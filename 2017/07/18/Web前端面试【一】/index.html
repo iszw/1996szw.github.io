@@ -130,7 +130,7 @@
 <meta property="og:site_name" content="iSzw_Blog">
 <meta property="og:description" content="INFO ：这段时间遇到的面试题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-02T11:27:12.000Z">
+<meta property="og:updated_time" content="2017-09-03T07:29:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端面试【一】">
 <meta name="twitter:description" content="INFO ：这段时间遇到的面试题。">
@@ -471,7 +471,7 @@
       
         <p>INFO ：这段时间遇到的面试题。</p>
 <a id="more"></a>
-<h3 id="1-前端页面由哪三层构成及各层的作用"><a href="#1-前端页面由哪三层构成及各层的作用" class="headerlink" title="1.前端页面由哪三层构成及各层的作用"></a>1.前端页面由哪三层构成及各层的作用</h3><ul>
+<h1 id="1-前端页面由哪三层构成及各层的作用"><a href="#1-前端页面由哪三层构成及各层的作用" class="headerlink" title="1.前端页面由哪三层构成及各层的作用"></a>1.前端页面由哪三层构成及各层的作用</h1><ul>
 <li><p>结构层：由 HTML 或 XHTML 之类的标记语言负责创建，仅负责语义的表达。解决了页面“内容是什么”的问题。</p>
 </li>
 <li><p>表示层：由CSS负责创建，解决了页面“如何显示内容”的问题。</p>
@@ -479,7 +479,7 @@
 <li><p>行为层：由脚本语言负责。解决了页面上“内容应该如何对事件作出反应”的问题。</p>
 </li>
 </ul>
-<h3 id="2-简述盒模型"><a href="#2-简述盒模型" class="headerlink" title="2.简述盒模型"></a>2.简述盒模型</h3><ul>
+<h1 id="2-简述盒模型"><a href="#2-简述盒模型" class="headerlink" title="2.简述盒模型"></a>2.简述盒模型</h1><ul>
 <li>文档中的每个元素被描绘为矩形盒子。盒子有四个边界：外边距边界margin, 边框边界border, 内边距边界padding与内容边界content。CSS3中有个box-sizing属性可以控制盒子的计算方式。</li>
 </ul>
 <ol>
@@ -488,21 +488,21 @@
 <li><p>IE6盒子模型：border-box：padding和border被包含在定义的width和height之内。对象的实际宽度就等于设置的width值。</p>
 </li>
 </ol>
-<h3 id="3-什么是CSS-Hack"><a href="#3-什么是CSS-Hack" class="headerlink" title="3.什么是CSS Hack"></a>3.什么是CSS Hack</h3><p>针对不同的浏览器写不同的CSS,就是 CSS Hack。<br>IE浏览器Hack一般又分为三种，条件Hack、属性级Hack、选择符Hack（详细参考CSS文档：<a href="http://www.phpstudy.net/css3/" target="_blank" rel="external">css文档</a>）。例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> // 1、条件Hack</div><div class="line">&lt;!<span class="selector-tag">--</span><span class="selector-attr">[if IE]</span>&gt;</div><div class="line">   &lt;<span class="selector-tag">style</span>&gt;</div><div class="line">         <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:red;&#125;</div><div class="line">   &lt;/style&gt;</div><div class="line">&lt;!<span class="selector-attr">[endif]</span><span class="selector-tag">--</span>&gt;</div><div class="line">// 2、属性Hack</div><div class="line"> <span class="selector-class">.test</span>&#123;</div><div class="line"> <span class="attribute">color</span>:<span class="number">#090</span>\<span class="number">9</span>; <span class="comment">/* For IE8+ */</span></div><div class="line"> *color:#f00;  /* For IE7 and earlier */</div><div class="line"> _<span class="selector-tag">color</span>:<span class="selector-id">#ff0</span>;  <span class="comment">/* For IE6 and earlier */</span></div><div class="line"> &#125;</div><div class="line">// 3、选择符Hack</div><div class="line"> * <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#090</span>;&#125;       <span class="comment">/* For IE6 and earlier */</span></div><div class="line"> * + <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#ff0</span>;&#125;     <span class="comment">/* For IE7 */</span></div></pre></td></tr></table></figure></p>
-<h3 id="4-简述同步和异步"><a href="#4-简述同步和异步" class="headerlink" title="4.简述同步和异步"></a>4.简述同步和异步</h3><ul>
+<h1 id="3-什么是CSS-Hack"><a href="#3-什么是CSS-Hack" class="headerlink" title="3.什么是CSS Hack"></a>3.什么是CSS Hack</h1><p>针对不同的浏览器写不同的CSS,就是 CSS Hack。<br>IE浏览器Hack一般又分为三种，条件Hack、属性级Hack、选择符Hack（详细参考CSS文档：<a href="http://www.phpstudy.net/css3/" target="_blank" rel="external">css文档</a>）。例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> // 1、条件Hack</div><div class="line">&lt;!<span class="selector-tag">--</span><span class="selector-attr">[if IE]</span>&gt;</div><div class="line">   &lt;<span class="selector-tag">style</span>&gt;</div><div class="line">         <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:red;&#125;</div><div class="line">   &lt;/style&gt;</div><div class="line">&lt;!<span class="selector-attr">[endif]</span><span class="selector-tag">--</span>&gt;</div><div class="line">// 2、属性Hack</div><div class="line"> <span class="selector-class">.test</span>&#123;</div><div class="line"> <span class="attribute">color</span>:<span class="number">#090</span>\<span class="number">9</span>; <span class="comment">/* For IE8+ */</span></div><div class="line"> *color:#f00;  /* For IE7 and earlier */</div><div class="line"> _<span class="selector-tag">color</span>:<span class="selector-id">#ff0</span>;  <span class="comment">/* For IE6 and earlier */</span></div><div class="line"> &#125;</div><div class="line">// 3、选择符Hack</div><div class="line"> * <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#090</span>;&#125;       <span class="comment">/* For IE6 and earlier */</span></div><div class="line"> * + <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#ff0</span>;&#125;     <span class="comment">/* For IE7 */</span></div></pre></td></tr></table></figure></p>
+<h1 id="4-简述同步和异步"><a href="#4-简述同步和异步" class="headerlink" title="4.简述同步和异步"></a>4.简述同步和异步</h1><ul>
 <li><p>同步是阻塞模式：同步是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程将会一直等待下去，直到收到返回信息才继续执行下去。</p>
 </li>
 <li><p>异步是非阻塞模式：异步是指进程不需要一直等下去，而是继续执行下面的操作，不管其他进程的状态。当有消息返回时系统会通知进程进行处理，这样可以提高执行的效率。</p>
 </li>
 </ul>
-<h3 id="5-浏览器的内核分别是什么"><a href="#5-浏览器的内核分别是什么" class="headerlink" title="5.浏览器的内核分别是什么"></a>5.浏览器的内核分别是什么</h3><ul>
+<h1 id="5-浏览器的内核分别是什么"><a href="#5-浏览器的内核分别是什么" class="headerlink" title="5.浏览器的内核分别是什么"></a>5.浏览器的内核分别是什么</h1><ul>
 <li>IE: trident内核</li>
 <li>Firefox：gecko内核</li>
 <li>Safari：webkit内核</li>
 <li>Opera：以前是presto内核，现已改用Google Chrome的Blink内核</li>
 <li>Chrome：Blink(基于webkit，Google与Opera Software共同开发)</li>
 </ul>
-<h3 id="6-什么叫优雅降级和渐进增强及其区别"><a href="#6-什么叫优雅降级和渐进增强及其区别" class="headerlink" title="6.什么叫优雅降级和渐进增强及其区别"></a>6.什么叫优雅降级和渐进增强及其区别</h3><ul>
+<h1 id="6-什么叫优雅降级和渐进增强及其区别"><a href="#6-什么叫优雅降级和渐进增强及其区别" class="headerlink" title="6.什么叫优雅降级和渐进增强及其区别"></a>6.什么叫优雅降级和渐进增强及其区别</h1><ul>
 <li><p>渐进增强 progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
 </li>
 <li><p>优雅降级 graceful degradation：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
@@ -514,19 +514,19 @@
 <li>渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要；</li>
 <li>降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。</li>
 </ol>
-<h3 id="7-px和em的区别"><a href="#7-px和em的区别" class="headerlink" title="7.px和em的区别"></a>7.px和em的区别</h3><ul>
+<h1 id="7-px和em的区别"><a href="#7-px和em的区别" class="headerlink" title="7.px和em的区别"></a>7.px和em的区别</h1><ul>
 <li><p>px和em都是长度单位，区别是，px的值是固定的，指定是多少就是多少，计算比较容易。em得值不是固定的，并且em会继承父级元素的字体大小。</p>
 </li>
 <li><p>浏览器的默认字体高都是16px。所以未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em。</p>
 </li>
 </ul>
-<h3 id="8-浏览器本地存储"><a href="#8-浏览器本地存储" class="headerlink" title="8.浏览器本地存储"></a>8.浏览器本地存储</h3><ul>
+<h1 id="8-浏览器本地存储"><a href="#8-浏览器本地存储" class="headerlink" title="8.浏览器本地存储"></a>8.浏览器本地存储</h1><ul>
 <li><p>sessionStorage：用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁，是会话级别的存储。</p>
 </li>
 <li><p>localStorage：用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。</p>
 </li>
 </ul>
-<h3 id="9-web-storage和cookie的区别"><a href="#9-web-storage和cookie的区别" class="headerlink" title="9.web storage和cookie的区别"></a>9.web storage和cookie的区别</h3><ol>
+<h1 id="9-web-storage和cookie的区别"><a href="#9-web-storage和cookie的区别" class="headerlink" title="9.web storage和cookie的区别"></a>9.web storage和cookie的区别</h1><ol>
 <li>Cookie的大小是受限的；</li>
 <li>每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽；</li>
 <li>cookie还需要指定作用域，不可以跨域调用；</li>
@@ -534,7 +534,7 @@
 <li>Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生；</li>
 <li>IE7、IE6中的UserData通过简单的代码封装可以统一到所有的浏览器都支持web storage；</li>
 </ol>
-<h3 id="10-请列举几种可以清除浮动的方法"><a href="#10-请列举几种可以清除浮动的方法" class="headerlink" title="10.请列举几种可以清除浮动的方法"></a>10.请列举几种可以清除浮动的方法</h3><ul>
+<h1 id="10-请列举几种可以清除浮动的方法"><a href="#10-请列举几种可以清除浮动的方法" class="headerlink" title="10.请列举几种可以清除浮动的方法"></a>10.请列举几种可以清除浮动的方法</h1><ul>
 <li>浮动会漂浮于普通流之上，像浮云一样，但是只能左右浮动。正是这种特性，导致框内部由于不存在其他普通流元素了，表现出高度为0（高度塌陷）。</li>
 </ul>
 <ol>
@@ -554,7 +554,7 @@
 <li><p>IE6-7的显示引擎使用的是一个称为布局（layout）的内部概念。</p>
 </li>
 </ul>
-<h3 id="11-对BFC规范的理解"><a href="#11-对BFC规范的理解" class="headerlink" title="11.对BFC规范的理解"></a>11.对BFC规范的理解</h3><ul>
+<h1 id="11-对BFC规范的理解"><a href="#11-对BFC规范的理解" class="headerlink" title="11.对BFC规范的理解"></a>11.对BFC规范的理解</h1><ul>
 <li><p>BFC全称是Block Formatting Context，即块格式化上下文。它是CSS2.1规范定义的，关于CSS渲染定位的一个概念。</p>
 </li>
 <li><p>BFC是页面CSS 视觉渲染的一部分，用于决定块盒子的布局及浮动相互影响范围的一个区域。</p>
@@ -564,7 +564,7 @@
 <li><p>利用BFC可以闭合浮动，防止与浮动元素重叠。</p>
 </li>
 </ul>
-<h3 id="12-WEB应用从服务器主动推送Data到客户端有那些方式"><a href="#12-WEB应用从服务器主动推送Data到客户端有那些方式" class="headerlink" title="12.WEB应用从服务器主动推送Data到客户端有那些方式"></a>12.WEB应用从服务器主动推送Data到客户端有那些方式</h3><ol>
+<h1 id="12-WEB应用从服务器主动推送Data到客户端有那些方式"><a href="#12-WEB应用从服务器主动推送Data到客户端有那些方式" class="headerlink" title="12.WEB应用从服务器主动推送Data到客户端有那些方式"></a>12.WEB应用从服务器主动推送Data到客户端有那些方式</h1><ol>
 <li>Html5 websoket</li>
 <li>WebSocket 通过 Flash</li>
 <li>XHR长时间连接</li>
@@ -572,7 +572,7 @@
 <li>不可见的Iframe</li>
 <li>&lt;script&gt;标签的长时间连接(可跨域)</li>
 </ol>
-<h3 id="13-网站重构的理解"><a href="#13-网站重构的理解" class="headerlink" title="13.网站重构的理解"></a>13.网站重构的理解</h3><ul>
+<h1 id="13-网站重构的理解"><a href="#13-网站重构的理解" class="headerlink" title="13.网站重构的理解"></a>13.网站重构的理解</h1><ul>
 <li>重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。</li>
 </ul>
 <ol>
@@ -581,7 +581,7 @@
 <li>减少代码间的耦合，让代码保持弹性</li>
 <li>压缩或合并JS、CSS、image等前端资源</li>
 </ol>
-<h3 id="14-一次完整的HTTP事务是怎样的一个过程"><a href="#14-一次完整的HTTP事务是怎样的一个过程" class="headerlink" title="14.一次完整的HTTP事务是怎样的一个过程"></a>14.一次完整的HTTP事务是怎样的一个过程</h3><ol>
+<h1 id="14-一次完整的HTTP事务是怎样的一个过程"><a href="#14-一次完整的HTTP事务是怎样的一个过程" class="headerlink" title="14.一次完整的HTTP事务是怎样的一个过程"></a>14.一次完整的HTTP事务是怎样的一个过程</h1><ol>
 <li>域名解析</li>
 <li>发起TCP的3次握手</li>
 <li>建立TCP连接后发起http请求</li>
@@ -589,7 +589,7 @@
 <li>浏览器解析html代码，并请求html代码中的资源</li>
 <li>浏览器对页面进行渲染呈现给用户</li>
 </ol>
-<h3 id="15-对标签语义化的理解"><a href="#15-对标签语义化的理解" class="headerlink" title="15.对标签语义化的理解"></a>15.对标签语义化的理解</h3><ul>
+<h1 id="15-对标签语义化的理解"><a href="#15-对标签语义化的理解" class="headerlink" title="15.对标签语义化的理解"></a>15.对标签语义化的理解</h1><ul>
 <li><p>去掉或者丢失样式的时候能够让页面呈现出清晰的结构；</p>
 </li>
 <li><p>有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；</p>
@@ -599,7 +599,7 @@
 <li><p>便于团队开发和维护，语义化更具可读性，遵循W3C标准的团队都遵循这个标准，可以减少差异化。</p>
 </li>
 </ul>
-<h3 id="16-HTML与XHTML二者有什么区别"><a href="#16-HTML与XHTML二者有什么区别" class="headerlink" title="16.HTML与XHTML二者有什么区别"></a>16.HTML与XHTML二者有什么区别</h3><ol>
+<h1 id="16-HTML与XHTML二者有什么区别"><a href="#16-HTML与XHTML二者有什么区别" class="headerlink" title="16.HTML与XHTML二者有什么区别"></a>16.HTML与XHTML二者有什么区别</h1><ol>
 <li><p>XHTML 元素必须被正确地嵌套。</p>
 </li>
 <li><p>XHTML 元素必须被关闭。</p>
@@ -609,7 +609,7 @@
 <li><p>XHTML 文档必须拥有根元素。</p>
 </li>
 </ol>
-<h3 id="17-请列举几种隐藏元素的方法"><a href="#17-请列举几种隐藏元素的方法" class="headerlink" title="17.请列举几种隐藏元素的方法"></a>17.请列举几种隐藏元素的方法</h3><ol>
+<h1 id="17-请列举几种隐藏元素的方法"><a href="#17-请列举几种隐藏元素的方法" class="headerlink" title="17.请列举几种隐藏元素的方法"></a>17.请列举几种隐藏元素的方法</h1><ol>
 <li>visibility: hidden；这个属性只是简单的隐藏某个元素，但是元素占用的空间任然存在。</li>
 <li>opacity: 0；一个CSS3属性，设置0可以使一个元素完全透明，制作出和visibility一样的效果。与visibility相比，它可以被transition和animate</li>
 <li>position: absolute；使元素脱离文档流，处于普通文档之上，给它设置一个很大的left负值定位，使元素定位在可见区域之外。</li>
@@ -619,7 +619,7 @@
 <li>height: 0; overflow: hidden；将元素在垂直方向上收缩为0,使元素消失。只要元素没有可见的边框，该技术就可以正常工作。</li>
 <li>filter: blur(0)；将一个元素的模糊度设置为0，从而使这个元素“消失”在页面中。</li>
 </ol>
-<h3 id="18-CSS的选择器"><a href="#18-CSS的选择器" class="headerlink" title="18.CSS的选择器"></a>18.CSS的选择器</h3><ul>
+<h1 id="18-CSS的选择器"><a href="#18-CSS的选择器" class="headerlink" title="18.CSS的选择器"></a>18.CSS的选择器</h1><ul>
 <li><p>元素选择器：* 、E、 E#id、 E.class</p>
 </li>
 <li><p>关系选择器：E、F、E&gt;F、E+F、E~F</p>
@@ -631,20 +631,20 @@
 <li><p>伪对象选择器：E:first-letter/E::first-letter、E:first-line/E::first-line、E:before/E::before、E:after/E::after、E::selection</p>
 </li>
 </ul>
-<h3 id="19-CSS的权重规则"><a href="#19-CSS的权重规则" class="headerlink" title="19.CSS的权重规则"></a>19.CSS的权重规则</h3><ul>
+<h1 id="19-CSS的权重规则"><a href="#19-CSS的权重规则" class="headerlink" title="19.CSS的权重规则"></a>19.CSS的权重规则</h1><ul>
 <li>一个行内样式：+1000；</li>
 <li>一个ID：+100；</li>
 <li>属性选择器/class类/伪类选择器：+10；</li>
 <li>一个元素名/伪对象选择器：+1。</li>
 </ul>
-<h3 id="20-CSS伪类与CSS伪对象的区别"><a href="#20-CSS伪类与CSS伪对象的区别" class="headerlink" title="20.CSS伪类与CSS伪对象的区别"></a>20.CSS伪类与CSS伪对象的区别</h3><ul>
+<h1 id="20-CSS伪类与CSS伪对象的区别"><a href="#20-CSS伪类与CSS伪对象的区别" class="headerlink" title="20.CSS伪类与CSS伪对象的区别"></a>20.CSS伪类与CSS伪对象的区别</h1><ul>
 <li>CSS 引入伪类和伪元素的概念是为了描述一些现有CSS无法描述的东西，根本区别在于：它们是否创造了新的元素（抽象）</li>
 </ul>
 <ol>
 <li>伪类：一开始用来表示一些元素的动态状态，随后CSS2标准扩展了其概念范围，使其成为了所有逻辑上存在但在文档树中却无须标识的“幽灵”分类。</li>
 <li>伪对象：代表了某个元素的子元素，这个子元素虽然在逻辑上存在，但却并不实际存在于文档树中。</li>
 </ol>
-<h3 id="21-position的几个取值"><a href="#21-position的几个取值" class="headerlink" title="21.position的几个取值"></a>21.position的几个取值</h3><ul>
+<h1 id="21-position的几个取值"><a href="#21-position的几个取值" class="headerlink" title="21.position的几个取值"></a>21.position的几个取值</h1><ul>
 <li><p>absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。</p>
 </li>
 <li><p>fixed：生成绝对定位的元素，相对于浏览器窗口进行定位。 （IE6不支持）。</p>
@@ -654,7 +654,7 @@
 <li><p>static：默认值。没有定位，元素出现在正常的流中。</p>
 </li>
 </ul>
-<h3 id="22-position的absolute与fixed的异同点"><a href="#22-position的absolute与fixed的异同点" class="headerlink" title="22.position的absolute与fixed的异同点"></a>22.position的absolute与fixed的异同点</h3><ul>
+<h1 id="22-position的absolute与fixed的异同点"><a href="#22-position的absolute与fixed的异同点" class="headerlink" title="22.position的absolute与fixed的异同点"></a>22.position的absolute与fixed的异同点</h1><ul>
 <li><p>相同：</p>
 <ol>
 <li>改变行内元素的呈现方式，display被置为block</li>
@@ -669,7 +669,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="23-外边距重叠"><a href="#23-外边距重叠" class="headerlink" title="23.外边距重叠"></a>23.外边距重叠</h3><ul>
+<h1 id="23-外边距重叠"><a href="#23-外边距重叠" class="headerlink" title="23.外边距重叠"></a>23.外边距重叠</h1><ul>
 <li><p>外边距重叠就是margin-collapse。在CSS当中，相邻的两个盒子（可能是兄弟关系也可能是祖先关系）的外边距可以结合成一个单独的外边距。这种合并外边距的方式被称为折叠，并且因而所结合成的外边距称为折叠外边距。</p>
 </li>
 <li><p>折叠结果遵循下列计算规则：</p>
@@ -680,7 +680,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="24-什么是JavaScript闭包"><a href="#24-什么是JavaScript闭包" class="headerlink" title="24.什么是JavaScript闭包"></a>24.什么是JavaScript闭包</h3><ul>
+<h1 id="24-什么是JavaScript闭包"><a href="#24-什么是JavaScript闭包" class="headerlink" title="24.什么是JavaScript闭包"></a>24.什么是JavaScript闭包</h1><ul>
 <li><p>当函数可以记住并访问所在的作用域时，就产生了闭包，即使函数是在当前作用域之外执行。闭包有如下特性：</p>
 <ol>
 <li>JavaScript允许你使用在当前函数以外定义的变量</li>
@@ -694,7 +694,7 @@
 <li><p>在定时器、事件监听器、Ajax请求、跨窗口通信、Web Workers或者任何其他的异步（或者同步）任务中，只要使用了回调函数，实际上就是在使用闭包！</p>
 </li>
 </ul>
-<h3 id="25-JS如何实现面向对象和继承机制"><a href="#25-JS如何实现面向对象和继承机制" class="headerlink" title="25.JS如何实现面向对象和继承机制"></a>25.JS如何实现面向对象和继承机制</h3><ul>
+<h1 id="25-JS如何实现面向对象和继承机制"><a href="#25-JS如何实现面向对象和继承机制" class="headerlink" title="25.JS如何实现面向对象和继承机制"></a>25.JS如何实现面向对象和继承机制</h1><ul>
 <li><p>创建对象方法：</p>
 <ol>
 <li>利用json创建对象</li>
@@ -713,7 +713,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="26-对this指针的理解"><a href="#26-对this指针的理解" class="headerlink" title="26.对this指针的理解"></a>26.对this指针的理解</h3><ul>
+<h1 id="26-对this指针的理解"><a href="#26-对this指针的理解" class="headerlink" title="26.对this指针的理解"></a>26.对this指针的理解</h1><ul>
 <li><p>this实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。</p>
 </li>
 <li><p>this指的是：调用函数的那个对象。</p>
@@ -725,7 +725,7 @@
 <li>作为构造函数调用，就是通过这个函数new一个新对象（object）。这时，this就指这个新对象。</li>
 <li>apply与call的调用，它们的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。</li>
 </ol>
-<h3 id="27-JS常用的绑定事件的方法有哪些"><a href="#27-JS常用的绑定事件的方法有哪些" class="headerlink" title="27.JS常用的绑定事件的方法有哪些"></a>27.JS常用的绑定事件的方法有哪些</h3><ul>
+<h1 id="27-JS常用的绑定事件的方法有哪些"><a href="#27-JS常用的绑定事件的方法有哪些" class="headerlink" title="27.JS常用的绑定事件的方法有哪些"></a>27.JS常用的绑定事件的方法有哪些</h1><ul>
 <li><p>在DOM元素中直接绑定，DOM元素，可以理解为HTML标签，onXXX=”JavaScript Code”，查看事件列表。</p>
 </li>
 <li><p>在JavaScript代码中绑定，elementObject.onXXX=function(){}，通称为DOM0事件系统。</p>
@@ -733,7 +733,7 @@
 <li><p>绑定事件监听函数，标准浏览器使用 addEventListener() ，IE11以下版本attachEvent() 来绑定事件监听函数，通称为DOM2事件系统。</p>
 </li>
 </ul>
-<h3 id="28-解释下javascript的冒泡和捕获"><a href="#28-解释下javascript的冒泡和捕获" class="headerlink" title="28.解释下javascript的冒泡和捕获"></a>28.解释下javascript的冒泡和捕获</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click2"</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click3"</span>&gt;</span>事件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="28-解释下javascript的冒泡和捕获"><a href="#28-解释下javascript的冒泡和捕获" class="headerlink" title="28.解释下javascript的冒泡和捕获"></a>28.解释下javascript的冒泡和捕获</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click2"</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click3"</span>&gt;</span>事件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <ol>
 <li>Netscape主张元素1的事件首先发生，这种事件发生顺序被称为捕获型。</li>
 <li>微软则保持元素3具有优先权，这种事件顺序被称为冒泡型。</li>
@@ -742,7 +742,7 @@
 <ul>
 <li>事件监听函数addEventListener()的第三个参数就是控制方法是捕获还是冒泡</li>
 </ul>
-<h3 id="29-jQuery的特点"><a href="#29-jQuery的特点" class="headerlink" title="29.jQuery的特点"></a>29.jQuery的特点</h3><ol>
+<h1 id="29-jQuery的特点"><a href="#29-jQuery的特点" class="headerlink" title="29.jQuery的特点"></a>29.jQuery的特点</h1><ol>
 <li>一款轻量级的js库</li>
 <li>丰富快速的DOM选择器</li>
 <li>链式表达式</li>
@@ -751,7 +751,7 @@
 <li>跨浏览器兼容</li>
 <li>插件扩展开发</li>
 </ol>
-<h3 id="30-js延迟加载的方式有哪些"><a href="#30-js延迟加载的方式有哪些" class="headerlink" title="30.js延迟加载的方式有哪些"></a>30.js延迟加载的方式有哪些</h3><ul>
+<h1 id="30-js延迟加载的方式有哪些"><a href="#30-js延迟加载的方式有哪些" class="headerlink" title="30.js延迟加载的方式有哪些"></a>30.js延迟加载的方式有哪些</h1><ul>
 <li><p>将script节点放置在最后&lt;/body&gt;之前</p>
 </li>
 <li><p>使用script标签的defer和async属性，defer属性为延迟加载，是在页面渲染完成之后再进行加载的，而async属性则是和文档并行加载</p>
@@ -761,7 +761,7 @@
 <li><p>通过ajax下载js脚本，动态添加script节点</p>
 </li>
 </ul>
-<h3 id="31-如何解决跨域问题"><a href="#31-如何解决跨域问题" class="headerlink" title="31.如何解决跨域问题"></a>31.如何解决跨域问题</h3><ul>
+<h1 id="31-如何解决跨域问题"><a href="#31-如何解决跨域问题" class="headerlink" title="31.如何解决跨域问题"></a>31.如何解决跨域问题</h1><ul>
 <li><p>JSONP（JSON with Padding），填充式JSON</p>
 </li>
 <li><p>iframe跨域</p>
@@ -773,7 +773,7 @@
 <li><p>跨域资源共享（CORS），服务器设置Access-Control-Allow-OriginHTTP响应头之后，浏览器将会允许跨域请求</p>
 </li>
 </ul>
-<h3 id="32-哪些操作会造成内存泄漏"><a href="#32-哪些操作会造成内存泄漏" class="headerlink" title="32.哪些操作会造成内存泄漏"></a>32.哪些操作会造成内存泄漏</h3><ul>
+<h1 id="32-哪些操作会造成内存泄漏"><a href="#32-哪些操作会造成内存泄漏" class="headerlink" title="32.哪些操作会造成内存泄漏"></a>32.哪些操作会造成内存泄漏</h1><ul>
 <li><p>当页面中元素被移除或替换时，若元素绑定的事件仍没被移除，在IE中不会作出恰当处理，此时要先手工移除事件，不然会存在内存泄露。</p>
 </li>
 <li><p>在IE中，如果循环引用中的任何对象是 DOM 节点或者 ActiveX 对象，垃圾收集系统则不会处理。</p>
@@ -783,7 +783,7 @@
 <li><p>在销毁对象的时候，要遍历属性中属性，依次删除，否则会泄漏。</p>
 </li>
 </ul>
-<h3 id="33-JavaScript中的变量声明提升"><a href="#33-JavaScript中的变量声明提升" class="headerlink" title="33.JavaScript中的变量声明提升"></a>33.JavaScript中的变量声明提升</h3><ul>
+<h1 id="33-JavaScript中的变量声明提升"><a href="#33-JavaScript中的变量声明提升" class="headerlink" title="33.JavaScript中的变量声明提升"></a>33.JavaScript中的变量声明提升</h1><ul>
 <li><p>函数声明和变量声明总是被JavaScript解释器隐式地提升到包含他们的作用域的最顶端。</p>
 </li>
 <li><p>function优先声明于var。</p>
@@ -792,7 +792,7 @@
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    bar();</div><div class="line">    <span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;<span class="comment">//等同于</span></div><div class="line">    <span class="keyword">var</span> x;</div><div class="line">    bar();</div><div class="line">    x = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    foo(); <span class="comment">// TypeError "foo is not a function"</span></div><div class="line">    bar(); <span class="comment">// "this will run!"</span></div><div class="line">    <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; &#125;<span class="comment">// 函数表达式被赋值给变量'foo'</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123; &#125;<span class="comment">// 名为'bar'的函数声明</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="34-JavaScript原型和原型链"><a href="#34-JavaScript原型和原型链" class="headerlink" title="34.JavaScript原型和原型链"></a>34.JavaScript原型和原型链</h3><ul>
+<h1 id="34-JavaScript原型和原型链"><a href="#34-JavaScript原型和原型链" class="headerlink" title="34.JavaScript原型和原型链"></a>34.JavaScript原型和原型链</h1><ul>
 <li><p>原型：</p>
 <ol>
 <li>原型是一个对象，其他对象可以通过它实现属性继承。</li>
@@ -807,19 +807,19 @@
 </ol>
 </li>
 </ul>
-<h3 id="35-JavaScript中的作用域和作用域链"><a href="#35-JavaScript中的作用域和作用域链" class="headerlink" title="35.JavaScript中的作用域和作用域链"></a>35.JavaScript中的作用域和作用域链</h3><ul>
+<h1 id="35-JavaScript中的作用域和作用域链"><a href="#35-JavaScript中的作用域和作用域链" class="headerlink" title="35.JavaScript中的作用域和作用域链"></a>35.JavaScript中的作用域和作用域链</h1><ul>
 <li><p>变量的作用域（scope）：程序源代码中定义这个变量的区域。</p>
 </li>
 <li><p>作用域链：是一个对象列表或链表，这组对象定义了这段代码“作用域中”的变量。查找变量会从第一个对象开始查找，有则用，无则查找链上的下一个对象。</p>
 </li>
 </ul>
-<h3 id="36-jQuery源码以及jQuery的实现原理"><a href="#36-jQuery源码以及jQuery的实现原理" class="headerlink" title="36.jQuery源码以及jQuery的实现原理"></a>36.jQuery源码以及jQuery的实现原理</h3><ul>
+<h1 id="36-jQuery源码以及jQuery的实现原理"><a href="#36-jQuery源码以及jQuery的实现原理" class="headerlink" title="36.jQuery源码以及jQuery的实现原理"></a>36.jQuery源码以及jQuery的实现原理</h1><ul>
 <li><p>jQuery给我们带来了一个简洁方便的编码模型(1&gt;创建jQuery对象;2&gt;直接使用jQuery对象的属性/方法/事件),</p>
 </li>
 <li><p>一个强悍的dom元素查找器($)，插件式编程接口(jQuery.fn)，以及插件初始化的”配置”对象思想</p>
 </li>
 </ul>
-<h3 id="37-输入完网址按下回车到看到网页这个过程中发生了什么"><a href="#37-输入完网址按下回车到看到网页这个过程中发生了什么" class="headerlink" title="37.输入完网址按下回车到看到网页这个过程中发生了什么"></a>37.输入完网址按下回车到看到网页这个过程中发生了什么</h3><ol>
+<h1 id="37-输入完网址按下回车到看到网页这个过程中发生了什么"><a href="#37-输入完网址按下回车到看到网页这个过程中发生了什么" class="headerlink" title="37.输入完网址按下回车到看到网页这个过程中发生了什么"></a>37.输入完网址按下回车到看到网页这个过程中发生了什么</h1><ol>
 <li>域名解析</li>
 <li>发起TCP的3次握手</li>
 <li>建立TCP连接后发起http请求</li>
@@ -827,7 +827,7 @@
 <li>浏览器解析html代码，并请求html代码中的资源</li>
 <li>浏览器对页面进行渲染呈现给用户</li>
 </ol>
-<h3 id="38-关于前端性能优化"><a href="#38-关于前端性能优化" class="headerlink" title="38.关于前端性能优化"></a>38.关于前端性能优化</h3><ul>
+<h1 id="38-关于前端性能优化"><a href="#38-关于前端性能优化" class="headerlink" title="38.关于前端性能优化"></a>38.关于前端性能优化</h1><ul>
 <li><p>请求优化：合并JS和CSS，减少DNS查找次数，避免重定向，使用GET完成AJAX请求，减小请求中的Cookie，缓存资源，使用CDN，开启GZip，压缩HTML页面，开启长连接，避免行内脚本阻塞并行下载，少用iframe（阻塞onload事件，影响并行下载）。</p>
 </li>
 <li><p>CSS优化：样式表置于页面顶部，避免使用CSS表达式，使用外部JS和CSS，压缩JS和CSS，避免滤镜。</p>
@@ -837,7 +837,7 @@
 <li><p>图片优化：内联图使用Data:URL，压缩图片或使用WebP格式，固定图片尺寸，图片预加载，图片延迟加载，使用字体矢量图标，Sprites图片。</p>
 </li>
 </ul>
-<h3 id="39-减少页面加载时间的方法"><a href="#39-减少页面加载时间的方法" class="headerlink" title="39.减少页面加载时间的方法"></a>39.减少页面加载时间的方法</h3><ul>
+<h1 id="39-减少页面加载时间的方法"><a href="#39-减少页面加载时间的方法" class="headerlink" title="39.减少页面加载时间的方法"></a>39.减少页面加载时间的方法</h1><ul>
 <li><p>尽量减少页面中重复的HTTP请求数量</p>
 </li>
 <li><p>服务器开启gzip压缩</p>
@@ -851,7 +851,7 @@
 <li><p>使用多域名负载网页内的多个文件、图片</p>
 </li>
 </ul>
-<h3 id="40-以前端角度出发做好SEO需要考虑什么"><a href="#40-以前端角度出发做好SEO需要考虑什么" class="headerlink" title="40.以前端角度出发做好SEO需要考虑什么"></a>40.以前端角度出发做好SEO需要考虑什么</h3><ul>
+<h1 id="40-以前端角度出发做好SEO需要考虑什么"><a href="#40-以前端角度出发做好SEO需要考虑什么" class="headerlink" title="40.以前端角度出发做好SEO需要考虑什么"></a>40.以前端角度出发做好SEO需要考虑什么</h1><ul>
 <li><p>了解搜索引擎如何抓取网页和如何索引网页</p>
 </li>
 <li><p>meta标签优化</p>
@@ -1147,7 +1147,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-前端页面由哪三层构成及各层的作用"><span class="nav-number">1.</span> <span class="nav-text">1.前端页面由哪三层构成及各层的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-简述盒模型"><span class="nav-number">2.</span> <span class="nav-text">2.简述盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是CSS-Hack"><span class="nav-number">3.</span> <span class="nav-text">3.什么是CSS Hack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-简述同步和异步"><span class="nav-number">4.</span> <span class="nav-text">4.简述同步和异步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-浏览器的内核分别是什么"><span class="nav-number">5.</span> <span class="nav-text">5.浏览器的内核分别是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-什么叫优雅降级和渐进增强及其区别"><span class="nav-number">6.</span> <span class="nav-text">6.什么叫优雅降级和渐进增强及其区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-px和em的区别"><span class="nav-number">7.</span> <span class="nav-text">7.px和em的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-浏览器本地存储"><span class="nav-number">8.</span> <span class="nav-text">8.浏览器本地存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-web-storage和cookie的区别"><span class="nav-number">9.</span> <span class="nav-text">9.web storage和cookie的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-请列举几种可以清除浮动的方法"><span class="nav-number">10.</span> <span class="nav-text">10.请列举几种可以清除浮动的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-对BFC规范的理解"><span class="nav-number">11.</span> <span class="nav-text">11.对BFC规范的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-WEB应用从服务器主动推送Data到客户端有那些方式"><span class="nav-number">12.</span> <span class="nav-text">12.WEB应用从服务器主动推送Data到客户端有那些方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-网站重构的理解"><span class="nav-number">13.</span> <span class="nav-text">13.网站重构的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-一次完整的HTTP事务是怎样的一个过程"><span class="nav-number">14.</span> <span class="nav-text">14.一次完整的HTTP事务是怎样的一个过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-对标签语义化的理解"><span class="nav-number">15.</span> <span class="nav-text">15.对标签语义化的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-HTML与XHTML二者有什么区别"><span class="nav-number">16.</span> <span class="nav-text">16.HTML与XHTML二者有什么区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-请列举几种隐藏元素的方法"><span class="nav-number">17.</span> <span class="nav-text">17.请列举几种隐藏元素的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-CSS的选择器"><span class="nav-number">18.</span> <span class="nav-text">18.CSS的选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-CSS的权重规则"><span class="nav-number">19.</span> <span class="nav-text">19.CSS的权重规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-CSS伪类与CSS伪对象的区别"><span class="nav-number">20.</span> <span class="nav-text">20.CSS伪类与CSS伪对象的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-position的几个取值"><span class="nav-number">21.</span> <span class="nav-text">21.position的几个取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-position的absolute与fixed的异同点"><span class="nav-number">22.</span> <span class="nav-text">22.position的absolute与fixed的异同点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-外边距重叠"><span class="nav-number">23.</span> <span class="nav-text">23.外边距重叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-什么是JavaScript闭包"><span class="nav-number">24.</span> <span class="nav-text">24.什么是JavaScript闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-JS如何实现面向对象和继承机制"><span class="nav-number">25.</span> <span class="nav-text">25.JS如何实现面向对象和继承机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-对this指针的理解"><span class="nav-number">26.</span> <span class="nav-text">26.对this指针的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-JS常用的绑定事件的方法有哪些"><span class="nav-number">27.</span> <span class="nav-text">27.JS常用的绑定事件的方法有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-解释下javascript的冒泡和捕获"><span class="nav-number">28.</span> <span class="nav-text">28.解释下javascript的冒泡和捕获</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-jQuery的特点"><span class="nav-number">29.</span> <span class="nav-text">29.jQuery的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#30-js延迟加载的方式有哪些"><span class="nav-number">30.</span> <span class="nav-text">30.js延迟加载的方式有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-如何解决跨域问题"><span class="nav-number">31.</span> <span class="nav-text">31.如何解决跨域问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-哪些操作会造成内存泄漏"><span class="nav-number">32.</span> <span class="nav-text">32.哪些操作会造成内存泄漏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-JavaScript中的变量声明提升"><span class="nav-number">33.</span> <span class="nav-text">33.JavaScript中的变量声明提升</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34-JavaScript原型和原型链"><span class="nav-number">34.</span> <span class="nav-text">34.JavaScript原型和原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35-JavaScript中的作用域和作用域链"><span class="nav-number">35.</span> <span class="nav-text">35.JavaScript中的作用域和作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#36-jQuery源码以及jQuery的实现原理"><span class="nav-number">36.</span> <span class="nav-text">36.jQuery源码以及jQuery的实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#37-输入完网址按下回车到看到网页这个过程中发生了什么"><span class="nav-number">37.</span> <span class="nav-text">37.输入完网址按下回车到看到网页这个过程中发生了什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#38-关于前端性能优化"><span class="nav-number">38.</span> <span class="nav-text">38.关于前端性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39-减少页面加载时间的方法"><span class="nav-number">39.</span> <span class="nav-text">39.减少页面加载时间的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#40-以前端角度出发做好SEO需要考虑什么"><span class="nav-number">40.</span> <span class="nav-text">40.以前端角度出发做好SEO需要考虑什么</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-前端页面由哪三层构成及各层的作用"><span class="nav-number">1.</span> <span class="nav-text">1.前端页面由哪三层构成及各层的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-简述盒模型"><span class="nav-number">2.</span> <span class="nav-text">2.简述盒模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-什么是CSS-Hack"><span class="nav-number">3.</span> <span class="nav-text">3.什么是CSS Hack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-简述同步和异步"><span class="nav-number">4.</span> <span class="nav-text">4.简述同步和异步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-浏览器的内核分别是什么"><span class="nav-number">5.</span> <span class="nav-text">5.浏览器的内核分别是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-什么叫优雅降级和渐进增强及其区别"><span class="nav-number">6.</span> <span class="nav-text">6.什么叫优雅降级和渐进增强及其区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-px和em的区别"><span class="nav-number">7.</span> <span class="nav-text">7.px和em的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-浏览器本地存储"><span class="nav-number">8.</span> <span class="nav-text">8.浏览器本地存储</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-web-storage和cookie的区别"><span class="nav-number">9.</span> <span class="nav-text">9.web storage和cookie的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-请列举几种可以清除浮动的方法"><span class="nav-number">10.</span> <span class="nav-text">10.请列举几种可以清除浮动的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-对BFC规范的理解"><span class="nav-number">11.</span> <span class="nav-text">11.对BFC规范的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-WEB应用从服务器主动推送Data到客户端有那些方式"><span class="nav-number">12.</span> <span class="nav-text">12.WEB应用从服务器主动推送Data到客户端有那些方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-网站重构的理解"><span class="nav-number">13.</span> <span class="nav-text">13.网站重构的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-一次完整的HTTP事务是怎样的一个过程"><span class="nav-number">14.</span> <span class="nav-text">14.一次完整的HTTP事务是怎样的一个过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-对标签语义化的理解"><span class="nav-number">15.</span> <span class="nav-text">15.对标签语义化的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-HTML与XHTML二者有什么区别"><span class="nav-number">16.</span> <span class="nav-text">16.HTML与XHTML二者有什么区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-请列举几种隐藏元素的方法"><span class="nav-number">17.</span> <span class="nav-text">17.请列举几种隐藏元素的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-CSS的选择器"><span class="nav-number">18.</span> <span class="nav-text">18.CSS的选择器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-CSS的权重规则"><span class="nav-number">19.</span> <span class="nav-text">19.CSS的权重规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-CSS伪类与CSS伪对象的区别"><span class="nav-number">20.</span> <span class="nav-text">20.CSS伪类与CSS伪对象的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#21-position的几个取值"><span class="nav-number">21.</span> <span class="nav-text">21.position的几个取值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#22-position的absolute与fixed的异同点"><span class="nav-number">22.</span> <span class="nav-text">22.position的absolute与fixed的异同点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#23-外边距重叠"><span class="nav-number">23.</span> <span class="nav-text">23.外边距重叠</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#24-什么是JavaScript闭包"><span class="nav-number">24.</span> <span class="nav-text">24.什么是JavaScript闭包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#25-JS如何实现面向对象和继承机制"><span class="nav-number">25.</span> <span class="nav-text">25.JS如何实现面向对象和继承机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#26-对this指针的理解"><span class="nav-number">26.</span> <span class="nav-text">26.对this指针的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#27-JS常用的绑定事件的方法有哪些"><span class="nav-number">27.</span> <span class="nav-text">27.JS常用的绑定事件的方法有哪些</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#28-解释下javascript的冒泡和捕获"><span class="nav-number">28.</span> <span class="nav-text">28.解释下javascript的冒泡和捕获</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#29-jQuery的特点"><span class="nav-number">29.</span> <span class="nav-text">29.jQuery的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#30-js延迟加载的方式有哪些"><span class="nav-number">30.</span> <span class="nav-text">30.js延迟加载的方式有哪些</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#31-如何解决跨域问题"><span class="nav-number">31.</span> <span class="nav-text">31.如何解决跨域问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#32-哪些操作会造成内存泄漏"><span class="nav-number">32.</span> <span class="nav-text">32.哪些操作会造成内存泄漏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#33-JavaScript中的变量声明提升"><span class="nav-number">33.</span> <span class="nav-text">33.JavaScript中的变量声明提升</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#34-JavaScript原型和原型链"><span class="nav-number">34.</span> <span class="nav-text">34.JavaScript原型和原型链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#35-JavaScript中的作用域和作用域链"><span class="nav-number">35.</span> <span class="nav-text">35.JavaScript中的作用域和作用域链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#36-jQuery源码以及jQuery的实现原理"><span class="nav-number">36.</span> <span class="nav-text">36.jQuery源码以及jQuery的实现原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#37-输入完网址按下回车到看到网页这个过程中发生了什么"><span class="nav-number">37.</span> <span class="nav-text">37.输入完网址按下回车到看到网页这个过程中发生了什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#38-关于前端性能优化"><span class="nav-number">38.</span> <span class="nav-text">38.关于前端性能优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#39-减少页面加载时间的方法"><span class="nav-number">39.</span> <span class="nav-text">39.减少页面加载时间的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#40-以前端角度出发做好SEO需要考虑什么"><span class="nav-number">40.</span> <span class="nav-text">40.以前端角度出发做好SEO需要考虑什么</span></a></li></ol></div>
             
 
           </div>
