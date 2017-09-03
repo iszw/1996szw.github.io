@@ -122,13 +122,13 @@
 
 
 
-<meta name="description" content="1.TCP报文格式几个重点字段：  （1）序号：Seq序号，占32位，用来标识从TCP源端向目的端发送的字节流，发起方发送数据时对此进行标记。  （2）确认序号：Ack序号，占32位，只有ACK标志位为1时，确认序号字段才有效，Ack=Seq+1。  （3）标志位：共6个，即URG、ACK、PSH、RST、SYN、FIN等，具体含义如下：  （A）URG：紧急指针（urgent pointer）">
+<meta name="description" content="1.TCP报文格式">
 <meta name="keywords" content="http,tcp&#x2F;ip">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于TCP的三次握手和四次挥手">
 <meta property="og:url" content="https://1996szw.github.io/2017/04/02/关于TCP的三次握手和四次挥手/index.html">
 <meta property="og:site_name" content="iSzw_Blog">
-<meta property="og:description" content="1.TCP报文格式几个重点字段：  （1）序号：Seq序号，占32位，用来标识从TCP源端向目的端发送的字节流，发起方发送数据时对此进行标记。  （2）确认序号：Ack序号，占32位，只有ACK标志位为1时，确认序号字段才有效，Ack=Seq+1。  （3）标志位：共6个，即URG、ACK、PSH、RST、SYN、FIN等，具体含义如下：  （A）URG：紧急指针（urgent pointer）">
+<meta property="og:description" content="1.TCP报文格式">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/tcp1.jpg">
 <meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/tcp2.jpg">
@@ -136,10 +136,10 @@
 <meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/tcp3.jpg">
 <meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/tcp4.jpg">
 <meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/tcp5.jpg">
-<meta property="og:updated_time" content="2017-09-03T16:55:20.000Z">
+<meta property="og:updated_time" content="2017-09-03T16:57:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于TCP的三次握手和四次挥手">
-<meta name="twitter:description" content="1.TCP报文格式几个重点字段：  （1）序号：Seq序号，占32位，用来标识从TCP源端向目的端发送的字节流，发起方发送数据时对此进行标记。  （2）确认序号：Ack序号，占32位，只有ACK标志位为1时，确认序号字段才有效，Ack=Seq+1。  （3）标志位：共6个，即URG、ACK、PSH、RST、SYN、FIN等，具体含义如下：  （A）URG：紧急指针（urgent pointer）">
+<meta name="twitter:description" content="1.TCP报文格式">
 <meta name="twitter:image" content="http://ouwxj7f40.bkt.clouddn.com/tcp1.jpg">
 
 
@@ -476,8 +476,8 @@
       
 
       
-        <a id="more"></a>
-<h1 id="1-TCP报文格式"><a href="#1-TCP报文格式" class="headerlink" title="1.TCP报文格式"></a>1.TCP报文格式</h1><p><img src="http://ouwxj7f40.bkt.clouddn.com/tcp1.jpg" alt=""><br>几个重点字段：<br>  （1）序号：Seq序号，占32位，用来标识从TCP源端向目的端发送的字节流，发起方发送数据时对此进行标记。<br>  （2）确认序号：Ack序号，占32位，只有ACK标志位为1时，确认序号字段才有效，Ack=Seq+1。<br>  （3）标志位：共6个，即URG、ACK、PSH、RST、SYN、FIN等，具体含义如下：<br>  （A）URG：紧急指针（urgent pointer）有效。<br>  （B）ACK：确认序号有效。<br>  （C）PSH：接收方应该尽快将这个报文交给应用层。<br>  （D）RST：重置连接。<br>  （E）SYN：发起一个新连接。<br>  （F）FIN：释放一个连接。</p>
+        <h1 id="1-TCP报文格式"><a href="#1-TCP报文格式" class="headerlink" title="1.TCP报文格式"></a>1.TCP报文格式</h1><a id="more"></a>
+<p><img src="http://ouwxj7f40.bkt.clouddn.com/tcp1.jpg" alt=""><br>几个重点字段：<br>  （1）序号：Seq序号，占32位，用来标识从TCP源端向目的端发送的字节流，发起方发送数据时对此进行标记。<br>  （2）确认序号：Ack序号，占32位，只有ACK标志位为1时，确认序号字段才有效，Ack=Seq+1。<br>  （3）标志位：共6个，即URG、ACK、PSH、RST、SYN、FIN等，具体含义如下：<br>  （A）URG：紧急指针（urgent pointer）有效。<br>  （B）ACK：确认序号有效。<br>  （C）PSH：接收方应该尽快将这个报文交给应用层。<br>  （D）RST：重置连接。<br>  （E）SYN：发起一个新连接。<br>  （F）FIN：释放一个连接。</p>
 <p> 需要注意的是：<br>  （A）不要将确认序号Ack与标志位中的ACK搞混了。<br>  （B）确认方Ack=发起方Req+1，两端配对。</p>
 <h1 id="2-三次握手"><a href="#2-三次握手" class="headerlink" title="2.三次握手"></a>2.三次握手</h1><blockquote>
 <p>TCP(Transmission Control Protocol)即传输控制协议，TCP是主机对主机层的传输控制协议，提供可靠的连接服务，采用三次握手确认建立一个连接。</p>
