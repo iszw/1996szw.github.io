@@ -46,7 +46,7 @@
   <entry>
     <title><![CDATA[一个测试颜色辨识度的小游戏]]></title>
     <url>%2F2017%2F05%2F18%2F%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95%E9%A2%9C%E8%89%B2%E8%BE%A8%E8%AF%86%E5%BA%A6%E7%9A%84%E5%B0%8F%E6%B8%B8%E6%88%8F%2F</url>
-    <content type="text"><![CDATA[testColorResolution A small game that can test your eyes for color recognition 简介之前有段时间网上有一个挺流行的小游戏叫做“看你有多色”。然后我看了网上的教程用createJS仿写了一个，具体实现后效果如下： 游戏开始 点击与其它方块颜色不一样的方块 一定步数之后，方块数量达到9*9后不再增加 以下是部分关键代码12345678910111213141516171819202122232425262728293031323334353637383940414243var stage = new createjs.Stage("gameView");createjs.Ticker.setFPS(30);createjs.Ticker.addEventListener("tick",stage);var gameView = new createjs.Container();stage.addChild(gameView);var n = 2;function addRect()&#123; var cl = parseInt(Math.random()*1000000); var color = "#" + cl; var cl1 = cl+90000; var RectColor = "#" + cl1; var x = parseInt(Math.random()*n); var y = parseInt(Math.random()*n); for(var indexX = 0;indexX &lt; n ;indexX++)&#123; for(var indexY = 0;indexY &lt; n;indexY++)&#123; var r = new Rect(n,color,RectColor); gameView.addChild(r); r.x = indexX; r.y = indexY; if(r.x == x &amp;&amp; r.y == y)&#123; r.setRectType(2); &#125; r.x = indexX*(400/n); r.y = indexY*(400/n); if(r.getRectType() == 2)&#123; r.addEventListener("click",function()&#123; var audio = document.getElementById("clickSound"); audio.play(); if(n&lt;9)&#123; ++n; &#125; gameView.removeAllChildren(); addRect(); &#125;) &#125; &#125; &#125;&#125;addRect(); 表示颜色的时候用的十六进制而不是RGB，然后随机颜色用的是random函数。而唯一一个不同于其他方块的方块颜色是要比其他颜色浅一些的。点击其他方块没有任何特效，点击唯一正确的方块会进入下一关并且伴随有音效提示，同时整个游戏会有BGM。]]></content>
+    <content type="text"><![CDATA[testColorResolution A small game that can test your eyes for color recognition 简介之前有段时间网上有一个挺流行的小游戏叫做“看你有多色”。然后我看了网上的教程用createJS仿写了一个，具体实现后效果如下： 游戏开始 点击与其它方块颜色不一样的方块 一定步数之后，方块数量达到9*9后不再增加 以下是部分关键代码12345678910111213141516171819202122232425262728293031323334353637383940414243var stage = new createjs.Stage("gameView");createjs.Ticker.setFPS(30);createjs.Ticker.addEventListener("tick",stage);var gameView = new createjs.Container();stage.addChild(gameView);var n = 2;function addRect()&#123; var cl = parseInt(Math.random()*1000000); var color = "#" + cl; var cl1 = cl+90000; var RectColor = "#" + cl1; var x = parseInt(Math.random()*n); var y = parseInt(Math.random()*n); for(var indexX = 0;indexX &lt; n ;indexX++)&#123; for(var indexY = 0;indexY &lt; n;indexY++)&#123; var r = new Rect(n,color,RectColor); gameView.addChild(r); r.x = indexX; r.y = indexY; if(r.x == x &amp;&amp; r.y == y)&#123; r.setRectType(2); &#125; r.x = indexX*(400/n); r.y = indexY*(400/n); if(r.getRectType() == 2)&#123; r.addEventListener("click",function()&#123; var audio = document.getElementById("clickSound"); audio.play(); if(n&lt;9)&#123; ++n; &#125; gameView.removeAllChildren(); addRect(); &#125;) &#125; &#125; &#125;&#125;addRect(); 表示颜色的时候用的十六进制而不是RGB，然后随机颜色用的是random函数。而唯一一个不同于其他方块的方块颜色是要比其他颜色浅一些的。点击其他方块没有任何特效，点击唯一正确的方块会进入下一关并且伴随有音效提示，同时整个游戏会有BGM。 源码地址：https://github.com/1996szw/testColorRecognition]]></content>
       <categories>
         <category>study</category>
       </categories>
@@ -88,9 +88,9 @@
         <category>life</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>hexo</tag>
         <tag>github</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -101,8 +101,8 @@
         <category>life</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>hexo</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
 </search>
