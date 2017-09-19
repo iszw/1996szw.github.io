@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[For U]]></title>
-    <url>%2F2017%2F09%2F03%2FFor%20U%2F</url>
-    <content type="text"><![CDATA[&emsp;&emsp;很突然，就是想跟你说些话。虽然也不知道该从何说起，本身也不善言辞，也不知道这种心情怎么表达才好。所以，也就请你勉强看看。 &emsp;&emsp;我这个人啊，一向运气不太好，好不容易幸运时候遇上个对的人，自己喜欢的人，却因为一些莫名其妙的原因呢弄丢了。后来也想着去找回，但本身毛病实在太多，优柔寡断、小气刻薄，也就一直未能成功。有人说，如非万不得已，千万不要选择退而求其次。无论是买东西也好，还是和人交往。得不到自己最想要的那个，就会在心里埋下一颗“爱而不得”的种子，心心念念，辗转反侧。大概就是这种情况吧。所以我愿意为了自己最喜欢的人，再努力试一次。 &emsp;&emsp;其实这个世界上很难有人了解一个人，而你了解我。大部分时间我还是有些讨厌自己，但是跟你在一起时，我不讨厌自己了，我喜欢跟你在一起。虽然呢，我们上次也没能一直在一起，现在也不知道能不能复合，就算是和好了以后也不能确定会不会再次分手，但仔细想想，人嘛，活在世上就是要开心点， 嗯。。之前在知乎上看到一个程序猿代码情书大赛的活动，我也用自己最近在学的语言写了一封，希望你能喜欢。 12345678910111213141516171819var Distance = 1001;var Monkey = "me";var u = "You";function run_toward_u() &#123; while(You.wait_for_me == true)&#123; Distance --; &#125;&#125;for (var i = 0; i &lt;= 1001; i--) &#123; Monkey.run_toward_u();&#125;// Translate:// The distance between u &amp; me is 1001,// When u wait for me,// I will run toward u for 1001 times,// And be happy with u.]]></content>
+    <title><![CDATA[For u]]></title>
+    <url>%2F2017%2F09%2F03%2FFor%20u%2F</url>
+    <content type="text"><![CDATA[uuuuuuu &emsp;&emsp;很突然，就是想跟你说些话。虽然也不知道该从何说起，本身也不善言辞，也不知道这种心情怎么表达才好。所以，也就请你勉强看看。 &emsp;&emsp;我这个人啊，一向运气不太好，好不容易幸运时候遇上个对的人，自己喜欢的人，却因为一些莫名其妙的原因呢弄丢了。后来也想着去找回，但本身毛病实在太多，优柔寡断、小气刻薄，也就一直未能成功。有人说，如非万不得已，千万不要选择退而求其次。无论是买东西也好，还是和人交往。得不到自己最想要的那个，就会在心里埋下一颗“爱而不得”的种子，心心念念，辗转反侧。大概就是这种情况吧。所以我愿意为了自己最喜欢的人，再努力试一次。 &emsp;&emsp;其实这个世界上很难有人了解一个人，而你了解我。大部分时间我还是有些讨厌自己，但是跟你在一起时，我不讨厌自己了，我喜欢跟你在一起。虽然呢，我们上次也没能一直在一起，现在也不知道能不能复合，就算是和好了以后也不能确定会不会再次分手， 嗯。。之前在知乎上看到一个程序猿代码情书大赛的活动，我也用自己最近在学的语言写了一封，希望你能喜欢。 12345678910111213141516171819var Distance = 1001;var Monkey = "me";var u = "You";function run_toward_u() &#123; while(You.wait_for_me == true)&#123; Distance --; &#125;&#125;for (var i = 0; i &lt;= 1001; i--) &#123; Monkey.run_toward_u();&#125;// Translate:// The distance between u &amp; me is 1001,// When u wait for me,// I will run toward u for 1001 times,// And be happy with u.]]></content>
       <categories>
         <category>life</category>
       </categories>
@@ -32,10 +32,10 @@
         <category>work</category>
       </categories>
       <tags>
+        <tag>javascript</tag>
         <tag>web</tag>
         <tag>interview</tag>
         <tag>html／css</tag>
-        <tag>javascript</tag>
         <tag>http</tag>
         <tag>frame</tag>
       </tags>
@@ -48,10 +48,10 @@
         <category>work</category>
       </categories>
       <tags>
+        <tag>javascript</tag>
         <tag>web</tag>
         <tag>interview</tag>
         <tag>html／css</tag>
-        <tag>javascript</tag>
         <tag>http</tag>
       </tags>
   </entry>
