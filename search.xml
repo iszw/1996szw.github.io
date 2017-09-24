@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[For u]]></title>
-    <url>%2F2017%2F09%2F03%2FFor%20u%2F</url>
-    <content type="text"><![CDATA[uuuuuuu &emsp;&emsp;很突然，就是想跟你说些话。虽然也不知道该从何说起，本身也不善言辞，也不知道这种心情怎么表达才好。所以，也就请你勉强看看。 &emsp;&emsp;我这个人啊，一向运气不太好，好不容易幸运时候遇上个对的人，自己喜欢的人，却因为一些莫名其妙的原因呢弄丢了。后来也想着去找回，但本身毛病实在太多，优柔寡断、小气刻薄，也就一直未能成功。有人说，如非万不得已，千万不要选择退而求其次。无论是买东西也好，还是和人交往。得不到自己最想要的那个，就会在心里埋下一颗“爱而不得”的种子，心心念念，辗转反侧。大概就是这种情况吧。所以我愿意为了自己最喜欢的人，再努力试一次。 &emsp;&emsp;其实这个世界上很难有人了解一个人，而你了解我。大部分时间我还是有些讨厌自己，但是跟你在一起时，我不讨厌自己了，我喜欢跟你在一起。虽然呢，我们上次也没能一直在一起，现在也不知道能不能复合，就算是和好了以后也不能确定会不会再次分手， 嗯。。之前在知乎上看到一个程序猿代码情书大赛的活动，我也用自己最近在学的语言写了一封，希望你能喜欢。 12345678910111213141516171819var Distance = 1001;var Monkey = "me";var u = "You";function run_toward_u() &#123; while(You.wait_for_me == true)&#123; Distance --; &#125;&#125;for (var i = 0; i &lt;= 1001; i--) &#123; Monkey.run_toward_u();&#125;// Translate:// The distance between u &amp; me is 1001,// When u wait for me,// I will run toward u for 1001 times,// And be happy with u.]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-      <tags>
-        <tag>me</tag>
-        <tag>u</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[记几道Codewars上面的编程题]]></title>
     <url>%2F2017%2F07%2F24%2F%E8%AE%B0%E5%87%A0%E9%81%93Codewars%E4%B8%8A%E9%9D%A2%E7%9A%84%E7%BC%96%E7%A8%8B%E9%A2%98%2F</url>
     <content type="text"><![CDATA[每次做完看到别人的答案：wtf ??? NO.1题目描述： 解法:12345678function removeSmallest(numbers) &#123; if(!numbers)&#123;return []&#125; var min = Math.min.apply(null,numbers); numbers.splice(numbers.indexOf(min),1); return numbers;&#125;var numbers = [2,1,3,4,1,2,5];var s = removeSmallest(numbers);console.log(s); Math.min()方法: 可以得到数组中最小的数,Math.min.apply(null,arr)其中第一个参数null，这个是因为没有对象去调用这个方法，所以直接传递null过去。 splice()方法: arrayObject.splice(index,howmany,item1,…..,itemX)，实现删除从index处开始的零个或多个(howmany)元素，并且用参数列表中声明的一个或多个值(item1~X)来替换那些被删除的元素。 NO.2题目描述： 我的解法：123456function isTriangle(a,b,c)&#123; var p = (a + b + c)/2; var S = Math.sqrt(p*(p-a)*(p-b)*(p-c)); return S &gt; 0;&#125; 得票最高的解法： orz。。 NO.3题目描述： 我的解法：123456789101112function sumArray(array) &#123; if(!array || array == null)&#123;return 0&#125;; var max = Math.max.apply(null,array); var min = Math.min.apply(null,array); array.splice(array.indexOf(max),1); array.splice(array.indexOf(min),1); console.log(array); for(var sum = 0,i = 0;i &lt; array.length;i++)&#123; sum += array[i]; &#125; return sum;&#125; 得票最高的解法：1sumArray = a =&gt; a ? a.sort((x, y) =&gt; x - y).slice(1, -1).reduce((s, e) =&gt; s + e, 0) : 0 ??? (黑人问号脸。。 NO.4题目描述： 我的解法：1234567var gimme = function(inputArray) &#123; let min = inputArray.indexOf(Math.min(...inputArray)), max = inputArray.indexOf(Math.max(...inputArray)); if (min === 0 &amp;&amp; max === 2 || max === 0 &amp;&amp; min === 2) return 1; if (min === 1 &amp;&amp; max === 2 || max === 1 &amp;&amp; min === 2) return 0; if (min === 0 &amp;&amp; max === 1 || max === 0 &amp;&amp; min === 1) return 2;&#125;; 得票最高的解法： 溜了溜了。。 PS。虽然这些高票答案精简得不行，但至少我写的代码块可读性强啊。。（微笑]]></content>
@@ -53,6 +41,18 @@
         <tag>interview</tag>
         <tag>html／css</tag>
         <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Javascript正则表达学习]]></title>
+    <url>%2F2017%2F05%2F24%2FJavascript%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>regex</tag>
       </tags>
   </entry>
   <entry>
@@ -100,9 +100,9 @@
         <category>life</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>hexo</tag>
         <tag>github</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -113,8 +113,8 @@
         <category>life</category>
       </categories>
       <tags>
-        <tag>blog</tag>
         <tag>hexo</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
 </search>
