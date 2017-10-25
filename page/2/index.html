@@ -1016,7 +1016,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  722 words
+                  733 words
                 </span>
               
 
@@ -1054,70 +1054,16 @@
 
       
         
-          
-            <h1 id="变量类型和计算"><a href="#变量类型和计算" class="headerlink" title="变量类型和计算"></a>变量类型和计算</h1><h2 id="引用类型（3种）"><a href="#引用类型（3种）" class="headerlink" title="引用类型（3种）"></a>引用类型（3种）</h2><p>对象、数组、函数。</p>
-<blockquote>
-<p>引用类型的内存只存一份，而值类型是存多份</p>
+          <blockquote>
+<p><strong>Info:之前学习JS的一些笔记 。</strong></p>
 </blockquote>
-<h2 id="typeof（6种）"><a href="#typeof（6种）" class="headerlink" title="typeof（6种）"></a>typeof（6种）</h2><p>undefined、number、string、boolean、object、function。</p>
-<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><ol>
-<li>字符串拼接；</li>
-<li>==运算符；</li>
-<li>if条件语句；</li>
-<li>逻辑运算（与或非)。</li>
-</ol>
-<h2 id="何时使用"><a href="#何时使用" class="headerlink" title="何时使用=="></a>何时使用==</h2><p>if(obj.a == null){ … } //这里是简写，相当于obj.a === null || obj.a === undefined。其他时候全部用三等“===”。</p>
-<h2 id="if-…-条件为假的几种情况"><a href="#if-…-条件为假的几种情况" class="headerlink" title="if(…){ }条件为假的几种情况"></a>if(…){ }条件为假的几种情况</h2><ol>
-<li>0；</li>
-<li>NaN；</li>
-<li>“”;</li>
-<li>null;</li>
-<li>undefined;</li>
-<li>false。</li>
-</ol>
-<h2 id="JS中的内置函数（数据封装内对象）"><a href="#JS中的内置函数（数据封装内对象）" class="headerlink" title="JS中的内置函数（数据封装内对象）"></a>JS中的内置函数（数据封装内对象）</h2><ol>
-<li>Object； </li>
-<li>Array； </li>
-<li>Boolean； </li>
-<li>Number； </li>
-<li>String； </li>
-<li>Function； </li>
-<li>Date； </li>
-<li>RegExp； </li>
-<li>Error。</li>
-</ol>
-<h2 id="如何理解JSON"><a href="#如何理解JSON" class="headerlink" title="如何理解JSON"></a>如何理解JSON</h2><ol>
-<li>JSON.stringify({a:10,b:20});   </li>
-<li>JSON.parse(‘{“a”:10,”b”:20}’)。</li>
-</ol>
-<blockquote>
-<p>（JSON只不过是一个JS对象）上面就是JSON常见的两个API。</p>
-</blockquote>
-<h1 id="原型和原型链："><a href="#原型和原型链：" class="headerlink" title="原型和原型链："></a>原型和原型链：</h1><h2 id="构造函数："><a href="#构造函数：" class="headerlink" title="构造函数："></a>构造函数：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.age = age;</div><div class="line">  <span class="keyword">this</span>.class = <span class="string">'class-1'</span>;</div><div class="line">  <span class="comment">//return this; //返回这个对象</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> Foo(<span class="string">'zhangsan'</span>,<span class="number">20</span>);</div><div class="line"><span class="comment">//var f1 = new Foo('lisi',22);</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f); <span class="comment">//Foo &#123; name: 'zhangsan', age: 20, class: 'class-1' &#125;</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(f <span class="keyword">instanceof</span> <span class="built_in">Object</span>); <span class="comment">//true</span></div></pre></td></tr></table></figure>
-<h2 id="构造函数—拓展："><a href="#构造函数—拓展：" class="headerlink" title="构造函数—拓展："></a>构造函数—拓展：</h2><ol>
-<li>var a = { } 其实是var a = new Object()的语法糖；</li>
-<li>var a = [ ] 其实是var a = new Array()的语法糖；</li>
-<li>function Foo(){…} 其实是var Foo = new Function()的语法糖；</li>
-<li>使用instanceof判断一个函数是否是一个变量的构造函数。</li>
-</ol>
-<h2 id="原型规则和示例："><a href="#原型规则和示例：" class="headerlink" title="原型规则和示例："></a>原型规则和示例：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一条规则：</span></div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;; obj.a = <span class="number">100</span>;</div><div class="line"><span class="keyword">var</span> arr = []; arr.a = <span class="number">100</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;; fn.a = <span class="number">100</span>;</div><div class="line"></div><div class="line"><span class="comment">//第二条规则：</span></div><div class="line"><span class="built_in">console</span>.log(obj.__proto__); <span class="comment">//&#123;&#125;</span></div><div class="line"><span class="built_in">console</span>.log(arr.__proto__); <span class="comment">//[]</span></div><div class="line"><span class="built_in">console</span>.log(fn.__proto__); <span class="comment">//[Function]</span></div><div class="line"></div><div class="line"><span class="comment">//第三条规则：</span></div><div class="line"><span class="built_in">console</span>.log(fn.prototype); <span class="comment">//fn &#123;&#125;</span></div><div class="line"></div><div class="line"><span class="comment">//第四条规则：</span></div><div class="line"><span class="built_in">console</span>.log(obj.__proto__ === <span class="built_in">Object</span>.prototype); <span class="comment">//true</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 第五条规则：</span></div><div class="line"></div><div class="line"><span class="comment">// 构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span> (<span class="params">name,age</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Foo.prototype.alertName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 创建示例</span></div><div class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> Foo(<span class="string">'zhangsan'</span>);</div><div class="line">f.printName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 测试</span></div><div class="line">f.printName(); <span class="comment">//zhangsan</span></div><div class="line">f.alertName(); <span class="comment">//zhangsan</span></div><div class="line">f.toString(); <span class="comment">//要去 f.__proto__.__proto__中去寻找</span></div><div class="line"></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="built_in">console</span>.log(f.__proto__.__proto__.__proto__); <span class="comment">//null</span></div></pre></td></tr></table></figure>
-<ol>
-<li>所有的引用类型（对象、数组、函数）都具有对象特性，即可自由拓展属性（除   了”null”之外）；</li>
-<li>所有的引用类型（对象、数组、函数）都有一个<strong>proto</strong>（隐式原型）属性，属性值是一个普通的对象；</li>
-<li>所有的函数都有一个prototype（显式原型）属性，属性值是一个普通的对象；</li>
-<li>所有的引用类型（对象、数组、函数），<strong>proto</strong>属性值指向它的构造函数的prototype属性值；</li>
-<li>当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的<strong>proto</strong>(即它的构造函数的prototype)中寻找。</li>
-</ol>
-<blockquote>
-<p>补充：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> item;</div><div class="line"><span class="keyword">for</span>(item <span class="keyword">in</span> f)&#123;</div><div class="line">  <span class="comment">// 虽然高级浏览器已经在 for in 中屏蔽了来自原型的属性</span></div><div class="line">  <span class="comment">// 但是还是建议加上这个判断，保证程序的健壮性</span></div><div class="line">  <span class="keyword">if</span>(f.hasOwnProperty(item))&#123;</div><div class="line">    <span class="built_in">console</span>.log(item);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="原型链："><a href="#原型链：" class="headerlink" title="原型链："></a>原型链：</h2><p><img src="http://ouwxj7f40.bkt.clouddn.com/yuanxing.jpg" alt=""></p>
-<h2 id="instanceof："><a href="#instanceof：" class="headerlink" title="instanceof："></a>instanceof：</h2><p>用于判断<strong>引用类型</strong>属于那个<strong>构造函数</strong>的方法。 </p>
-<p><img src="http://ouwxj7f40.bkt.clouddn.com/intanceof.jpg" alt=""></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/06/Javascript学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
