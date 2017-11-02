@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[For u]]></title>
-    <url>%2F2017%2F10%2F28%2FFor%20u%2F</url>
-    <content type="text"><![CDATA[uuuuuuu &emsp;&emsp;很突然，就是想跟你说些话。虽然也不知道该从何说起，本身也不善言辞，也不知道这种心情怎么表达才好。所以，也就请你勉强看看。 &emsp;&emsp;我这个人啊，一向运气不太好，好不容易幸运时候遇上个对的人，自己喜欢的人，却因为一些莫名其妙的原因呢弄丢了。后来也想着去找回，但本身毛病实在太多，优柔寡断、小气刻薄，也就一直未能如愿。有人说，如非万不得已，千万不要选择退而求其次。无论是买东西也好，还是和人交往。得不到自己最想要的那个，就会在心里埋下一颗“爱而不得”的种子，心心念念，辗转反侧。大概就是这种情况吧。所以我愿意为了自己最喜欢的人，再努力试一次。 &emsp;&emsp;其实这个世界上很难有人了解一个人，而你了解我。大部分时间我还是有些讨厌自己，但是跟你在一起时，我不讨厌自己了，我喜欢跟你在一起。虽然呢，我们上次也没能一直在一起，现在也不知道能不能复合，就算是和好了以后也不能确定会不会再次分手。事实上我是认为我们挺不合适的，但没办法，因为是你，就是这样。 &emsp;&emsp;时间过得很快，遗憾也越来越多，时机也并非偶然。是我这样的胆小鬼经过无数次犹豫不决，但也不知道从哪里鼓起来的勇气、毫不迟疑、当机立断。反正算我是中毒了吧。故事都是靠情感维系着的，可能久别重逢和失而复得会是很好的结局。 嗯。。之前在知乎上看到一个程序猿代码情书大赛的活动，我也用自己最近在学的语言写了封，希望你能喜欢。 12345678910111213141516171819var Distance = 1001;var Monkey = "me";var u = "You";function run_toward_u() &#123; while(You.wait_for_me == true)&#123; Distance --; &#125;&#125;for (var i = 0; i &lt;= 1001; i--) &#123; Monkey.run_toward_u();&#125;// Translate:// The distance between u &amp; me is 1001,// When u wait for me,// I will run toward u for 1001 times,// And be happy with u.]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-      <tags>
-        <tag>me</tag>
-        <tag>u</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[FreeCodeCamp上面的JS算法题]]></title>
     <url>%2F2017%2F08%2F06%2FFreeCodeCamp%E4%B8%8A%E9%9D%A2%E7%9A%84JS%E7%AE%97%E6%B3%95%E9%A2%98%2F</url>
     <content type="text"><![CDATA[Info:Javascript中操作字符串和数组一些常见的方法。 Split Strings with split()12345var string = "Split me into an array";var array = [];array = string.split(" ");console.log(array); //[ 'Split', 'me', 'into', 'an', 'array' ] // split() 方法用于把一个字符串分割成字符串数组。// 提示： 如果把空字符串 (“ “) 用作 separator，那么 stringObject 中的每个字符之间都会被分割。// 注意： split() 方法不改变原始字符串。 Get the sub string with substring/substr/slice()1234567891011var s = 'hello, world'var r1 = s.substring(0, 5); // 从索引0开始到5(不包括5)var r2 = s.substring(7); // 从索引7开始到结束var r3 = s.substr(2,4); //从索引开始找接下来的4个字符var r4 = s.slice(-5);console.log(r1); //helloconsole.log(r2); //worldconsole.log(r3); //llo,console.log(r4); //world Title Case a Sentence with toUpper/LowerCase()12345678910111213141516171819202122// 句中单词首字母大写:function titleCase(str) &#123; // 请把你的代码写在这里 arr = str.split(" "); var newStr = ""; for(var i = 0;i&lt;arr.length;i++)&#123; newStr += arr[i][0].toUpperCase(); for(var j = 1;j&lt;arr[i].length;j++)&#123; newStr += arr[i][j].toLowerCase(); &#125; if(i!=arr.length-1)&#123; newStr += " "; &#125;&#125; return newStr;&#125;var r = titleCase("I'm a little tea pot");console.log(r); //I'm A Little Tea Pot Get the index of string in a stringObj with indexOf/lastIndexOf()123456789var s = 'hello, world';var r1 = s.indexOf('world'); // 找到指定的子串,返回该子串第一次出现的位置var r2 = s.indexOf('sorld'); // 没有找到指定的子串，返回-1var r3 = s.lastIndexOf('l'); // 找到指定的子串，返回该子串最后一次出现的位置console.log(r1); //7console.log(r2); //-1console.log(r3); //10 Iterate over Arrays with map()1234567891011121314151617var oldArray = [1,2,3,4,5];// 只能在这一行下面写代码var newArray = oldArray.map(function(val)&#123; return val + 3;&#125;);console.log(newArray); //[ 4, 5, 6, 7, 8 ]// another// var numbers = [4, 9, 16, 25];// function myFunction() &#123;// x = document.getElementById("demo")// x.innerHTML = numbers.map(Math.sqrt);// &#125; // map() 方法会迭代数组中的每一个元素，并根据回调函数来处理每一个元素，最后返回一个新数组。// map() 方法按照原始数组元素顺序依次处理元素。// 注意： map() 不会对空数组进行检测。// 注意： map() 不会改变原始数组。 Condense arrays with reduce()12345678910var array = [4,5,6,7,8];var singleVal = 0;// 只能在这一行下面写代码singleVal = array.reduce(function(pre,cur)&#123; return pre + cur ;&#125;);console.log(singleVal); //30 // reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始合并(迭代)，最终计算为一个值。// 注意: reduce() 对于空数组是不会执行回调函数的。 Filter Arrays with filter()123456789var oldArray = [1,2,3,4,5,6,7,8,9,10];// 只能在这一行下面写代码var newArray = oldArray.filter(function(val)&#123; return val &lt; 6;&#125;);console.log(newArray); //[ 1, 2, 3, 4, 5 ] // filter 方法用来迭代一个数组，并且按给出的条件过滤出符合的元素。// filter 方法传入一个回调函数，这个回调函数会携带一个参数，参数为当前迭代的项（我们叫它 val ）。// 回调函数返回 true 的项会保留在数组中，返回 false 的项会被过滤出数组。 Sort Arrays with sort()1234567var array = [1, 21, 12, 2];array.sort(function(a, b) &#123; return b - a;&#125;); // 将数组元素从大到小排序console.log(array); //[ 21, 12, 2, 1 ] 1234567891011121314151617// 数组排序并找出元素索引:function where(arr, num) &#123; // 请把你的代码写在这里 var newArr = []; newArr = arr.concat(num); newArr.sort(function(a,b)&#123; return a-b; &#125;); for(var i =0;i&lt;newArr.length;i++)&#123; if(newArr[i] === num)&#123; return i;&#125; &#125;&#125;var r = where([40, 60], 50);console.log(r); //1 // sort() 方法将改变原数组，返回被排序后的数组。// sort() 可以把比较函数作为参数传入。比较函数有返回值，当 a 小于 b，返回一个负数；当 a 大于 b ，返回一个正数；相等时返回0。// 如果没有传入比较函数，它将把值全部转成字符串，并按照字母顺序进行排序。 Reverse Arrays with reverse()12345678var array = [1,2,3,4,5,6,7];var newArray = [];// 只能在这一行下面写代码newArray = array.reverse();console.log(newArray); //[ 7, 6, 5, 4, 3, 2, 1 ] // reverse()方法用于颠倒数组中元素的顺序。// reverse()方法会改变原来的数组，而不会创建新的数组。 Concatenate Arrays with concat()12345678var oldArray = [1,2,3];var newArray = [];var concatMe = [4,5,6];newArray = oldArray.concat(concatMe);console.log(newArray); //[ 1, 2, 3, 4, 5, 6 ] // concat()方法用于连接两个或多个数组。// concat()方法不会改变现有的数组，而仅仅会返回被连接数组的一个副本。 Join Strings with join()12345678var joinMe = ["Split","me","into","an","array"];var joinedString = ' ';// 只能在这一行下面写代码joinedString = joinMe.join(joinedString);console.log(joinedString); //Split me into an array // join() 方法用于把数组中的所有元素转换一个字符串。// 元素是通过指定的分隔符进行分隔的。 Find the Longest Word in a String with Math.max.apply()12345678910111213141516171819// 找到字符串中最长的单词function findLongestWord(str) &#123; var maxLength = 0; var arr = []; var s = str.split(" "); console.log(str); for(var i = 0;i&lt;s.length;i++)&#123; arr[i] = s[i].length; &#125; maxLength = Math.max.apply(null,arr); return maxLength;&#125;var r = findLongestWord("The quick brown fox jumped over the lazy dog");console.log(r); //6 //Math.max.apply()方法可以得到数组中最大的数,Math.max.apply(null,arr)其中第一个参数null，这个是因为没有对象去调用这个方法，所以直接传递null过去。 Remove the smallest number in an array with splice()123456789function removeSmallest(numbers) &#123; if(!numbers)&#123;return []&#125; var min = Math.min.apply(null,numbers); numbers.splice(numbers.indexOf(min),1); return numbers;&#125;var numbers = [2,1,3,4,1,2,5];var s = removeSmallest(numbers);console.log(s); //[ 2, 3, 4, 1, 2, 5 ] //splice()方法:arrayObject.splice(index,howmany,item1,…..,itemX)，实现删除从index处开始的零个或多个(howmany)元素，并且用参数列表中声明的一个或多个值(item1~X)来替换那些被删除的元素。]]></content>
@@ -69,8 +57,8 @@
         <tag>web</tag>
         <tag>interview</tag>
         <tag>html/css</tag>
-        <tag>jquery</tag>
         <tag>http</tag>
+        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
@@ -162,8 +150,8 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-        <tag>github</tag>
         <tag>blog</tag>
+        <tag>github</tag>
         <tag>share</tag>
       </tags>
   </entry>
