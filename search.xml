@@ -21,8 +21,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>study</tag>
         <tag>algorithm</tag>
+        <tag>study</tag>
         <tag>freecodecamp</tag>
         <tag>array</tag>
         <tag>string</tag>
@@ -69,8 +69,8 @@
         <tag>web</tag>
         <tag>interview</tag>
         <tag>html/css</tag>
-        <tag>http</tag>
         <tag>jquery</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
@@ -121,14 +121,14 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>dom</tag>
         <tag>study</tag>
+        <tag>dom</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Javascript学习笔记]]></title>
-    <url>%2F2017%2F03%2F07%2FJavascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E5%BC%B9%2F</url>
-    <content type="text"><![CDATA[日期123456789Date.now(); //获取当前时间毫秒数var dt = new Date(); //Date()是一个构造函数，.now是他的一个属性函数dt.getTime(); //获取毫秒数dt.getFullYear(); //年dt.getMonth(); //月（0 - 11）dt.getDate(); //日（0 - 31）dt.getHours(); //小时（0 - 23）dt.getMinutes(); //分钟（0 - 59）dt.getSeconds(); //秒（0 - 59） MathMath.random()获取随机数 数组API forEach 遍历所有元素 every 判断所有元素是否都符合条件 some 判断是否至少有一个元素符合条件 sort 排序 map 对元素重新组装，生成一个新数组 filter 过滤符合条件的元素 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647// 1.forEachvar arr = [1,2,3];arr.forEach( function(item, index) &#123; console.log(index,item);// 0 1 1 2 2 3&#125;);// 2.everyvar arr = [1,2,3];var result = arr.every(function(item,index)&#123; if(item &lt; 4)&#123; return true; &#125;&#125;)console.log(result); // true// 3.somevar arr = [1,2,3];var result = arr.some(function(item,index)&#123; if(item &lt; 2)&#123; return true; &#125;&#125;)console.log(result); //true// 4.sortvar arr = [1,4,3,5,2];var arr2 = arr.sort(function(a,b)&#123; return a - b; //从小到大排序&#125;)console.log(arr2); //[1,2,3,4,5]// 5.mapvar arr = [1,2,3,4];var arr2 = arr.map(function(item,index)&#123; return '&lt;b&gt;' + item + '&lt;/b&gt;';&#125;)console.log(arr2); //[ '&lt;b&gt;1&lt;/b&gt;', '&lt;b&gt;2&lt;/b&gt;', '&lt;b&gt;3&lt;/b&gt;', '&lt;b&gt;4&lt;/b&gt;' ]// 6.filtervar arr = [1,2,3];var arr2 = arr.filter(function(item,index)&#123; //通过某个条件过滤数组 if(item &gt;= 2)&#123; return true; &#125;&#125;)console.log(arr2); //[2,3] 对象API1234567891011var obj = &#123; x: 100, y: 200, z: 300&#125;var key;for (key in obj)&#123; if(obj.hasOwnProperty(key))&#123; console.log(key,obj[key]); &#125;&#125; // x 100 y 200 z 300 事件通用事件绑定12345678910111213var btn = document.getElementById('btn1');btn.addEventListener('click', function(event)&#123; console.log('clicked');&#125;)function bindEvent (elem,type,fn) &#123; elem.addEventListener(type, fn);&#125;var a = document.getElementById('link1');bindEvent(a,'click', function(e)&#123; e.preventDefault(); //阻止默认行为 alert('clicked');&#125;) 冒泡123456789101112131415161718192021222324&lt;body&gt; &lt;div id="div1"&gt; &lt;p id="p1"&gt;激活&lt;/p&gt; &lt;p id="p2"&gt;取消&lt;/p&gt; &lt;p id="p3"&gt;取消&lt;/p&gt; &lt;p id="p4"&gt;取消&lt;/p&gt; &lt;/div&gt; &lt;div id="div2"&gt; &lt;p id="p5"&gt;取消&lt;/p&gt; &lt;p id="p6"&gt;取消&lt;/p&gt; &lt;/div&gt; &lt;script type="text/javascript"&gt; var p1 = document.getElementById('p1'); var body = document.body; bindEvent(p1,'click',function(e)&#123; e.stopPropagation(); alert('激活'); &#125;) bindEvent(body,'click',function(e)&#123; alert('取消'); &#125;) &lt;/script&gt;&lt;/body&gt; 代理]]></content>
+    <title><![CDATA[Javascript学习笔记第二弹]]></title>
+    <url>%2F2017%2F03%2F08%2FJavascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%AC%AC%E4%BA%8C%E5%BC%B9%2F</url>
+    <content type="text"><![CDATA[Info:JS学习的补充笔记 日期123456789Date.now(); //获取当前时间毫秒数var dt = new Date(); //Date()是一个构造函数，.now是他的一个属性函数dt.getTime(); //获取毫秒数dt.getFullYear(); //年dt.getMonth(); //月（0 - 11）dt.getDate(); //日（0 - 31）dt.getHours(); //小时（0 - 23）dt.getMinutes(); //分钟（0 - 59）dt.getSeconds(); //秒（0 - 59） MathMath.random()获取随机数 数组API forEach 遍历所有元素 every 判断所有元素是否都符合条件 some 判断是否至少有一个元素符合条件 sort 排序 map 对元素重新组装，生成一个新数组 filter 过滤符合条件的元素 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647// 1.forEachvar arr = [1,2,3];arr.forEach( function(item, index) &#123; console.log(index,item);// 0 1 1 2 2 3&#125;);// 2.everyvar arr = [1,2,3];var result = arr.every(function(item,index)&#123; if(item &lt; 4)&#123; return true; &#125;&#125;)console.log(result); // true// 3.somevar arr = [1,2,3];var result = arr.some(function(item,index)&#123; if(item &lt; 2)&#123; return true; &#125;&#125;)console.log(result); //true// 4.sortvar arr = [1,4,3,5,2];var arr2 = arr.sort(function(a,b)&#123; return a - b; //从小到大排序&#125;)console.log(arr2); //[1,2,3,4,5]// 5.mapvar arr = [1,2,3,4];var arr2 = arr.map(function(item,index)&#123; return '&lt;b&gt;' + item + '&lt;/b&gt;';&#125;)console.log(arr2); //[ '&lt;b&gt;1&lt;/b&gt;', '&lt;b&gt;2&lt;/b&gt;', '&lt;b&gt;3&lt;/b&gt;', '&lt;b&gt;4&lt;/b&gt;' ]// 6.filtervar arr = [1,2,3];var arr2 = arr.filter(function(item,index)&#123; //通过某个条件过滤数组 if(item &gt;= 2)&#123; return true; &#125;&#125;)console.log(arr2); //[2,3] 对象API1234567891011var obj = &#123; x: 100, y: 200, z: 300&#125;var key;for (key in obj)&#123; if(obj.hasOwnProperty(key))&#123; console.log(key,obj[key]); &#125;&#125; // x 100 y 200 z 300 事件通用事件绑定12345678910111213var btn = document.getElementById('btn1');btn.addEventListener('click', function(event)&#123; console.log('clicked');&#125;)function bindEvent (elem,type,fn) &#123; elem.addEventListener(type, fn);&#125;var a = document.getElementById('link1');bindEvent(a,'click', function(e)&#123; e.preventDefault(); //阻止默认行为 alert('clicked');&#125;) 冒泡123456789101112131415161718192021222324&lt;body&gt; &lt;div id="div1"&gt; &lt;p id="p1"&gt;激活&lt;/p&gt; &lt;p id="p2"&gt;取消&lt;/p&gt; &lt;p id="p3"&gt;取消&lt;/p&gt; &lt;p id="p4"&gt;取消&lt;/p&gt; &lt;/div&gt; &lt;div id="div2"&gt; &lt;p id="p5"&gt;取消&lt;/p&gt; &lt;p id="p6"&gt;取消&lt;/p&gt; &lt;/div&gt; &lt;script type="text/javascript"&gt; var p1 = document.getElementById('p1'); var body = document.body; bindEvent(p1,'click',function(e)&#123; e.stopPropagation(); alert('激活'); &#125;) bindEvent(body,'click',function(e)&#123; alert('取消'); &#125;) &lt;/script&gt;&lt;/body&gt; 代理]]></content>
       <categories>
         <category>study</category>
       </categories>
@@ -162,8 +162,8 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-        <tag>blog</tag>
         <tag>github</tag>
+        <tag>blog</tag>
         <tag>share</tag>
       </tags>
   </entry>
