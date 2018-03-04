@@ -122,22 +122,22 @@
 
 
 
-<meta name="description" content="DOM先来看看下面代码:">
+<meta name="description" content="DOM 文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。">
 <meta name="keywords" content="javascript,study,dom">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript中的DOM对象学习">
 <meta property="og:url" content="https://1996szw.github.io/2017/03/12/Javascript中的DOM对象学习/index.html">
 <meta property="og:site_name" content="iSzw_Blog">
-<meta property="og:description" content="DOM先来看看下面代码:">
+<meta property="og:description" content="DOM 文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/dom2.jpg">
 <meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/dom3.jpg">
 <meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/dom4.jpg">
 <meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/dom5.jpg">
-<meta property="og:updated_time" content="2017-10-30T15:57:04.331Z">
+<meta property="og:updated_time" content="2018-03-04T16:40:35.123Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript中的DOM对象学习">
-<meta name="twitter:description" content="DOM先来看看下面代码:">
+<meta name="twitter:description" content="DOM 文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。">
 <meta name="twitter:image" content="http://ouwxj7f40.bkt.clouddn.com/dom2.jpg">
 
 
@@ -437,7 +437,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  225 words
+                  303 words
                 </span>
               
 
@@ -474,8 +474,11 @@
       
 
       
-        <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="先来看看下面代码"><a href="#先来看看下面代码" class="headerlink" title="先来看看下面代码:"></a>先来看看下面代码:</h2><a id="more"></a>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html"</span>; <span class="attr">charset</span>=<span class="string">"gb2312"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>DOM<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.imooc.com"</span>&gt;</span>javascript DOM<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>对HTML元素进行操作，可添加、改变或移除CSS样式等<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">li</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">li</span>&gt;</span>DOM<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">li</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+        <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><blockquote>
+<p>文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="先来看看下面代码"><a href="#先来看看下面代码" class="headerlink" title="先来看看下面代码:"></a>先来看看下面代码:</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html"</span>; <span class="attr">charset</span>=<span class="string">"gb2312"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>DOM<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.imooc.com"</span>&gt;</span>javascript DOM<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>对HTML元素进行操作，可添加、改变或移除CSS样式等<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">li</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">li</span>&gt;</span>DOM<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    	<span class="tag">&lt;<span class="name">li</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <blockquote>
 <p>将HTML代码分解为DOM节点层次图:</p>
 </blockquote>
