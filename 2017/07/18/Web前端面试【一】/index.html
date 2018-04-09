@@ -106,7 +106,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,web,interview,html/css,http,jquery," />
+  <meta name="keywords" content="javascript,web,interview,html/css,jquery,http," />
 
 
 
@@ -123,7 +123,7 @@
 
 
 <meta name="description" content="INFO ：这段时间遇到的面试题。">
-<meta name="keywords" content="javascript,web,interview,html&#x2F;css,http,jquery">
+<meta name="keywords" content="javascript,web,interview,html&#x2F;css,jquery,http">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web前端面试【一】">
 <meta property="og:url" content="https://1996szw.github.io/2017/07/18/Web前端面试【一】/index.html">
@@ -432,7 +432,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5,898 words
+                  5,930 words
                 </span>
               
 
@@ -498,7 +498,7 @@
 <li><p>IE6盒子模型：border-box：padding和border被包含在定义的width和height之内。对象的实际宽度就等于设置的width值。</p>
 </li>
 </ol>
-<h1 id="4-什么是CSS-Hack"><a href="#4-什么是CSS-Hack" class="headerlink" title="4.什么是CSS Hack"></a>4.什么是CSS Hack</h1><p>针对不同的浏览器写不同的CSS,就是 CSS Hack。<br>IE浏览器Hack一般又分为三种，条件Hack、属性级Hack、选择符Hack（详细参考CSS文档：<a href="http://www.phpstudy.net/css3/" target="_blank" rel="external">css文档</a>）。例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"> // 1、条件Hack</div><div class="line">&lt;!<span class="selector-tag">--</span><span class="selector-attr">[if IE]</span>&gt;</div><div class="line">   &lt;<span class="selector-tag">style</span>&gt;</div><div class="line">         <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:red;&#125;</div><div class="line">   &lt;/style&gt;</div><div class="line">&lt;!<span class="selector-attr">[endif]</span><span class="selector-tag">--</span>&gt;</div><div class="line">// 2、属性Hack</div><div class="line"> <span class="selector-class">.test</span>&#123;</div><div class="line"> <span class="attribute">color</span>:<span class="number">#090</span>\<span class="number">9</span>; <span class="comment">/* For IE8+ */</span></div><div class="line"> *color:#f00;  /* For IE7 and earlier */</div><div class="line"> _<span class="selector-tag">color</span>:<span class="selector-id">#ff0</span>;  <span class="comment">/* For IE6 and earlier */</span></div><div class="line"> &#125;</div><div class="line">// 3、选择符Hack</div><div class="line"> * <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#090</span>;&#125;       <span class="comment">/* For IE6 and earlier */</span></div><div class="line"> * + <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#ff0</span>;&#125;     <span class="comment">/* For IE7 */</span></div></pre></td></tr></table></figure></p>
+<h1 id="4-什么是CSS-Hack"><a href="#4-什么是CSS-Hack" class="headerlink" title="4.什么是CSS Hack"></a>4.什么是CSS Hack</h1><p>针对不同的浏览器写不同的CSS,就是 CSS Hack。<br>IE浏览器Hack一般又分为三种，条件Hack、属性级Hack、选择符Hack（详细参考CSS文档：<a href="http://www.phpstudy.net/css3/" target="_blank" rel="noopener">css文档</a>）。例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> // 1、条件Hack</span><br><span class="line">&lt;!<span class="selector-tag">--</span><span class="selector-attr">[if IE]</span>&gt;</span><br><span class="line">   &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">         <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:red;&#125;</span><br><span class="line">   &lt;/style&gt;</span><br><span class="line">&lt;!<span class="selector-attr">[endif]</span><span class="selector-tag">--</span>&gt;</span><br><span class="line">// 2、属性Hack</span><br><span class="line"> <span class="selector-class">.test</span>&#123;</span><br><span class="line"> <span class="attribute">color</span>:<span class="number">#090</span>\<span class="number">9</span>; <span class="comment">/* For IE8+ */</span></span><br><span class="line"> *color:#f00;  /* For IE7 and earlier */</span><br><span class="line"> _<span class="selector-tag">color</span>:<span class="selector-id">#ff0</span>;  <span class="comment">/* For IE6 and earlier */</span></span><br><span class="line"> &#125;</span><br><span class="line">// 3、选择符Hack</span><br><span class="line"> * <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#090</span>;&#125;       <span class="comment">/* For IE6 and earlier */</span></span><br><span class="line"> * + <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#ff0</span>;&#125;     <span class="comment">/* For IE7 */</span></span><br></pre></td></tr></table></figure></p>
 <h1 id="5-简述同步和异步"><a href="#5-简述同步和异步" class="headerlink" title="5.简述同步和异步"></a>5.简述同步和异步</h1><ul>
 <li><p>同步是阻塞模式：同步是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程将会一直等待下去，直到收到返回信息才继续执行下去。</p>
 </li>
@@ -554,10 +554,10 @@
 <li>父元素设置 overflow：auto 属性；同样IE6需要触发hasLayout；</li>
 <li>父元素也设置浮动；</li>
 <li>父元素设置display:table；</li>
-<li>使用:after 伪元素；由于IE6-7不支持:after，使用 zoom:1触发<a href="http://yiminghe.iteye.com/blog/367384" target="_blank" rel="external">hasLayout</a>。</li>
+<li>使用:after 伪元素；由于IE6-7不支持:after，使用 zoom:1触发<a href="http://yiminghe.iteye.com/blog/367384" target="_blank" rel="noopener">hasLayout</a>。</li>
 </ol>
 <ul>
-<li><p>在CSS2.1里面有一个很重要的概念，那就是 Block formatting contexts （块级格式化上下文），简称<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="external">BFC</a>。</p>
+<li><p>在CSS2.1里面有一个很重要的概念，那就是 Block formatting contexts （块级格式化上下文），简称<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener">BFC</a>。</p>
 </li>
 <li><p>创建了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，同时BFC仍然属于文档中的普通流。</p>
 </li>
@@ -711,7 +711,7 @@
 <li>直接继承函数的prototype属性，对b的一种改进</li>
 <li>利用空对象作为中介</li>
 <li>在ECMAScript5中定义了一个新方法Object.create()，用于创建一个新方法</li>
-<li>拷贝继承，把父对象的所有属性和方法，拷贝进子对象，实现继承。参考<a href="http://myweb.jowai.info/javascript-clone-and-copy-and-whatever/" target="_blank" rel="external">《JavaScript中的对象克隆》</a></li>
+<li>拷贝继承，把父对象的所有属性和方法，拷贝进子对象，实现继承。参考<a href="http://myweb.jowai.info/javascript-clone-and-copy-and-whatever/" target="_blank" rel="noopener">《JavaScript中的对象克隆》</a></li>
 </ol>
 </li>
 </ul>
@@ -735,7 +735,7 @@
 <li><p>绑定事件监听函数，标准浏览器使用 addEventListener() ，IE11以下版本attachEvent() 来绑定事件监听函数，通称为DOM2事件系统。</p>
 </li>
 </ul>
-<h1 id="28-解释下javascript的冒泡和捕获"><a href="#28-解释下javascript的冒泡和捕获" class="headerlink" title="28.解释下javascript的冒泡和捕获"></a>28.解释下javascript的冒泡和捕获</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click2"</span>&gt;</span></div><div class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click3"</span>&gt;</span>事件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="28-解释下javascript的冒泡和捕获"><a href="#28-解释下javascript的冒泡和捕获" class="headerlink" title="28.解释下javascript的冒泡和捕获"></a>28.解释下javascript的冒泡和捕获</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click2"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click3"</span>&gt;</span>事件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li>Netscape主张元素1的事件首先发生，这种事件发生顺序被称为捕获型。</li>
 <li>微软则保持元素3具有优先权，这种事件顺序被称为冒泡型。</li>
@@ -793,7 +793,7 @@
 <li><p>函数表达式中只会提升名称，函数体只有在执行到赋值语句时才会被赋值。</p>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    bar();</div><div class="line">    <span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;<span class="comment">//等同于</span></div><div class="line">    <span class="keyword">var</span> x;</div><div class="line">    bar();</div><div class="line">    x = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    foo(); <span class="comment">// TypeError "foo is not a function"</span></div><div class="line">    bar(); <span class="comment">// "this will run!"</span></div><div class="line">    <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; &#125;<span class="comment">// 函数表达式被赋值给变量'foo'</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123; &#125;<span class="comment">// 名为'bar'的函数声明</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    bar();</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;<span class="comment">//等同于</span></span><br><span class="line">    <span class="keyword">var</span> x;</span><br><span class="line">    bar();</span><br><span class="line">    x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo(); <span class="comment">// TypeError "foo is not a function"</span></span><br><span class="line">    bar(); <span class="comment">// "this will run!"</span></span><br><span class="line">    <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; &#125;<span class="comment">// 函数表达式被赋值给变量'foo'</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123; &#125;<span class="comment">// 名为'bar'的函数声明</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="34-JavaScript原型和原型链"><a href="#34-JavaScript原型和原型链" class="headerlink" title="34.JavaScript原型和原型链"></a>34.JavaScript原型和原型链</h1><ul>
 <li><p>原型：</p>
 <ol>
@@ -885,7 +885,7 @@
 <ol>
 <li><p>200 OK 访问正常<br>表示成功访问,为网站可正常访问时的状态。</p>
 </li>
-<li><p>301 Moved Permanently 301重定向永久重定向<br>对搜索引擎相对友好的跳转方式，当网站更换域名时可将原域名作301永久重定向到新域名，原域名权重可传递到新域名，也常有将不含www的域名301跳转到含www的，如xxx.com通过301跳转到www.xxx.com </p>
+<li><p>301 Moved Permanently 301重定向永久重定向<br>对搜索引擎相对友好的跳转方式，当网站更换域名时可将原域名作301永久重定向到新域名，原域名权重可传递到新域名，也常有将不含www的域名301跳转到含www的，如xxx.com通过301跳转到<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> </p>
 </li>
 <li><p>302 Found 为临时重定向<br>易被搜索引擎判为作弊,比如asp程序的response.Redirect()跳转、js跳转或静态http跳转。</p>
 </li>
@@ -962,9 +962,9 @@
           
             <a href="/tags/html-css/" rel="tag"><i class="fa fa-tag"></i> html/css</a>
           
-            <a href="/tags/http/" rel="tag"><i class="fa fa-tag"></i> http</a>
-          
             <a href="/tags/jquery/" rel="tag"><i class="fa fa-tag"></i> jquery</a>
+          
+            <a href="/tags/http/" rel="tag"><i class="fa fa-tag"></i> http</a>
           
         </div>
       
@@ -1068,7 +1068,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1090,7 +1090,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

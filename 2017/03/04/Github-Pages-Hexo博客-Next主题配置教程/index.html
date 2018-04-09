@@ -479,8 +479,8 @@
 <h2 id="Hexo本地环境搭建"><a href="#Hexo本地环境搭建" class="headerlink" title="Hexo本地环境搭建"></a>Hexo本地环境搭建</h2><h3 id="Git环境"><a href="#Git环境" class="headerlink" title="Git环境"></a>Git环境</h3><ol>
 <li><p>首先我们需要一个git环境，MacOS的XCode是自带git的所以也无需重复安装。</p>
 </li>
-<li><p>如果是Windows用户的话，可以去<a href="https://git-scm.com/download/win" target="_blank" rel="external">Git官网</a>根据自己的电脑操作系统位数下载相应的版本，下载完成后点击安装，一路next即可。</p>
-<p> Windows用户还需要配置环境变量，具体操作可参考度娘上面的教程：<a href="http://jingyan.baidu.com/article/9f7e7ec0b17cac6f2815548d.html" target="_blank" rel="external">Git的安装与配置</a></p>
+<li><p>如果是Windows用户的话，可以去<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Git官网</a>根据自己的电脑操作系统位数下载相应的版本，下载完成后点击安装，一路next即可。</p>
+<p> Windows用户还需要配置环境变量，具体操作可参考度娘上面的教程：<a href="http://jingyan.baidu.com/article/9f7e7ec0b17cac6f2815548d.html" target="_blank" rel="noopener">Git的安装与配置</a></p>
 <p> 测试是否安装配置成功：win+R打开运行，输入cmd打开命令提示窗口，输入如下命令：</p>
 <blockquote>
 <p>git –version</p>
@@ -489,10 +489,10 @@
 </li>
 </ol>
 <h3 id="Node-js环境"><a href="#Node-js环境" class="headerlink" title="Node.js环境"></a>Node.js环境</h3><ol>
-<li><p>Mac用户可以通过<a href="https://brew.sh/" target="_blank" rel="external">Homebrew</a>来安装(推荐)，具体步骤如下：</p>
+<li><p>Mac用户可以通过<a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a>来安装(推荐)，具体步骤如下：</p>
 <p> 先安装Homebrew：</p>
 <blockquote>
-<p>ruby -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank" rel="external">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)”</p>
+<p>ruby -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;" target="_blank" rel="noopener">https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</a></p>
 </blockquote>
 <p> 然后更新brew确保其可用：</p>
 <blockquote>
@@ -508,7 +508,7 @@
 </blockquote>
 <p> 如果正确打印出安装的Node版本号，则说明安装成功。</p>
 </li>
-<li><p>Windows用户，可以去<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node官网</a>根据自己的操作系统位数下载安装（过程跟上述安装Git的步骤类似，在此不再赘述。。</p>
+<li><p>Windows用户，可以去<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">Node官网</a>根据自己的操作系统位数下载安装（过程跟上述安装Git的步骤类似，在此不再赘述。。</p>
 </li>
 </ol>
 <h3 id="Hexo环境"><a href="#Hexo环境" class="headerlink" title="Hexo环境"></a>Hexo环境</h3><p><em>Hexo是一款基于Node.js的静态博客框架，所以之前的那些步骤都是为了安装hexo所做的准备，具体安装hexo的步骤如下：</em></p>
@@ -521,7 +521,7 @@
 </blockquote>
 <p>  <em><em>当然由于我国的社会主义核心建设，上述命令可能被墙，从而导致安装失败。此时将命令中的npm镜像源改成国内万能的某宝提供的镜像源即可：</em></em></p>
 <blockquote>
-<p>sudo npm install -g hexo-cli –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+<p>sudo npm install -g hexo-cli –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
 </blockquote>
 </li>
 <li><p>初始化hexo：</p>
@@ -546,9 +546,9 @@
 </blockquote>
 </li>
 </ol>
-<p><em><em>正确完成到了这一步后，在浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 后就能看到搭建好的hexo站点了。</em></em></p>
+<p><em><em>正确完成到了这一步后，在浏览器输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 后就能看到搭建好的hexo站点了。</em></em></p>
 <p><em><em>接下来的步骤则是将本地的hexo放到github上托管，再重定向到你的个人域名以方便访问。</em></em></p>
-<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="注册Github"><a href="#注册Github" class="headerlink" title="注册Github"></a>注册Github</h3><p>如果不是程序员的话，可能会没有Github账号，这时就需要去<a href="https://github.com/" target="_blank" rel="external">Github官网</a>去注册一个账号。注册成功后记得去你填的那个邮箱查收验证确认邮件。</p>
+<h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="注册Github"><a href="#注册Github" class="headerlink" title="注册Github"></a>注册Github</h3><p>如果不是程序员的话，可能会没有Github账号，这时就需要去<a href="https://github.com/" target="_blank" rel="noopener">Github官网</a>去注册一个账号。注册成功后记得去你填的那个邮箱查收验证确认邮件。</p>
 <h3 id="新建一个仓库（new-repository）"><a href="#新建一个仓库（new-repository）" class="headerlink" title="新建一个仓库（new repository）"></a>新建一个仓库（new repository）</h3><p>注册登录成功后，去你的github主页点击”New repository”，取名为 “your_user_name.github.io”。</p>
 <p><img src="http://ouwxj7f40.bkt.clouddn.com/github1.jpg" alt=""></p>
 <p><img src="http://ouwxj7f40.bkt.clouddn.com/github2.jpg" alt=""></p>
@@ -562,7 +562,7 @@
 </ol>
 <h2 id="将Hexo本地项目托管到GitHub-Pages"><a href="#将Hexo本地项目托管到GitHub-Pages" class="headerlink" title="将Hexo本地项目托管到GitHub Pages"></a>将Hexo本地项目托管到GitHub Pages</h2><h3 id="建立关联"><a href="#建立关联" class="headerlink" title="建立关联"></a>建立关联</h3><p>进入到你的本地hexo博客目录，有个_config.yml文件（全局配置文件），打开它，翻到最后面，将deploy改成如下所示：</p>
 <blockquote>
-<p>type: git<br>repository: <a href="https://github.com/your_user_name/your_user_name.github.io.git" target="_blank" rel="external">https://github.com/your_user_name/your_user_name.github.io.git</a><br>branch: master</p>
+<p>type: git<br>repository: <a href="https://github.com/your_user_name/your_user_name.github.io.git" target="_blank" rel="noopener">https://github.com/your_user_name/your_user_name.github.io.git</a><br>branch: master</p>
 </blockquote>
 <h3 id="安装hexo-deployer-git插件"><a href="#安装hexo-deployer-git插件" class="headerlink" title="安装hexo-deployer-git插件"></a>安装hexo-deployer-git插件</h3><p>在你的博客目录下输入如下命令：</p>
 <blockquote>
@@ -743,7 +743,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -765,7 +765,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
