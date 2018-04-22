@@ -86,8 +86,8 @@
         <tag>web</tag>
         <tag>interview</tag>
         <tag>html/css</tag>
-        <tag>jquery</tag>
         <tag>http</tag>
+        <tag>jquery</tag>
       </tags>
   </entry>
   <entry>
@@ -130,6 +130,20 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[CSS实现垂直水平居中]]></title>
+    <url>%2F2017%2F03%2F18%2FCSS%E5%AE%9E%E7%8E%B0%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%2F</url>
+    <content type="text"><![CDATA[CSS实现垂直水平居中 第一种方法（position:absolute，负margin法） 123456789101112131415div.box&#123;weight:200px;height:400px;&lt;!--把元素变成定位元素--&gt;position:absolute;&lt;!--设置元素的定位位置，距离上、左都为50%--&gt;left:50%;top:50%;&lt;!--设置元素的左外边距、上外边距为宽高的负1/2--&gt;margin-left:-100px;margin-top:-200px;&#125; 优点：兼容性好；缺点：必须固定元素的宽高 第二种方法（使用css3的新属性transform:translate(x,y)） 123456789101112131415div.box&#123;weight:200px;height:400px;&lt;!--把元素变成定位元素--&gt;position:absolute;&lt;!--设置元素的定位位置，距离上、左都为50%--&gt;left:50%;top:50%;&lt;!--设置元素的相对于自身的偏移度为负50%(也就是元素自身尺寸的一半)--&gt;transform:translate(-50%,-50%);&#125; 这是css3里的样式，在移动端用得较多；缺点：兼容性不好，只支持IE9+的浏览器。 第三种方法（设置margin为auto） 1234567891011121314151617div.box&#123;weight:200px;height:400px;&lt;!--把元素变成定位元素--&gt;position:absolute;&lt;!--设置元素的定位位置，距离上、下、左、右都为0--&gt;left:0;right:0;top:0;bottom:0;&lt;!--设置元素的margin样式值为 auto--&gt;margin:auto;&#125; 优点：兼容性较好；缺点：不支持IE7以下的浏览器。 第四种方法（inline-block方法） 场景： 一个块状元素A内 有若干个块状元素B，要达到的效果是 ，所有块状元素B 在 元素A 内水平居中显示。 12345&lt;div class="A"&gt; &lt;div class="B"&gt;&lt;/div&gt; &lt;div class="B"&gt;&lt;/div&gt; &lt;div class="B"&gt;&lt;/div&gt;&lt;/div&gt; 首先，我们要设置元素A的大小为500px，设置背景色为green方便查看。 1234.A｛ width:500px; backgrond-color:green;｝ 然后， 设置所有元素B 的宽度为100px，高度为100px，外边据都为5px，背景色为#000方便查看。 123456.B｛ width:100px; height:100px; magin:5px; backgrond-color:green;｝ 此时的效果： 我们要做的是，先把所有的元素B都设置为行内块级元素，让他们都排成一行，即使用：display:inline-block； 最后就是让所有的元素B居中了， 到这里，相信很多人就猜到下一步要做什么了，我锦上添花，解释一下。 先想一想，如果是行内元素， 我们一般让它怎么居中呢？答：当然是给它的父容器加一个text-align:center的样式。 这里我们已经把所有的元素B变成了行内块， 也就有了行内元素的特性，所以，我们下一步要做的就是给元素A加text-align:center， 这样我们的目的就达到了，请看效果： 优点：兼容性较好；缺点：父元素和子元素的宽度都要已知。]]></content>
+      <categories>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>css</tag>
+        <tag>study</tag>
+        <tag>居中</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Javascript中的DOM对象学习]]></title>
     <url>%2F2017%2F03%2F12%2FJavascript%E4%B8%AD%E7%9A%84DOM%E5%AF%B9%E8%B1%A1%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[DOM 文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展标志语言的标准编程接口。在网页上，组织页面（或文档）的对象被组织在一个树形结构中，用来表示文档中对象的标准模型就称为DOM。 先来看看下面代码:12345678910111213141516&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta http-equiv="Content-Type" content="text/html"; charset="gb2312"&gt;&lt;title&gt;DOM&lt;/title&gt;&lt;/head&gt;&lt;body&gt; &lt;h2&gt;&lt;a href="http://www.imooc.com"&gt;javascript DOM&lt;/h2&gt; &lt;p&gt;对HTML元素进行操作，可添加、改变或移除CSS样式等&lt;/p&gt; &lt;ul&gt; &lt;li&gt;JavaScript&lt;/li&gt; &lt;li&gt;DOM&lt;/li&gt; &lt;li&gt;CSS&lt;/li&gt; &lt;/ul&gt;&lt;/body&gt;&lt;/html&gt; 将HTML代码分解为DOM节点层次图: HTML文档可以说由节点构成的集合，DOM节点有: 元素节点：上图中&lt;html&gt;、&lt;body&gt;、&lt;p&gt;等都是元素节点，即标签。 文本节点:向用户展示的内容，如&lt;li&gt;…&lt;/li&gt;中的JavaScript、DOM、CSS等文本。 属性节点:元素属性，如&lt;a&gt;标签的链接属性href=”http://www.imooc.com&quot;。 节点属性: 遍历节点树: 以上图ul为例，它的父级节点body,它的子节点3个li,它的兄弟结点h2、P。 DOM操作（DOM常见的API）: 注意:前两个是document方法。]]></content>
@@ -151,8 +165,8 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>algorithm</tag>
         <tag>study</tag>
+        <tag>algorithm</tag>
         <tag>freecodecamp</tag>
         <tag>array</tag>
         <tag>string</tag>
