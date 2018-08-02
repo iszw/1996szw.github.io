@@ -14,6 +14,21 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[基于Vue+Webpack打造todoApp应用]]></title>
+    <url>%2F2017%2F12%2F10%2F%E5%9F%BA%E4%BA%8EVue%2BWebpack%E6%89%93%E9%80%A0todoApp%E5%BA%94%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[基于Vue+Webpack打造todoApp应用 前言此源码基于vue和webpack编写。前置知识有JavaScript、Css、Html、ES6、Stylus、Vue、Webpack、Webpack-cli、Bable等。 源码地址此Demo源码托管在本人Github，点击此链接直达。 使用步骤安装依赖 需要安装npm包管理工具 需要安装的npm依赖包详见pakage.json 开发环境 启动项目：npm run dev 浏览器调试：localhost:8000 生产环境 项目打包：npm run build 过程记录笔记前端的价值 搭建前端工程 网络优化（HTTP的理解） API定制 Node.js层 初始化一个项目 npm init 需要安装的依赖 npm install webpack -g(全局安装webpack)npm install webpack –save-dev(局部安装webpack，并且默认是安装最新版本)npm install css-loadernpm install vue-template-compilernpm install vuenpm install vue-loader vue中的render函数 render方法的实质就是生成template模板，通过调用一个方法来生成，而这个方法是通过render方法的参数传递给他的。 Vue中\$mount() Vue 的\$mount()为手动挂载，在项目中可用于延时挂载（例如在挂载之前要进行一些其他操作、判断等），之后要手动挂载上,new Vue时，el和$mount并没有本质上的区别。 “webpack –config webpack.config.js”配置的含义 “build”: “webpack –config webpack.config.js”以上配置的意义是强制终端在执行npm run build的时候调用的是本地安装的webpak，而不是全局的webpack，并且在执行npm run build命令的时候，会执行webpack.config.js文件 css-loader、style-loader说明 loader: ‘css-loader’，这个只是帮我们处理CSS文件。以下写法能帮我们把CSS样式插到HTML结构中: 1234use: [ 'style-loader', 'css-loader'] (在此之前需要安装依赖：npm install style-loader) webpack处理图片文件代码解析 代码： 123456789&#123; test: /\\.(gif|jpg|jpeg|svg)$/, use: [&#123; loader: 'url-loader', options: &#123; limit: 1024 , name: '[name]-aa.[ext]' &#125;&#125; 该代码的作用就是使用url-loader来处理后缀名为.gif、.jpg、.jpeg、.svg的文件，将其转化为base64代码，直接写在js文件里面，而不用生成一个新的文件。 使用对象的写法是为了配置url-loader的一些选项。limit:1024的含义就是当图片小于1024kb的时候，转化为base64代码，减少了HTTP请求。name配置的含义是定义输出文件的名字】(配置里面的name是原来图片的名字，ext是转化后的后缀名)可以使用下面两段代码来进行测试 12345678910111213141516body &#123; color: blue; background-image: url(../images/bg.jpg);&#125;//vue组件不能直接挂载到HTML文件中的解决方案import Vue from 'vue'import App from './app.vue'import './assets/styles/test.css'import './assets/images/bg.jpg'const root = document.createElement('div')document.body.appendChild(root)new Vue(&#123; // 将app.vue组件挂载到HTML文件中 render: (h) =&gt; h(App)&#125;).$mount(root) 使用命令：npm run build，将可以在dist目录下看到一张转化后的图片(bg-aa.jpg) webpack强大的地方之一就是能够处理任何的依赖文件，比如在CSS文件中定义的图片，webpack也会使用配置好的url-loader将其进行处理。 CSS预处理器(使用stylus)安装： npm install stylus stylus-loader 配置：1234&#123; test: /\.styl/, use: ['style-loader', 'css-loader', 'stylus-loader']&#125;, 使用npm安装依赖包的细节 1、npm install webapck –save-dev：表示安装的webpack只在开发环境(dev)中使用，项目发布之后就不会用到，简写方式为npm i webapck -D。2、npm install vue –save：表示安装的vue在开发环境和正式环境中都会被用到，简写方式为npm i vue -S webpack-dev-server的配置和使用 安装：npm i webpack-dev-server配置：”dev”: “webpack-dev-server –config webpack.config.js” 通过以上的配置，那么使用命令npm run dev也能够实现打包项目，并且它是开发模式打包项目 如何分辨是在开发环境还是正式环境 步骤一： npm i cross-env步骤二：为了能够在不同的平台都运行webpack.config.js文件，我们需要在package.json中这样来配置：“build”: “cross-env NODE_ENV=production webpack –config webpack.config.js”,“dev”: “cross-env NODE_ENV=development webpack-dev-server –config webpack.config.js”步骤三：配置webpack.config.js文件 如何让打包好的js文件自动包含到HTML文件中 步骤一：npm install html-webpack-plugin]]></content>
+      <categories>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>study</tag>
+        <tag>vue</tag>
+        <tag>webpack</tag>
+        <tag>npm</tag>
+        <tag>stylus</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[前端项目中的数据可视化]]></title>
     <url>%2F2017%2F11%2F21%2F%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%2F</url>
     <content type="text"><![CDATA[近几年随着大数据逐渐火热，数据可视化也就显得格外重要。。 最近几年随着大数据的兴起，以及浏览器性能的提升，数据可视化成为了一个热点，前端也冒出来了很多数据可视化的岗位。本人也做过一些数据可视化相关的产品，下面聊聊对数据可视化的一些思考。本文的数据可视化一般专指互联网公司web前端接触的数据可视化。 数据可视化，是关于数据视觉表现形式的科学技术研究。其中，这种数据的视觉表现形式被定义为，一种以某种概要形式抽提出来的信息，包括相应信息单位的各种属性和变量。它是一个处于不断演变之中的概念，其边界在不断地扩大。主要指的是技术上较为高级的技术方法，而这些技术方法允许利用图形、图像处理、计算机视觉以及用户界面，通过表达、建模以及对立体、表面、属性以及动画的显示，对数据加以可视化解释。与立体建模之类的特殊技术方法相比，数据可视化所涵盖的技术方法要广泛得多. ———————-百度百科 而前端常说的视觉可视化大部分是指借助曲线图表等展示形式把一些相关数据更直接、形象、生动、具体的展示在web页面上。要做一个好的数据产品是需要 产品经理-&gt;设计师-&gt;前端-&gt;后端-&gt;用户整个链路紧密配合密切合作并且协调的。 产品需要懂数据可视化的理论基础，哪些数据可以可视化，哪些数据是用户最想要的。 设计师包括视觉和交互，需要理清楚数据怎么展示最合理，曲线，柱状图，饼状图，都有哪些优缺点，不能仅仅为了美观设计了一个好看的图形，而不顾实际数据情况，展示出来就很奇怪。 前端其实在里面是最紧密的一环，数据怎么获取，什么格式对前后端最友好，采用什么技术方案，是svg的库，还是canvas的库，是自己撸还是用现成的库。实现成本有多高，性能、扩展性怎么样都是需要考虑的问题 后端需要考虑的就是数据的拉取，需要考虑数据格式以及能获取哪些数据。 以上分工只是一个粗略的说明。这里看了一篇文章小心，这饼有毒！论饼图的正确打开方式里面讲的一些经历可能大家都遇到过，我也深有同感。 我的这些数据，好像柱状图、折线图、饼图都能表示啊，到底应该选哪个？ 饼图和环形图也差不多，取决于我要不要在中间显示其他内容吗？ 我可不可以将数据映射到饼图的半径维度上 数据可视化最重要的不是好看，而是让人一目了然的明白这个图表传达出来的意思。 其实这方面是有相关的信息图表学的相关知识储备的话就不会犯这些错误了。支付宝有个G2 里面有两个相关的图表学基础知识介绍，我个人认为这是G2 比echart更近一步，更规范化的点之一。 详见这里 可视化基础-图表使用建议 https://antv.alipay.com/vis/doc/chart/classify/compare.html 可视化基础-图表设计指引规范 https://antv.alipay.com/vis/doc/design/index.html 以及经典文献： 在数据可视化的研究和实现中，《数据可视化》、《The Grammarof Graphics》、《深入浅出统计学》、《计算机图形学几何工具算法详解》、《Visualization Analysis and Design》 、《ggplot2：数据分析与图形艺术》 。 叨叨了这么多基础，下面说说前端在可视化里的一些相关的发展和技术选型 首先需要明白一个观点：技术选型没有一劳永逸的，永远是根据你的项目实际情况以及你的个人偏好和技术基础来做的选择。 下面说说常见的一些图表库和相关技术： 1. echartsecharts算是国产的图表库里最好的了。EFE团队也是国内技术实力最雄厚的可视化团队.采用canvas作为渲染容器。底层一些实现比如鼠标事件啥的用的自己开发的zrender框架。 echart2.0对应不同的组件比如坐标轴图例是用不同的canvas来渲染的，echart3之后都合并到一个canvas里面了，猜测应该是底层的框架升级了 博客： http://efe.baidu.com/， 这个博客更的很慢了。 http://echarts.baidu.com/blog/posts/ 这个更得多点。 2.highcharts这个框架用的人也不少，主打就是IE6也支持。。。。。。。。。然并卵微软都不支持IE6了。淘宝连ie8都不支持了。。。。收费的库，底层用的SVG。私以为他的API使用起来没有Echart友好。 3.G2-支付宝蚂蚁金服的产品，图标容器为canvas，玉伯的团队开发的。怎么说呢。。这个东西看着还不错，不过实际使用的时候大部分人还是会不由自主的去选择前面两个，大阿里的开源东西就是这么个鬼情况。东西是不错，就怕搞着搞着团队没了。。 4.d3.jsd3也算是资历比较老的一个产品了，采用svg作为图标容器。刚开始出来的时候各种动画比较惊艳，图标类型也比较丰富，感觉echarts一开始也参照它的图表类型新增了好几个图表示例。 d3的优点是各种示例demo比较完善适合拿来就用，缺点就是demo不适合二次开发，熟悉api的话也可以直接自己画，他的api是对svg的dom的一种整理和兼容，类比于jquery对应html的dom。 其他： 一两年前阿里妈妈貌似出过一个图表库，我当初还给他们留言说：为啥不先出一个移动端的图表库说不定更有市场。貌似最后沦为KPI的牺牲品 以上就是最常见的一些图表库，那么我们需要根据实际项目需要来做一些技术选型。 移动端图表库，echarts和G2应该都可以。pc端就看个人喜好了。报表类型的项目看设计师画的效果稿吧，echarts可定制性最高，G2没用过，highcharts文档不健全。 监控类型的项目需要频繁更新数据的优选选择canvas的性能应该更好。 下面说说数据可视化的一般应用场景： 报表类 报表类使用场景最多，使用的图表也最简单一般echarts里面的示例图表就能满足了。 监控类 监控类稍微复杂点，一般涉及到实时性和稳健性，开发的时候需要考虑后端的接口性能，以及页面图表渲染的性能问题，数据量大了之后对前后端都很有挑战性。做起来也比较有意思，和业务场景结合起来能做一整套的数据可视化的产品系统。 动效PR稿类 这种类型的项目一般都有一个特点：急，炫，累。项目周期很急，动画效果要很炫，干起活来很累。偶尔做做还行，一直搞，就感觉路走的有点偏，而且一般很少能找到现成的库和框架，前期需要大量的技术调研和技术储备。相关的库一般需要canvas的效果库，webGL的库，比如:http://www.pixijs.com/ ，threejs，要求更高的可能需要一些游戏库来帮忙了比如：https://www.egret.com/ ，http://www.createjs.com/等等。 地图类 这类的数据可视化单独拿出来是因为现在越来越多的数据可视化场景里需要用到地图。这也是数据可视化最麻烦的一直，一般我们借助echart的地图，或者百度地图，高德地图等来开发，其实百度地图也出了个地图可视化的库 http://mapv.baidu.com/ ，展示效果没有echart好。。。。需要定制开发的同学其实可以直接拿百度地图之类的然后在地图上蒙一层覆盖类，然后在这个覆盖类里填充一个canvas做一些自己的扩展参见百度地图的demo；背后的地图。。可以用css隐藏掉。。。。。 数据可视化系统 这个范畴比较大，还是需要看业务场景，某些业务场景就特别适合做一堆相关联的数据可视化系统。做好了成就感还是满满的。 ================================================ 参考于：https://www.56way.com/p/102.html]]></content>
@@ -67,10 +82,10 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>http</tag>
         <tag>web</tag>
         <tag>interview</tag>
         <tag>html/css</tag>
+        <tag>http</tag>
         <tag>frame</tag>
       </tags>
   </entry>
@@ -83,10 +98,10 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>http</tag>
         <tag>web</tag>
         <tag>interview</tag>
         <tag>html/css</tag>
+        <tag>http</tag>
         <tag>jquery</tag>
       </tags>
   </entry>
@@ -125,8 +140,8 @@
       </categories>
       <tags>
         <tag>study</tag>
-        <tag>tcp/ip</tag>
         <tag>http</tag>
+        <tag>tcp/ip</tag>
       </tags>
   </entry>
   <entry>
@@ -209,8 +224,8 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-        <tag>blog</tag>
         <tag>github</tag>
+        <tag>blog</tag>
         <tag>share</tag>
       </tags>
   </entry>
