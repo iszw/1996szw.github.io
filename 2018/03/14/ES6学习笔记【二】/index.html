@@ -129,18 +129,18 @@
 
 
 
-<meta name="description" content="Info:学习es6的笔记，包括函数默认参数Parameter、对象代理Proxy、解构赋值以及多行字符串/模版变量">
+<meta name="description" content="Info:es6的学习笔记，包括函数默认参数Parameter、对象代理Proxy、解构赋值以及多行字符串/模版变量">
 <meta name="keywords" content="javascript,study,es6,parameter,proxy,解构赋值,模版字符串">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6学习笔记[二]">
 <meta property="og:url" content="https://1996szw.github.io/2018/03/14/ES6学习笔记【二】/index.html">
 <meta property="og:site_name" content="iSzw_Blog">
-<meta property="og:description" content="Info:学习es6的笔记，包括函数默认参数Parameter、对象代理Proxy、解构赋值以及多行字符串/模版变量">
+<meta property="og:description" content="Info:es6的学习笔记，包括函数默认参数Parameter、对象代理Proxy、解构赋值以及多行字符串/模版变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-13T12:41:56.264Z">
+<meta property="og:updated_time" content="2018-08-13T12:55:50.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6学习笔记[二]">
-<meta name="twitter:description" content="Info:学习es6的笔记，包括函数默认参数Parameter、对象代理Proxy、解构赋值以及多行字符串/模版变量">
+<meta name="twitter:description" content="Info:es6的学习笔记，包括函数默认参数Parameter、对象代理Proxy、解构赋值以及多行字符串/模版变量">
 
 
 
@@ -477,7 +477,7 @@
 
       
         <blockquote>
-<p><strong>Info:学习es6的笔记，包括函数默认参数Parameter、对象代理Proxy、解构赋值以及多行字符串/模版变量</strong></p>
+<p>Info:es6的学习笔记，包括函数默认参数Parameter、对象代理Proxy、解构赋值以及多行字符串/模版变量</p>
 </blockquote>
 <a id="more"></a>
 <h1 id="ES6学习笔记-二"><a href="#ES6学习笔记-二" class="headerlink" title="ES6学习笔记[二]"></a>ES6学习笔记[二]</h1><h2 id="默认参数-parameter"><a href="#默认参数-parameter" class="headerlink" title="默认参数 (parameter)"></a>默认参数 (parameter)</h2><h3 id="通过es6很方便地给函数设置一个默认参数"><a href="#通过es6很方便地给函数设置一个默认参数" class="headerlink" title="通过es6很方便地给函数设置一个默认参数"></a>通过es6很方便地给函数设置一个默认参数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * es5中函数默认参数</span></span><br><span class="line"><span class="comment"> * 如果需要这个函数的参数可填可不填，不填的话就给一个默认值</span></span><br><span class="line"><span class="comment"> * 那么在函数体内要写一个判断或者采用或表达式（||）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b == <span class="literal">null</span>)&#123;</span><br><span class="line">        b = <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">    c = c || <span class="number">3</span></span><br><span class="line">    <span class="keyword">return</span> a+b+c</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">1</span>) <span class="comment">// 6</span></span><br><span class="line">fn(<span class="number">1</span>,<span class="number">3</span>) <span class="comment">// 7</span></span><br><span class="line">fn(<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>) <span class="comment">// 8</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * es6中函数默认参数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a,b = <span class="number">2</span>,c = <span class="number">3</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b+c</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//该函数使用babel编译过来的结果得到：</span></span><br><span class="line"><span class="comment">// function fn(a) &#123;</span></span><br><span class="line"><span class="comment">//   var b = arguments.length &gt; 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : 0;</span></span><br><span class="line"><span class="comment">//   var c = arguments.length &gt; 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : 1;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   return a+b+c;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
@@ -683,7 +683,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">72</span>
+                <span class="site-state-item-count">87</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
