@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('Please Input The Password:') !== ''){
+                alert('You Got A Wrong Pass!');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Microsoft YaHei:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Menlo:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css,study,javascript,vue,stylus,travelweb,vue-awesome-swiper,axios,better-scroll,vuex,localstorge,keep-alive,vue-router,动态路由,父子组件间传递数据,递归组建,移动开发,reset.css,1像素边框,300ms点击延时,rem," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/logo.png?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Info: Vue开发旅游网站笔记整理">
+<meta name="keywords" content="css,study,javascript,vue,stylus,travelweb,vue-awesome-swiper,axios,better-scroll,vuex,localstorge,keep-alive,vue-router,动态路由,父子组件间传递数据,递归组建,移动开发,reset.css,1像素边框,300ms点击延时,rem">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue2.0搭建旅游网站开发笔记">
+<meta property="og:url" content="https://1996szw.github.io/2018/03/14/Vue2.0搭建旅游网站开发笔记/index.html">
+<meta property="og:site_name" content="iSzw_Blog">
+<meta property="og:description" content="Info: Vue开发旅游网站笔记整理">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/vuex_1.jpg">
+<meta property="og:updated_time" content="2018-08-30T08:31:27.024Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue2.0搭建旅游网站开发笔记">
+<meta name="twitter:description" content="Info: Vue开发旅游网站笔记整理">
+<meta name="twitter:image" content="http://ouwxj7f40.bkt.clouddn.com/vuex_1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"display":"always","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://1996szw.github.io/2018/03/14/Vue2.0搭建旅游网站开发笔记/"/>
+
+
+
+
+
+  <title>Vue2.0搭建旅游网站开发笔记 | iSzw_Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">iSzw_Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">努力地做一只有情怀的猿。😘</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://1996szw.github.io/2018/03/14/Vue2.0搭建旅游网站开发笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="suvannn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iSzw_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vue2.0搭建旅游网站开发笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T21:37:29+08:00">
+                2018-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">study</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/14/Vue2.0搭建旅游网站开发笔记/" class="leancloud_visitors" data-flag-title="Vue2.0搭建旅游网站开发笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,259 words
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  21 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Info: Vue开发旅游网站笔记整理</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是最近使用Vue写的仿去哪儿网旅游网站，大致实现了网站首页Header制作、首页轮播、图标区块、热销推荐、使用axios获取接口数据、首页父子组件间的传递、城市选择页面路由配置、搜索框布局、better-scroll的使用及字母表布局、搜索的逻辑实现、Vuex实现数据共享、LocalStorage实现页面数据持久存储、使用keep-alive优化路由页面性能、动态路由配置及banner布局、公用画廊组件的拆分、渐隐渐显的header效果实现、递归组件实现详情列表、画廊动画效果封装等实用性网站功能。</p>
+<p>在此要十分感谢<code>Vue</code>框架的作者Evan You，这种<code>渐进式</code>的开发方式的确十分的友好，也让人深刻地领会到组件化开发所带来的便捷之处。</p>
+<p>而本篇文章是作为整个项目开发时的一些记录，以便日后完善或者重构代码时能够更加清晰。</p>
+<ul>
+<li><p>项目源码：<a href="https://github.com/1996szw/TravelWeb" target="_blank" rel="noopener">https://github.com/1996szw/TravelWeb</a></p>
+</li>
+<li><p>使用方式：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># install dependencies</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"># serve with hot reload at localhost:8080</span><br><span class="line">npm run dev</span><br><span class="line"></span><br><span class="line"># build for production with minification</span><br><span class="line">npm run build</span><br><span class="line"></span><br><span class="line"># build for production and view the bundle analyzer report</span><br><span class="line">npm run build --report</span><br></pre></td></tr></table></figure>
+<h1 id="项目代码初始化"><a href="#项目代码初始化" class="headerlink" title="项目代码初始化"></a>项目代码初始化</h1><h2 id="配置移动端的-标签"><a href="#配置移动端的-标签" class="headerlink" title="配置移动端的\标签"></a>配置移动端的\<meta>标签</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 设置移动端屏幕比例不可缩放 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="引入reset-css"><a href="#引入reset-css" class="headerlink" title="引入reset.css"></a>引入reset.css</h2><p>在不同的移动设备上，浏览器的初始样式表是不统一的。所以需要引入reset.css来进行统一化，之后在项目入口文件main.js中引用该样式表：<code>import &#39;styles/reset.css&#39;</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 重置样式表reset.css */</span></span><br><span class="line">@<span class="keyword">charset</span> <span class="string">"utf-8"</span>;<span class="selector-tag">html</span>&#123;<span class="attribute">background-color</span>:<span class="number">#fff</span>;<span class="attribute">color</span>:<span class="number">#000</span>;<span class="attribute">font-size</span>:<span class="number">12px</span>&#125;</span><br><span class="line"><span class="selector-tag">body</span>,<span class="selector-tag">ul</span>,<span class="selector-tag">ol</span>,<span class="selector-tag">dl</span>,<span class="selector-tag">dd</span>,<span class="selector-tag">h1</span>,<span class="selector-tag">h2</span>,<span class="selector-tag">h3</span>,<span class="selector-tag">h4</span>,<span class="selector-tag">h5</span>,<span class="selector-tag">h6</span>,<span class="selector-tag">figure</span>,<span class="selector-tag">form</span>,<span class="selector-tag">fieldset</span>,<span class="selector-tag">legend</span>,<span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>,<span class="selector-tag">button</span>,<span class="selector-tag">p</span>,<span class="selector-tag">blockquote</span>,<span class="selector-tag">th</span>,<span class="selector-tag">td</span>,<span class="selector-tag">pre</span>,<span class="selector-tag">xmp</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>&#125;</span><br><span class="line"><span class="selector-tag">body</span>,<span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>,<span class="selector-tag">button</span>,<span class="selector-tag">select</span>,<span class="selector-tag">pre</span>,<span class="selector-tag">xmp</span>,<span class="selector-tag">tt</span>,<span class="selector-tag">code</span>,<span class="selector-tag">kbd</span>,<span class="selector-tag">samp</span>&#123;<span class="attribute">line-height</span>:<span class="number">1.5</span>;<span class="attribute">font-family</span>:tahoma,arial,<span class="string">"Hiragino Sans GB"</span>,simsun,sans-serif&#125;</span><br><span class="line"><span class="selector-tag">h1</span>,<span class="selector-tag">h2</span>,<span class="selector-tag">h3</span>,<span class="selector-tag">h4</span>,<span class="selector-tag">h5</span>,<span class="selector-tag">h6</span>,<span class="selector-tag">small</span>,<span class="selector-tag">big</span>,<span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>,<span class="selector-tag">button</span>,<span class="selector-tag">select</span>&#123;<span class="attribute">font-size</span>:<span class="number">100%</span>&#125;</span><br><span class="line"><span class="selector-tag">h1</span>,<span class="selector-tag">h2</span>,<span class="selector-tag">h3</span>,<span class="selector-tag">h4</span>,<span class="selector-tag">h5</span>,<span class="selector-tag">h6</span>&#123;<span class="attribute">font-family</span>:tahoma,arial,<span class="string">"Hiragino Sans GB"</span>,<span class="string">"微软雅黑"</span>,simsun,sans-serif&#125;</span><br><span class="line"><span class="selector-tag">h1</span>,<span class="selector-tag">h2</span>,<span class="selector-tag">h3</span>,<span class="selector-tag">h4</span>,<span class="selector-tag">h5</span>,<span class="selector-tag">h6</span>,<span class="selector-tag">b</span>,<span class="selector-tag">strong</span>&#123;<span class="attribute">font-weight</span>:normal&#125;</span><br><span class="line"><span class="selector-tag">address</span>,<span class="selector-tag">cite</span>,<span class="selector-tag">dfn</span>,<span class="selector-tag">em</span>,<span class="selector-tag">i</span>,<span class="selector-tag">optgroup</span>,<span class="selector-tag">var</span>&#123;<span class="attribute">font-style</span>:normal&#125;</span><br><span class="line"><span class="selector-tag">table</span>&#123;<span class="attribute">border-collapse</span>:collapse;<span class="attribute">border-spacing</span>:<span class="number">0</span>;<span class="attribute">text-align</span>:left&#125;</span><br><span class="line"><span class="selector-tag">caption</span>,<span class="selector-tag">th</span>&#123;<span class="attribute">text-align</span>:inherit&#125;</span><br><span class="line"><span class="selector-tag">ul</span>,<span class="selector-tag">ol</span>,<span class="selector-tag">menu</span>&#123;<span class="attribute">list-style</span>:none&#125;</span><br><span class="line"><span class="selector-tag">fieldset</span>,<span class="selector-tag">img</span>&#123;<span class="attribute">border</span>:<span class="number">0</span>&#125;</span><br><span class="line"><span class="selector-tag">img</span>,<span class="selector-tag">object</span>,<span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>,<span class="selector-tag">button</span>,<span class="selector-tag">select</span>&#123;<span class="attribute">vertical-align</span>:middle&#125;</span><br><span class="line"><span class="selector-tag">article</span>,<span class="selector-tag">aside</span>,<span class="selector-tag">footer</span>,<span class="selector-tag">header</span>,<span class="selector-tag">section</span>,<span class="selector-tag">nav</span>,<span class="selector-tag">figure</span>,<span class="selector-tag">figcaption</span>,<span class="selector-tag">hgroup</span>,<span class="selector-tag">details</span>,<span class="selector-tag">menu</span>&#123;<span class="attribute">display</span>:block&#125;</span><br><span class="line">audio,canvas,video&#123;display:inline-block;*display:inline;*zoom:1&#125;</span><br><span class="line"><span class="selector-tag">blockquote</span><span class="selector-pseudo">:before</span>,<span class="selector-tag">blockquote</span><span class="selector-pseudo">:after</span>,<span class="selector-tag">q</span><span class="selector-pseudo">:before</span>,<span class="selector-tag">q</span><span class="selector-pseudo">:after</span>&#123;<span class="attribute">content</span>:<span class="string">"\0020"</span>&#125;</span><br><span class="line"><span class="selector-tag">textarea</span>&#123;<span class="attribute">overflow</span>:auto;<span class="attribute">resize</span>:vertical&#125;</span><br><span class="line"><span class="selector-tag">input</span>,<span class="selector-tag">textarea</span>,<span class="selector-tag">button</span>,<span class="selector-tag">select</span>,<span class="selector-tag">a</span>&#123;<span class="attribute">outline</span>:<span class="number">0</span> none;<span class="attribute">border</span>: none;&#125;</span><br><span class="line"><span class="selector-tag">button</span><span class="selector-pseudo">::-moz-focus-inner</span>,<span class="selector-tag">input</span><span class="selector-pseudo">::-moz-focus-inner</span>&#123;<span class="attribute">padding</span>:<span class="number">0</span>;<span class="attribute">border</span>:<span class="number">0</span>&#125;</span><br><span class="line"><span class="selector-tag">mark</span>&#123;<span class="attribute">background-color</span>:transparent&#125;</span><br><span class="line"><span class="selector-tag">a</span>,<span class="selector-tag">ins</span>,<span class="selector-tag">s</span>,<span class="selector-tag">u</span>,<span class="selector-tag">del</span>&#123;<span class="attribute">text-decoration</span>:none&#125;</span><br><span class="line"><span class="selector-tag">sup</span>,<span class="selector-tag">sub</span>&#123;<span class="attribute">vertical-align</span>:baseline&#125;</span><br><span class="line"><span class="selector-tag">html</span> &#123;<span class="attribute">overflow-x</span>: hidden;<span class="attribute">height</span>: <span class="number">100%</span>;<span class="attribute">font-size</span>: <span class="number">50px</span>;<span class="attribute">-webkit-tap-highlight-color</span>: transparent;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">font-family</span>: Arial, <span class="string">"Microsoft Yahei"</span>, <span class="string">"Helvetica Neue"</span>, Helvetica, sans-serif;<span class="attribute">color</span>: <span class="number">#333</span>;<span class="attribute">font-size</span>: .<span class="number">28em</span>;<span class="attribute">line-height</span>: <span class="number">1</span>;<span class="attribute">-webkit-text-size-adjust</span>: none;&#125;</span><br><span class="line"><span class="selector-tag">hr</span> &#123;<span class="attribute">height</span>: .<span class="number">02rem</span>;<span class="attribute">margin</span>: .<span class="number">1rem</span> <span class="number">0</span>;<span class="attribute">border</span>: medium none;<span class="attribute">border-top</span>: .<span class="number">02rem</span> solid <span class="number">#cacaca</span>;&#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123;<span class="attribute">color</span>: <span class="number">#25a4bb</span>;<span class="attribute">text-decoration</span>: none;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解决移动设备中的一像素边框问题"><a href="#解决移动设备中的一像素边框问题" class="headerlink" title="解决移动设备中的一像素边框问题"></a>解决移动设备中的一像素边框问题</h2><p>有的移动设备分辨率比较高是一个二倍屏或是三倍屏，所以在写1像素边框的时候，写的是1px但实际渲染出来却是2px或是3px。所以需要引入一个1像素边框的解决方案:<code>import &#39;styles/border.css&#39;</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 1像素边框的解决方案border.css */</span></span><br><span class="line"><span class="comment">/* 该代码解决方式是css中的scale */</span></span><br><span class="line">@<span class="keyword">charset</span> <span class="string">"utf-8"</span>;</span><br><span class="line"><span class="selector-class">.border</span>,</span><br><span class="line"><span class="selector-class">.border-top</span>,</span><br><span class="line"><span class="selector-class">.border-right</span>,</span><br><span class="line"><span class="selector-class">.border-bottom</span>,</span><br><span class="line"><span class="selector-class">.border-left</span>,</span><br><span class="line"><span class="selector-class">.border-topbottom</span>,</span><br><span class="line"><span class="selector-class">.border-rightleft</span>,</span><br><span class="line"><span class="selector-class">.border-topleft</span>,</span><br><span class="line"><span class="selector-class">.border-rightbottom</span>,</span><br><span class="line"><span class="selector-class">.border-topright</span>,</span><br><span class="line"><span class="selector-class">.border-bottomleft</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-top</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-right</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-bottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-left</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-topleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-topright</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topright</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">"\0020"</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* border</span></span><br><span class="line"><span class="comment"> * 因，边框是由伪元素区域遮盖在父级</span></span><br><span class="line"><span class="comment"> * 故，子级若有交互，需要对子级设置</span></span><br><span class="line"><span class="comment"> * 定位 及 z轴</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="selector-class">.border</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#eaeaea</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-top</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-bottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-topleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-topright</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-right</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-left</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-topleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topright</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-top</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topright</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="number">#eaeaea</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-right</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topright</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">border-right</span>: <span class="number">1px</span> solid <span class="number">#eaeaea</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">100%</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-bottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#eaeaea</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-left</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">border-left</span>: <span class="number">1px</span> solid <span class="number">#eaeaea</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-top</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topright</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-right</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topright</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-bottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.border-left</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.border-topleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (max--moz-device-pixel-ratio: <span class="number">1.49</span>), (-webkit-max-device-pixel-ratio: <span class="number">1.49</span>), (max-device-pixel-ratio: <span class="number">1.49</span>), (max-resolution: <span class="number">143dpi</span>), (max-resolution: <span class="number">1.49dppx</span>) &#123;</span><br><span class="line">    <span class="comment">/* 默认值，无需重置 */</span></span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (min--moz-device-pixel-ratio: <span class="number">1.5</span>) and (max--moz-device-pixel-ratio: <span class="number">2.49</span>), (-webkit-min-device-pixel-ratio: <span class="number">1.5</span>) and (-webkit-max-device-pixel-ratio: <span class="number">2.49</span>), (min-device-pixel-ratio: <span class="number">1.5</span>) and (max-device-pixel-ratio: <span class="number">2.49</span>), (min-resolution: <span class="number">144dpi</span>) and (max-resolution: <span class="number">239dpi</span>), (min-resolution: <span class="number">1.5dppx</span>) and (max-resolution: <span class="number">2.49dppx</span>) &#123;</span><br><span class="line">    <span class="selector-class">.border</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">200%</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">200%</span>;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(.5);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.border-top</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-bottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.border-topleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.border-topright</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(.5);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.border-right</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-left</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.border-topleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-topright</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.5);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (min--moz-device-pixel-ratio: <span class="number">2.5</span>), (-webkit-min-device-pixel-ratio: <span class="number">2.5</span>), (min-device-pixel-ratio: <span class="number">2.5</span>), (min-resolution: <span class="number">240dpi</span>), (min-resolution: <span class="number">2.5dppx</span>) &#123;</span><br><span class="line">    <span class="selector-class">.border</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">300%</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">300%</span>;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scale</span>(.33333);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.border-top</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-bottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-topbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.border-topleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.border-topright</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(.33333);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.border-right</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-left</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-rightleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.border-topleft</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.border-rightbottom</span><span class="selector-pseudo">::before</span>,</span><br><span class="line">    <span class="selector-class">.border-topright</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.border-bottomleft</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.33333);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解决移动端的点击300ms延时的问题"><a href="#解决移动端的点击300ms延时的问题" class="headerlink" title="解决移动端的点击300ms延时的问题"></a>解决移动端的点击300ms延时的问题</h2><p>在项目中，尤其是移动项目中在某些机型、某些浏览器上使用click事件的时候，这些click事件会延迟300ms才会执行，导致用户体验不佳，所以需要引入fastclick第三方库:<code>npm install fastclick --save</code>，然后在main.js中引用并使用这个库:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fastClick <span class="keyword">from</span> <span class="string">'fastclick'</span></span><br><span class="line"></span><br><span class="line">fastClick.attach(<span class="built_in">document</span>.body)</span><br></pre></td></tr></table></figure>
+<h1 id="网站首页的开发"><a href="#网站首页的开发" class="headerlink" title="网站首页的开发"></a>网站首页的开发</h1><h2 id="移动项目的开发中使用rem"><a href="#移动项目的开发中使用rem" class="headerlink" title="移动项目的开发中使用rem"></a>移动项目的开发中使用rem</h2><p>如果设计师给的是二倍屏中的86像素，对应就是一倍屏中的43像素，而reset.css中将<code>html{font-size: 50px}</code>，那么就有：1rem = html font size = 50px。所以43px = .86rem</p>
+<h2 id="使用css预处理器stylus中的贯穿式变量"><a href="#使用css预处理器stylus中的贯穿式变量" class="headerlink" title="使用css预处理器stylus中的贯穿式变量"></a>使用css预处理器stylus中的贯穿式变量</h2><p>如果在样式中某一个颜色代码或者尺寸数字会被经常使用到，那么可以在styles文件夹下写一个varibles.styl文件专门用来存放这些个变量，然后在对应的css中引用：<code>@import &#39;../../../assets/styles/varilbes.styl&#39;</code>。这样写引用太复杂了，所以可以在<code>webpack.base.conf.js</code>中将styles目录设置一个别名:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">resolve: &#123;</span><br><span class="line">    extensions: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>],</span><br><span class="line">    alias: &#123;</span><br><span class="line">      <span class="string">'vue$'</span>: <span class="string">'vue/dist/vue.esm.js'</span>,</span><br><span class="line">      <span class="string">'@'</span>: resolve(<span class="string">'src'</span>),</span><br><span class="line">      <span class="string">'styles'</span>: resolve(<span class="string">'src/assets/styles'</span>),</span><br><span class="line">      <span class="string">'common'</span>: resolve(<span class="string">'src/common'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<h2 id="使用占位来解决图片还未加载时候高度为0之后会有一个抖动的问题"><a href="#使用占位来解决图片还未加载时候高度为0之后会有一个抖动的问题" class="headerlink" title="使用占位来解决图片还未加载时候高度为0之后会有一个抖动的问题"></a>使用占位来解决图片还未加载时候高度为0之后会有一个抖动的问题</h2><p>给该图片区域包裹一层<code>&lt;div&gt;</code>标签，然后设置该区块的宽度为100%，而它的高度会根据宽度自动地撑开31.25%:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span></span><br><span class="line">    <span class="selector-tag">overflow</span> <span class="selector-tag">hidden</span></span><br><span class="line">    <span class="selector-tag">width</span> 100%</span><br><span class="line">    <span class="selector-tag">height</span> 0</span><br><span class="line">    <span class="selector-tag">padding-bottom</span> 31<span class="selector-class">.25</span>%</span><br></pre></td></tr></table></figure>
+<h2 id="css中的样式穿透"><a href="#css中的样式穿透" class="headerlink" title="css中的样式穿透"></a>css中的样式穿透</h2><p>当需要设置scoped外其它组件中的元素样式时，需要使用<code>&gt;&gt;&gt;</code>来进行一个样式穿透:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &gt;&gt;&gt; <span class="selector-class">.swiper-pagination-bullet-active</span></span><br><span class="line">    <span class="selector-tag">background</span> <span class="selector-id">#fff</span></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">## 使用<span class="selector-tag">vue-awesome-swiper</span>来显示<span class="selector-tag">icon</span>轮播效果时翻页的算法</span><br><span class="line"></span><br><span class="line">```<span class="selector-tag">javascript</span></span><br><span class="line">// 借助computed计算属性</span><br><span class="line"><span class="selector-tag">computed</span>: &#123;</span><br><span class="line">    pages () &#123;</span><br><span class="line">      const pages = []</span><br><span class="line">      this.iconList.forEach((item, index) =&gt; &#123;</span><br><span class="line">        const page = Math.floor(index / 8)</span><br><span class="line">        <span class="selector-tag">if</span> (!<span class="selector-tag">pages</span><span class="selector-attr">[page]</span>) &#123;</span><br><span class="line">          pages[page] = []</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">pages</span><span class="selector-attr">[page]</span><span class="selector-class">.push</span>(<span class="selector-tag">item</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="selector-tag">return</span> <span class="selector-tag">pages</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用css预处理器stylus中的混合书写Mixins"><a href="#使用css预处理器stylus中的混合书写Mixins" class="headerlink" title="使用css预处理器stylus中的混合书写Mixins"></a>使用css预处理器stylus中的混合书写Mixins</h2><p>提供…占位符来表示由于空间不够而被隐藏的内容，可以使用stylus中将该方法封装成mixins.styl，然后在需要的地方调用：<code>ellipsis()</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ellipsis</span>()</span><br><span class="line">  <span class="selector-tag">overflow</span> <span class="selector-tag">hidden</span></span><br><span class="line">  <span class="selector-tag">white-space</span> <span class="selector-tag">nowrap</span></span><br><span class="line">  <span class="selector-tag">text-overflow</span> <span class="selector-tag">ellipsis</span></span><br></pre></td></tr></table></figure>
+<h2 id="在vue中使用axios"><a href="#在vue中使用axios" class="headerlink" title="在vue中使用axios"></a>在vue中使用axios</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">    getHomeInfo () &#123;</span><br><span class="line">      axios.get(<span class="string">'/api/index.json?city='</span> + <span class="keyword">this</span>.city)</span><br><span class="line">        .then(<span class="keyword">this</span>.getHomeInfoSucc) <span class="comment">// axios返回的是一个promise对象，所以可以调用.then方法</span></span><br><span class="line">    &#125;,</span><br><span class="line">    getHomeInfoSucc (res) &#123;</span><br><span class="line">      res = res.data</span><br><span class="line">      <span class="keyword">if</span> (res.ret &amp;&amp; res.data) &#123;</span><br><span class="line">        <span class="keyword">const</span> data = res.data</span><br><span class="line">        <span class="keyword">this</span>.swiperList = data.swiperList</span><br><span class="line">        <span class="keyword">this</span>.iconList = data.iconList</span><br><span class="line">        <span class="keyword">this</span>.recommendList = data.recommendList</span><br><span class="line">        <span class="keyword">this</span>.weekendList = data.weekendList</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mounted () &#123;</span><br><span class="line">    <span class="keyword">this</span>.getHomeInfo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">activated () &#123;</span><br><span class="line">    <span class="keyword">this</span>.getHomeInfo()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="城市选择页面开发"><a href="#城市选择页面开发" class="headerlink" title="城市选择页面开发"></a>城市选择页面开发</h1><h2 id="better-scroll的使用"><a href="#better-scroll的使用" class="headerlink" title="better-scroll的使用"></a>better-scroll的使用</h2><p>better-scroll是iscroll的一个封装，使用起来要更为友好。若要使用这个包，先要用<code>npm</code>安装:<code>npm install better-scroll --save</code>。然后html代码需要符合如下结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>...<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>...<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- you can put some other DOMs here, it won't affect the scrolling --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，better-scroll应用于外部wrapper容器，滚动部分是content元素。注意，better-scroll只处理容器（wrapper）的第一个子元素（内容）的滚动，这意味着将忽略其他元素。最简单的初始化代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> BScroll <span class="keyword">from</span> <span class="string">'beetter-scroll'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> wrapper = <span class="built_in">document</span>.querySelector(<span class="string">'wrapper'</span>)</span><br><span class="line"><span class="keyword">const</span> scroll = <span class="keyword">new</span> BScorll(wrapper)</span><br></pre></td></tr></table></figure>
+<p>better-scroll提供了一个类，其实例化时其第一个参数是普通DOM对象。当然，better-scroll内部会尝试使用querySelector来获取DOM对象，因此initiazation代码也可以如下所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> BScroll <span class="keyword">from</span> <span class="string">'better-scroll'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> scroll = <span class="keyword">new</span> BScroll(<span class="string">'.wrapper'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="获取拖拽动作最后得到的内容并做一个函数节流"><a href="#获取拖拽动作最后得到的内容并做一个函数节流" class="headerlink" title="获取拖拽动作最后得到的内容并做一个函数节流"></a>获取拖拽动作最后得到的内容并做一个函数节流</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span></span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">"item"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">v-for</span>=<span class="string">"item of letters"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:key</span>=<span class="string">"item"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">:ref</span>=<span class="string">"item"</span></span></span><br><span class="line"><span class="tag">        @<span class="attr">click</span>=<span class="string">"handleLetterClick"</span></span></span><br><span class="line"><span class="tag">        @<span class="attr">touchstart.prevent</span>=<span class="string">"handleTouchStart"</span></span></span><br><span class="line"><span class="tag">        @<span class="attr">touchmove</span>=<span class="string">"handleTouchMove"</span></span></span><br><span class="line"><span class="tag">        @<span class="attr">touchend</span>=<span class="string">"handleTouchEnd"</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">        &#123;&#123;item&#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'CityAlphabet'</span>,</span></span><br><span class="line"><span class="undefined">  props: &#123;</span></span><br><span class="line"><span class="javascript">    cities: <span class="built_in">Object</span></span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  data () &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">      touchStatus: <span class="literal">false</span>,</span></span><br><span class="line"><span class="undefined">      startY: 0,</span></span><br><span class="line"><span class="javascript">      timer: <span class="literal">null</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  updated () &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">this</span>.startY = <span class="keyword">this</span>.$refs[<span class="string">'A'</span>][<span class="number">0</span>].offsetTop</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  computed: &#123;</span></span><br><span class="line"><span class="undefined">    letters () &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">const</span> letters = []</span></span><br><span class="line"><span class="javascript">      <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> <span class="keyword">this</span>.cities) &#123;</span></span><br><span class="line"><span class="undefined">        letters.push(i)</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> letters</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  methods: &#123;</span></span><br><span class="line"><span class="undefined">    handleLetterClick (e) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$emit(<span class="string">'change'</span>, e.target.innerText)</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    handleTouchStart () &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.touchStatus = <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    handleTouchMove (e) &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">if</span> (<span class="keyword">this</span>.touchStatus) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="keyword">this</span>.timer) &#123; <span class="comment">// 函数节流</span></span></span><br><span class="line"><span class="javascript">          clearTimeout(<span class="keyword">this</span>.timer)</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">          <span class="keyword">const</span> touchY = e.touches[<span class="number">0</span>].clientY - <span class="number">75</span></span></span><br><span class="line"><span class="javascript">          <span class="keyword">const</span> index = <span class="built_in">Math</span>.floor((touchY - <span class="keyword">this</span>.startY) / <span class="number">18</span>)</span></span><br><span class="line"><span class="javascript">          <span class="keyword">if</span> (index &gt;= <span class="number">0</span> &amp;&amp; index &lt; <span class="keyword">this</span>.letters.length) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.$emit(<span class="string">'change'</span>, <span class="keyword">this</span>.letters[index])</span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">        &#125;, 16)</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    handleTouchEnd () &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.touchStatus = <span class="literal">false</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用vuex来实现数据共享"><a href="#使用vuex来实现数据共享" class="headerlink" title="使用vuex来实现数据共享"></a>使用vuex来实现数据共享</h2><p><code>Vuex</code>是一个专为<code>Vue.js</code>应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。在Vue的大型项目开发之中，Vue.js只能承担视图层的主要内容，而当涉及到大量数据间的传递，往往都要通过vuex这个数据框架来完成。虽然bus总线的作法有时候也可以完成效果，但写起来还是比较麻烦。</p>
+<p><img src="http://ouwxj7f40.bkt.clouddn.com/vuex_1.jpg" alt="vuex"></p>
+<p>Vuex其实就是一个单向数据的改变流程。使用vuex需要先安装vuex：<code>npm install vuex --save</code>，之后要在项目的入口文件<code>main.js</code>中引入这个包并在创建根实例的时候把<code>store</code>传递进去来使用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">      city: <span class="string">'杭州'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">      changeCity (ctx, city) &#123; <span class="comment">// ctx是一个上下文，可以通过它来执行commit方法</span></span><br><span class="line">          ctx.commit(<span class="string">'changeCity'</span>, city)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">      changeCity (state, city) &#123;</span><br><span class="line">          state.city = city</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="vuex中的map映射api"><a href="#vuex中的map映射api" class="headerlink" title="vuex中的map映射api"></a>vuex中的map映射api</h2><p>在每次调用vuex公用数据中的city的时候，都要写<code>this.$store.state.city</code>这样的一串，而vuex就提供了一个map映射api来简化这样的代码，先要引入需要映射的数据，然后通过<code>...</code>扩展运算符将<code>state</code>里面的city映射到HomeHeader这个组件的computed计算属性中，然后就可以直接通过<code>this.city</code>来调用这个数据了(如果是mutations则可以映射到组件的methods方法中)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'HomeHeader'</span>,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapState([<span class="string">'city'</span>])</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="vuex中的getter和module"><a href="#vuex中的getter和module" class="headerlink" title="vuex中的getter和module"></a>vuex中的getter和module</h2><p>vuex中的getter很类似于组件中的computed计算属性，如果需要根据vuex的state里的数据来计算出一个新的数据的时候，就可以通过getter来进行实现，从而避免数据的冗余。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    todos: [</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">done</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">text</span>: <span class="string">'...'</span>, <span class="attr">done</span>: <span class="literal">false</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    doneTodos: <span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> state.todos.filter(<span class="function"><span class="params">todo</span> =&gt;</span> todo.done)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>由于使用单一状态树，应用的所有状态会集中到一个比较大的对象。当应用变得非常复杂时，store 对象就有可能变得相当臃肿。</p>
+<p>为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块——从上至下进行同样方式的分割：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">const moduleA = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;,</span><br><span class="line">  getters: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const moduleB = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">store.state.a // -&gt; moduleA 的状态</span><br><span class="line">store.state.b // -&gt; moduleB 的状态</span><br></pre></td></tr></table></figure>
+<h2 id="vue中的内置组件-lt-keep-alive-gt"><a href="#vue中的内置组件-lt-keep-alive-gt" class="headerlink" title="vue中的内置组件&lt;keep-alive&gt;"></a>vue中的内置组件<code>&lt;keep-alive&gt;</code></h2><p><code>&lt;keep-alive&gt;</code>包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。和<code>&lt;transition&gt;</code>相似，<code>&lt;keep-alive&gt;</code>是一个抽象组件：它自身不会渲染一个DOM元素，也不会出现在父组件链中。</p>
+<p><code>&lt;keep-alive&gt;</code>可以接受可选参数：</p>
+<ul>
+<li><p>include - 字符串或正则表达式。只有匹配的组件会被缓存。</p>
+</li>
+<li><p>exclude - 字符串或正则表达式。任何匹配的组件都不会被缓存。</p>
+</li>
+</ul>
+<p>当组件在<code>&lt;keep-alive&gt;</code>内被切换，它的<code>activated</code>和<code>deactivated</code>这两个生命周期钩子函数将会被对应执行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    getDetailInfo () &#123;</span><br><span class="line">      axios.get(<span class="string">'/api/detail.json'</span>, &#123;</span><br><span class="line">        params: &#123;</span><br><span class="line">          id: <span class="keyword">this</span>.$route.params.id</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;).then(<span class="keyword">this</span>.handleGetDataSucc)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  mounted () &#123;</span><br><span class="line">    <span class="keyword">this</span>.getDetailInfo()</span><br><span class="line">  &#125;,</span><br><span class="line">  activated () &#123;</span><br><span class="line">    <span class="keyword">this</span>.getDetailInfo() <span class="comment">// 每次页面被加载的时候，都重新发送一个ajax请求</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="详情页面的开发"><a href="#详情页面的开发" class="headerlink" title="详情页面的开发"></a>详情页面的开发</h1><h2 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h2><p><code>&lt;router-link&gt;</code>标签的to前面可以跟一个<code>:</code>来作一个动态路由，这样就可以传递出一个参数给router。调用这个参数可以通过<code>this.$router.params.id</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">router-link</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tag</span>=<span class="string">"li"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"item border-bottom"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-for</span>=<span class="string">"item of recommendList"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:key</span>=<span class="string">"item.id"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:to</span>=<span class="string">"'/detail/' + item.id"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"item-img"</span> <span class="attr">:src</span>=<span class="string">"item.imgUrl"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item-info"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"item-title"</span>&gt;</span>&#123;&#123;item.title&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"item-desc"</span>&gt;</span>&#123;&#123;item.desc&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"item-btn"</span>&gt;</span>查看详情<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="给DOM元素添加一个渐变的边框"><a href="#给DOM元素添加一个渐变的边框" class="headerlink" title="给DOM元素添加一个渐变的边框"></a>给DOM元素添加一个渐变的边框</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.banner-info</span></span><br><span class="line">    <span class="selector-tag">background-image</span> <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">top</span>, <span class="selector-tag">rgba</span>(0, 0, 0, 0), <span class="selector-tag">rgba</span>(0, 0, 0, <span class="selector-class">.5</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="实现顶部Header区域拖动渐隐渐现效果"><a href="#实现顶部Header区域拖动渐隐渐现效果" class="headerlink" title="实现顶部Header区域拖动渐隐渐现效果"></a>实现顶部Header区域拖动渐隐渐现效果</h2><p>如果通过给window对象绑定一个全局事件的方式来实现某个功能，那么要记得及时地对这个全局事件进行一个解绑，否则就会影响外部组件。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">name: <span class="string">'DetailHeader'</span>,</span><br><span class="line">data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        showAbs: <span class="literal">true</span>,</span><br><span class="line">        opacityStyle: &#123;</span><br><span class="line">        opacity: <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    handleScroll () &#123;</span><br><span class="line">        <span class="keyword">const</span> top = <span class="built_in">document</span>.documentElement.scrollTop</span><br><span class="line">        <span class="keyword">if</span> (top &gt; <span class="number">60</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> countOpacity = top / <span class="number">140</span></span><br><span class="line">            countOpacity = countOpacity &gt; <span class="number">1</span> ? <span class="number">1</span> : countOpacity</span><br><span class="line">            <span class="keyword">this</span>.opacityStyle.opacity = countOpacity</span><br><span class="line">            <span class="keyword">this</span>.showAbs = <span class="literal">false</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.showAbs = <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">activated () &#123;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>.handleScroll)</span><br><span class="line">&#125;,</span><br><span class="line">deactivated () &#123; <span class="comment">// 使用deactivated来对全局事件进行解绑，当退出这个页面时，此函数会被执行</span></span><br><span class="line">    <span class="built_in">window</span>.removeEventListener(<span class="string">'scroll'</span>, <span class="keyword">this</span>.handleScroll)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="递归组件"><a href="#递归组件" class="headerlink" title="递归组件"></a>递归组件</h2><p>在组件模板中调用组件的自身就叫做递归组件。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span> <span class="attr">v-for</span>=<span class="string">"(item, index) of list"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item-title border-bottom"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item-title-icon"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        &#123;&#123;item.title&#125;&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"item.children"</span> <span class="attr">class</span>=<span class="string">"item-children"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">detail-list</span> <span class="attr">:list</span>=<span class="string">"item.children"</span>&gt;</span><span class="tag">&lt;/<span class="name">detail-list</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="javascript">  name: <span class="string">'DetailList'</span>,</span></span><br><span class="line"><span class="undefined">  data: &#123;</span></span><br><span class="line"><span class="undefined">      list: [</span></span><br><span class="line"><span class="undefined">          &#123;</span></span><br><span class="line"><span class="javascript">              title: <span class="string">'我是一级标题'</span>,</span></span><br><span class="line"><span class="undefined">              children: [&#123;</span></span><br><span class="line"><span class="javascript">                  title: <span class="string">'我是二级标题'</span>,</span></span><br><span class="line"><span class="undefined">                  children: [&#123;</span></span><br><span class="line"><span class="javascript">                      title: <span class="string">'我是三级标题'</span></span></span><br><span class="line"><span class="undefined">                  &#125;]</span></span><br><span class="line"><span class="undefined">              &#125;]</span></span><br><span class="line"><span class="undefined">          &#125;, &#123;</span></span><br><span class="line"><span class="javascript">              title: <span class="string">'我是一级标题'</span>,</span></span><br><span class="line"><span class="undefined">              children: [</span></span><br><span class="line"><span class="undefined">                  &#123;</span></span><br><span class="line"><span class="javascript">                      title: <span class="string">'我是二级标题'</span></span></span><br><span class="line"><span class="undefined">                  &#125;</span></span><br><span class="line"><span class="undefined">              ]</span></span><br><span class="line"><span class="undefined">          &#125;, &#123;</span></span><br><span class="line"><span class="javascript">              title: <span class="string">'我是一级标题'</span></span></span><br><span class="line"><span class="undefined">          &#125;</span></span><br><span class="line"><span class="undefined">      ]</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文已结束 <i class="fa fa-paw"></i> 十分感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>万水千山总是情 打赏两元行不行</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="suvannn WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="suvannn Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+            <a href="/tags/study/" rel="tag"><i class="fa fa-tag"></i> study</a>
+          
+            <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
+          
+            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+          
+            <a href="/tags/stylus/" rel="tag"><i class="fa fa-tag"></i> stylus</a>
+          
+            <a href="/tags/travelweb/" rel="tag"><i class="fa fa-tag"></i> travelweb</a>
+          
+            <a href="/tags/vue-awesome-swiper/" rel="tag"><i class="fa fa-tag"></i> vue-awesome-swiper</a>
+          
+            <a href="/tags/axios/" rel="tag"><i class="fa fa-tag"></i> axios</a>
+          
+            <a href="/tags/better-scroll/" rel="tag"><i class="fa fa-tag"></i> better-scroll</a>
+          
+            <a href="/tags/vuex/" rel="tag"><i class="fa fa-tag"></i> vuex</a>
+          
+            <a href="/tags/localstorge/" rel="tag"><i class="fa fa-tag"></i> localstorge</a>
+          
+            <a href="/tags/keep-alive/" rel="tag"><i class="fa fa-tag"></i> keep-alive</a>
+          
+            <a href="/tags/vue-router/" rel="tag"><i class="fa fa-tag"></i> vue-router</a>
+          
+            <a href="/tags/动态路由/" rel="tag"><i class="fa fa-tag"></i> 动态路由</a>
+          
+            <a href="/tags/父子组件间传递数据/" rel="tag"><i class="fa fa-tag"></i> 父子组件间传递数据</a>
+          
+            <a href="/tags/递归组建/" rel="tag"><i class="fa fa-tag"></i> 递归组建</a>
+          
+            <a href="/tags/移动开发/" rel="tag"><i class="fa fa-tag"></i> 移动开发</a>
+          
+            <a href="/tags/reset-css/" rel="tag"><i class="fa fa-tag"></i> reset.css</a>
+          
+            <a href="/tags/1像素边框/" rel="tag"><i class="fa fa-tag"></i> 1像素边框</a>
+          
+            <a href="/tags/300ms点击延时/" rel="tag"><i class="fa fa-tag"></i> 300ms点击延时</a>
+          
+            <a href="/tags/rem/" rel="tag"><i class="fa fa-tag"></i> rem</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/14/ES6学习笔记【二】/" rel="next" title="ES6学习笔记[二]">
+                <i class="fa fa-chevron-left"></i> ES6学习笔记[二]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/24/【毕设】数据挖掘算法之Apriori关联规则挖掘/" rel="prev" title="【毕设】数据挖掘算法之Apriori关联规则挖掘">
+                【毕设】数据挖掘算法之Apriori关联规则挖掘 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDI3My82ODI4"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="suvannn" />
+          <p class="site-author-name" itemprop="name">suvannn</p>
+           
+              <p class="site-description motion-element" itemprop="description">Maybe it is always night. Nevertheless, We still have to move forward.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">121</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/1996szw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/1996szw" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                    
+                      Instagram
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/szw1996" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://music.163.com/#/user/home?id=109005975" target="_blank" title="Music">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                    
+                      Music
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:isuziwei@163.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目代码初始化"><span class="nav-number">2.</span> <span class="nav-text">项目代码初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置移动端的-标签"><span class="nav-number">2.1.</span> <span class="nav-text">配置移动端的\标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入reset-css"><span class="nav-number">2.2.</span> <span class="nav-text">引入reset.css</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决移动设备中的一像素边框问题"><span class="nav-number">2.3.</span> <span class="nav-text">解决移动设备中的一像素边框问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决移动端的点击300ms延时的问题"><span class="nav-number">2.4.</span> <span class="nav-text">解决移动端的点击300ms延时的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网站首页的开发"><span class="nav-number">3.</span> <span class="nav-text">网站首页的开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#移动项目的开发中使用rem"><span class="nav-number">3.1.</span> <span class="nav-text">移动项目的开发中使用rem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用css预处理器stylus中的贯穿式变量"><span class="nav-number">3.2.</span> <span class="nav-text">使用css预处理器stylus中的贯穿式变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用占位来解决图片还未加载时候高度为0之后会有一个抖动的问题"><span class="nav-number">3.3.</span> <span class="nav-text">使用占位来解决图片还未加载时候高度为0之后会有一个抖动的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css中的样式穿透"><span class="nav-number">3.4.</span> <span class="nav-text">css中的样式穿透</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用css预处理器stylus中的混合书写Mixins"><span class="nav-number">3.5.</span> <span class="nav-text">使用css预处理器stylus中的混合书写Mixins</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在vue中使用axios"><span class="nav-number">3.6.</span> <span class="nav-text">在vue中使用axios</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#城市选择页面开发"><span class="nav-number">4.</span> <span class="nav-text">城市选择页面开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#better-scroll的使用"><span class="nav-number">4.1.</span> <span class="nav-text">better-scroll的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取拖拽动作最后得到的内容并做一个函数节流"><span class="nav-number">4.2.</span> <span class="nav-text">获取拖拽动作最后得到的内容并做一个函数节流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用vuex来实现数据共享"><span class="nav-number">4.3.</span> <span class="nav-text">使用vuex来实现数据共享</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vuex中的map映射api"><span class="nav-number">4.4.</span> <span class="nav-text">vuex中的map映射api</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vuex中的getter和module"><span class="nav-number">4.5.</span> <span class="nav-text">vuex中的getter和module</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue中的内置组件-lt-keep-alive-gt"><span class="nav-number">4.6.</span> <span class="nav-text">vue中的内置组件&lt;keep-alive&gt;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#详情页面的开发"><span class="nav-number">5.</span> <span class="nav-text">详情页面的开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动态路由"><span class="nav-number">5.1.</span> <span class="nav-text">动态路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#给DOM元素添加一个渐变的边框"><span class="nav-number">5.2.</span> <span class="nav-text">给DOM元素添加一个渐变的边框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现顶部Header区域拖动渐隐渐现效果"><span class="nav-number">5.3.</span> <span class="nav-text">实现顶部Header区域拖动渐隐渐现效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归组件"><span class="nav-number">5.4.</span> <span class="nav-text">递归组件</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">suvannn</span>
+
+  
+</div>
+
+<!-- 
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Muse
+    </a>
+  </div>
+ -->
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("xmvVSIGllhuRewm6UgxhpLda-gzGzoHsz", "HQ6urz5psY3HxcooEp6A44D6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>

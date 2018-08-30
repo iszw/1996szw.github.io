@@ -137,10 +137,12 @@
 <meta property="og:site_name" content="iSzw_Blog">
 <meta property="og:description" content="INFO ：这段时间遇到的面试题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-13T12:53:31.447Z">
+<meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/35395982-bcb9f8ec-0226-11e8-8e81-f9629afb4506.png">
+<meta property="og:updated_time" content="2018-08-30T07:48:22.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端面试【一】">
 <meta name="twitter:description" content="INFO ：这段时间遇到的面试题。">
+<meta name="twitter:image" content="http://ouwxj7f40.bkt.clouddn.com/35395982-bcb9f8ec-0226-11e8-8e81-f9629afb4506.png">
 
 
 
@@ -439,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6,040 words
+                  9,127 words
                 </span>
               
 
@@ -455,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  22 min
+                  34 min
                 </span>
               
             </div>
@@ -480,7 +482,7 @@
 <p>INFO ：这段时间遇到的面试题。</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="1-前端页面由哪三层构成及各层的作用"><a href="#1-前端页面由哪三层构成及各层的作用" class="headerlink" title="1.前端页面由哪三层构成及各层的作用"></a>1.前端页面由哪三层构成及各层的作用</h1><ul>
+<h1 id="前端页面由哪三层构成及各层的作用"><a href="#前端页面由哪三层构成及各层的作用" class="headerlink" title="前端页面由哪三层构成及各层的作用"></a>前端页面由哪三层构成及各层的作用</h1><ul>
 <li><p>结构层：由 HTML 或 XHTML 之类的标记语言负责创建，仅负责语义的表达。解决了页面“内容是什么”的问题。</p>
 </li>
 <li><p>表示层：由CSS负责创建，解决了页面“如何显示内容”的问题。</p>
@@ -488,7 +490,7 @@
 <li><p>行为层：由脚本语言负责。解决了页面上“内容应该如何对事件作出反应”的问题。</p>
 </li>
 </ul>
-<h1 id="2-行内元素有哪些？块级元素有哪些？-空-void-元素有那些？"><a href="#2-行内元素有哪些？块级元素有哪些？-空-void-元素有那些？" class="headerlink" title="2.行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？"></a>2.行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</h1><ul>
+<h1 id="行内元素有哪些？块级元素有哪些？-空-void-元素有那些？"><a href="#行内元素有哪些？块级元素有哪些？-空-void-元素有那些？" class="headerlink" title="行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？"></a>行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</h1><ul>
 <li><p>行内元素：a、b、span、img、input、strong、select、label、em、button、textarea;</p>
 </li>
 <li><p>块级元素：div、ul、li、dl、dt、dd、p、h1-h6、blockquote;</p>
@@ -496,109 +498,53 @@
 <li><p>空元素：br、meta、hr、link、input、img。</p>
 </li>
 </ul>
-<h1 id="3-简述盒模型"><a href="#3-简述盒模型" class="headerlink" title="3.简述盒模型"></a>3.简述盒模型</h1><ul>
-<li>文档中的每个元素被描绘为矩形盒子。盒子有四个边界：外边距边界margin, 边框边界border, 内边距边界padding与内容边界content。CSS3中有个box-sizing属性可以控制盒子的计算方式。</li>
-</ul>
+<h1 id="html5有哪些新特性、移除了那些元素？"><a href="#html5有哪些新特性、移除了那些元素？" class="headerlink" title="html5有哪些新特性、移除了那些元素？"></a>html5有哪些新特性、移除了那些元素？</h1><ul>
+<li><p>新特性：</p>
 <ol>
-<li><p>W3C盒子模型：content-box：padding和border不被包含在定义的width和height之内。对象的实际宽度等于设置的width值和border、padding之和。</p>
-</li>
-<li><p>IE6盒子模型：border-box：padding和border被包含在定义的width和height之内。对象的实际宽度就等于设置的width值。</p>
-</li>
+<li>语义化更好的内容元素，比如 article、footer、header、nav、section，表单控件，calendar、date、time、email、url、search;</li>
+<li>一些功能标签，如绘画 canvas，用于媒介播放的 video 和 audio 元素;</li>
+<li>本地离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失;sessionStorage 的数据在浏览器关闭后自动删除；</li>
+<li>新的技术，如webworker, websocket, Geolocation;</li>
 </ol>
-<h1 id="4-什么是CSS-Hack"><a href="#4-什么是CSS-Hack" class="headerlink" title="4.什么是CSS Hack"></a>4.什么是CSS Hack</h1><p>针对不同的浏览器写不同的CSS,就是 CSS Hack。<br>IE浏览器Hack一般又分为三种，条件Hack、属性级Hack、选择符Hack（详细参考CSS文档：<a href="http://www.phpstudy.net/css3/" target="_blank" rel="noopener">css文档</a>）。例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> // 1、条件Hack</span><br><span class="line">&lt;!<span class="selector-tag">--</span><span class="selector-attr">[if IE]</span>&gt;</span><br><span class="line">   &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">         <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:red;&#125;</span><br><span class="line">   &lt;/style&gt;</span><br><span class="line">&lt;!<span class="selector-attr">[endif]</span><span class="selector-tag">--</span>&gt;</span><br><span class="line">// 2、属性Hack</span><br><span class="line"> <span class="selector-class">.test</span>&#123;</span><br><span class="line"> <span class="attribute">color</span>:<span class="number">#090</span>\<span class="number">9</span>; <span class="comment">/* For IE8+ */</span></span><br><span class="line"> *color:#f00;  /* For IE7 and earlier */</span><br><span class="line"> _<span class="selector-tag">color</span>:<span class="selector-id">#ff0</span>;  <span class="comment">/* For IE6 and earlier */</span></span><br><span class="line"> &#125;</span><br><span class="line">// 3、选择符Hack</span><br><span class="line"> * <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#090</span>;&#125;       <span class="comment">/* For IE6 and earlier */</span></span><br><span class="line"> * + <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#ff0</span>;&#125;     <span class="comment">/* For IE7 */</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="5-简述同步和异步"><a href="#5-简述同步和异步" class="headerlink" title="5.简述同步和异步"></a>5.简述同步和异步</h1><ul>
-<li><p>同步是阻塞模式：同步是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程将会一直等待下去，直到收到返回信息才继续执行下去。</p>
 </li>
-<li><p>异步是非阻塞模式：异步是指进程不需要一直等下去，而是继续执行下面的操作，不管其他进程的状态。当有消息返回时系统会通知进程进行处理，这样可以提高执行的效率。</p>
-</li>
-</ul>
-<h1 id="6-浏览器的内核分别是什么"><a href="#6-浏览器的内核分别是什么" class="headerlink" title="6.浏览器的内核分别是什么"></a>6.浏览器的内核分别是什么</h1><ul>
-<li>IE: trident内核</li>
-<li>Firefox：gecko内核</li>
-<li>Safari：webkit内核</li>
-<li>Opera：以前是presto内核，现已改用Google Chrome的Blink内核</li>
-<li>Chrome：Blink(基于webkit，Google与Opera Software共同开发)</li>
-</ul>
-<h1 id="7-什么叫优雅降级和渐进增强及其区别"><a href="#7-什么叫优雅降级和渐进增强及其区别" class="headerlink" title="7.什么叫优雅降级和渐进增强及其区别"></a>7.什么叫优雅降级和渐进增强及其区别</h1><ul>
-<li><p>渐进增强 progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
-</li>
-<li><p>优雅降级 graceful degradation：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
-<p>  区别：</p>
-</li>
-</ul>
+<li><p>移除的元素：</p>
 <ol>
-<li>优雅降级是从复杂的现状开始，并试图减少用户体验的供给；</li>
-<li>渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要；</li>
-<li>降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。</li>
+<li>纯表现的元素：basefont，big，center，font, s，strike，tt，u;</li>
+<li>对可用性产生负面影响的元素：frame，frameset，noframes；</li>
 </ol>
-<h1 id="8-px和em的区别"><a href="#8-px和em的区别" class="headerlink" title="8.px和em的区别"></a>8.px和em的区别</h1><ul>
-<li><p>px和em都是长度单位，区别是，px的值是固定的，指定是多少就是多少，计算比较容易。em得值不是固定的，并且em会继承父级元素的字体大小。</p>
-</li>
-<li><p>浏览器的默认字体高都是16px。所以未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em。</p>
 </li>
 </ul>
-<h1 id="9-浏览器本地存储"><a href="#9-浏览器本地存储" class="headerlink" title="9.浏览器本地存储"></a>9.浏览器本地存储</h1><ul>
-<li><p>sessionStorage：用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁，是会话级别的存储。</p>
-</li>
-<li><p>localStorage：用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。</p>
-</li>
-</ul>
-<h1 id="10-web-storage和cookie的区别"><a href="#10-web-storage和cookie的区别" class="headerlink" title="10.web storage和cookie的区别"></a>10.web storage和cookie的区别</h1><ol>
-<li>Cookie的大小是受限的；</li>
-<li>每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽；</li>
-<li>cookie还需要指定作用域，不可以跨域调用；</li>
-<li>Web Storage拥有setItem,getItem等方法，cookie需要前端开发者自己封装setCookie，getCookie；</li>
-<li>Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生；</li>
-<li>IE7、IE6中的UserData通过简单的代码封装可以统一到所有的浏览器都支持web storage；</li>
-</ol>
-<h1 id="11-请列举几种可以清除浮动的方法"><a href="#11-请列举几种可以清除浮动的方法" class="headerlink" title="11.请列举几种可以清除浮动的方法"></a>11.请列举几种可以清除浮动的方法</h1><ul>
-<li>浮动会漂浮于普通流之上，像浮云一样，但是只能左右浮动。正是这种特性，导致框内部由于不存在其他普通流元素了，表现出高度为0（高度塌陷）。</li>
-</ul>
-<ol>
-<li>添加额外标签，例如&lt;div style=”clear:both”&gt;&lt;/div&gt;</li>
-<li>使用br标签和其自身的html属性，例如&lt;br clear=”all” /&gt;</li>
-<li>父元素设置 overflow：hidden；在IE6中还需要触发hasLayout，例如zoom:1；</li>
-<li>父元素设置 overflow：auto 属性；同样IE6需要触发hasLayout；</li>
-<li>父元素也设置浮动；</li>
-<li>父元素设置display:table；</li>
-<li>使用:after 伪元素；由于IE6-7不支持:after，使用 zoom:1触发<a href="http://yiminghe.iteye.com/blog/367384" target="_blank" rel="noopener">hasLayout</a>。</li>
-</ol>
+<h1 id="meta标签"><a href="#meta标签" class="headerlink" title="meta标签"></a>meta标签</h1><ol>
+<li><p>charset属性：单独使用，设置文档字符及编码格式。<br>写法：\<meta charset="UTF-8"><br>常见的中文编码格式：</p>
 <ul>
-<li><p>在CSS2.1里面有一个很重要的概念，那就是 Block formatting contexts （块级格式化上下文），简称<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener">BFC</a>。</p>
+<li>B-2312: 国标码，简体中文</li>
+<li>GBK：扩展的国标编码，简体中文</li>
+<li>UTF-8: 万国码 Unicode码，基本兼容各国语言</li>
+</ul>
 </li>
-<li><p>创建了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，同时BFC仍然属于文档中的普通流。</p>
+<li><p>name属性：需配合content属性使用，主要用于给搜索引擎提供必要信息。<br>写法：\&lt;meta name=”属性值” content=”属性值详细内容”<br>重要属性值：</p>
+<ul>
+<li>author 作者，声明网站作者，常用公司网址表示</li>
+<li>keywords 网站关键字，多个关键字，用英文逗号分隔</li>
+<li>description 网页描述，搜索引擎显示在title下的描述内容</li>
+</ul>
 </li>
-<li><p>IE6-7的显示引擎使用的是一个称为布局（layout）的内部概念。</p>
+<li><p>http-equiv属性: 也需要与content属性配合使用，前者是用于声明即将修改哪些属性值，而实际的属性值内容，在content中描述。而这个属性的用途是把 content 属性关联到 HTTP 头部。<br>常用属性值：</p>
+<ul>
+<li>Content-Type HTML4.01之前的文档内容编码声明。</li>
+<li>refresh 网页刷新</li>
+<li><p>set-Cookie 设置浏览器cookie缓存</p>
+<p>http-equiv 属性为名称/值对提供了名称。并指示服务器在发送实际的文档之前先在要传送给浏览器的 MIME 文档头部包含名称/值对。</p>
+<p>当服务器向浏览器发送文档时，会先发送许多名称/值对。虽然有些服务器会发送许多这种名称/值对，但是所有服务器都至少要发送一个：content-type:text/html。这将告诉浏览器准备接受一个 HTML 文档。</p>
+<p>使用带有 http-equiv 属性的 <meta> 标签时，服务器将把名称/值对添加到发送给浏览器的内容头部。例如，添加：</p>
 </li>
 </ul>
-<h1 id="12-对BFC规范的理解"><a href="#12-对BFC规范的理解" class="headerlink" title="12.对BFC规范的理解"></a>12.对BFC规范的理解</h1><ul>
-<li><p>BFC全称是Block Formatting Context，即块格式化上下文。它是CSS2.1规范定义的，关于CSS渲染定位的一个概念。</p>
 </li>
-<li><p>BFC是页面CSS 视觉渲染的一部分，用于决定块盒子的布局及浮动相互影响范围的一个区域。</p>
-</li>
-<li><p>BFC的一个最重要的效果是，让处于BFC内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。</p>
-</li>
-<li><p>利用BFC可以闭合浮动，防止与浮动元素重叠。</p>
-</li>
-</ul>
-<h1 id="13-WEB应用从服务器主动推送Data到客户端有那些方式"><a href="#13-WEB应用从服务器主动推送Data到客户端有那些方式" class="headerlink" title="13.WEB应用从服务器主动推送Data到客户端有那些方式"></a>13.WEB应用从服务器主动推送Data到客户端有那些方式</h1><ol>
-<li>Html5 websoket</li>
-<li>WebSocket 通过 Flash</li>
-<li>XHR长时间连接</li>
-<li>XHR Multipart Streaming</li>
-<li>不可见的Iframe</li>
-<li>&lt;script&gt;标签的长时间连接(可跨域)</li>
 </ol>
-<h1 id="14-网站重构的理解"><a href="#14-网站重构的理解" class="headerlink" title="14.网站重构的理解"></a>14.网站重构的理解</h1><ul>
-<li>重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。</li>
-</ul>
-<ol>
-<li>使网站前端兼容于现代浏览器(针对于不合规范的CSS、如对IE6有效的)</li>
-<li>对于移动平台的优化，针对于SEO进行优化</li>
-<li>减少代码间的耦合，让代码保持弹性</li>
-<li>压缩或合并JS、CSS、image等前端资源</li>
-</ol>
-<h1 id="15-对标签语义化的理解"><a href="#15-对标签语义化的理解" class="headerlink" title="15.对标签语义化的理解"></a>15.对标签语义化的理解</h1><ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"charset"</span> <span class="attr">content</span>=<span class="string">"iso-8859-1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"expires"</span> <span class="attr">content</span>=<span class="string">"31 Dec 2008"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样发送到浏览器的头部就应该包含：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">content-type: text/html</span><br><span class="line">charset:iso-8859-1</span><br><span class="line">expires:31 Dec 2008</span><br></pre></td></tr></table></figure>
+<h1 id="对标签语义化的理解"><a href="#对标签语义化的理解" class="headerlink" title="对标签语义化的理解"></a>对标签语义化的理解</h1><ul>
 <li><p>去掉或者丢失样式的时候能够让页面呈现出清晰的结构；</p>
 </li>
 <li><p>有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；</p>
@@ -608,7 +554,21 @@
 <li><p>便于团队开发和维护，语义化更具可读性，遵循W3C标准的团队都遵循这个标准，可以减少差异化。</p>
 </li>
 </ul>
-<h1 id="16-HTML与XHTML二者有什么区别"><a href="#16-HTML与XHTML二者有什么区别" class="headerlink" title="16.HTML与XHTML二者有什么区别"></a>16.HTML与XHTML二者有什么区别</h1><ol>
+<h1 id="以前端角度出发做好SEO需要考虑什么"><a href="#以前端角度出发做好SEO需要考虑什么" class="headerlink" title="以前端角度出发做好SEO需要考虑什么"></a>以前端角度出发做好SEO需要考虑什么</h1><ul>
+<li><p>了解搜索引擎如何抓取网页和如何索引网页</p>
+</li>
+<li><p>meta标签优化</p>
+</li>
+<li><p>关键词分析</p>
+</li>
+<li><p>付费给搜索引擎</p>
+</li>
+<li><p>链接交换和链接广泛度（Link Popularity）</p>
+</li>
+<li><p>合理的标签使用</p>
+</li>
+</ul>
+<h1 id="HTML与XHTML二者有什么区别"><a href="#HTML与XHTML二者有什么区别" class="headerlink" title="HTML与XHTML二者有什么区别"></a>HTML与XHTML二者有什么区别</h1><ol>
 <li><p>XHTML 元素必须被正确地嵌套。</p>
 </li>
 <li><p>XHTML 元素必须被关闭。</p>
@@ -618,52 +578,50 @@
 <li><p>XHTML 文档必须拥有根元素。</p>
 </li>
 </ol>
-<h1 id="17-请列举几种隐藏元素的方法"><a href="#17-请列举几种隐藏元素的方法" class="headerlink" title="17.请列举几种隐藏元素的方法"></a>17.请列举几种隐藏元素的方法</h1><ol>
-<li>visibility: hidden；这个属性只是简单的隐藏某个元素，但是元素占用的空间任然存在。</li>
-<li>opacity: 0；一个CSS3属性，设置0可以使一个元素完全透明，制作出和visibility一样的效果。与visibility相比，它可以被transition和animate</li>
-<li>position: absolute；使元素脱离文档流，处于普通文档之上，给它设置一个很大的left负值定位，使元素定位在可见区域之外。</li>
-<li>display: none；元素会变得不可见，并且不会再占用文档的空间。</li>
-<li>transform: scale(0)；将一个元素设置为无限小，这个元素将不可见。这个元素原来所在的位置将被保留。</li>
-<li>HTML5 hidden attribute；hidden属性的效果和display:none;相同，这个属性用于记录一个元素的状态</li>
-<li>height: 0; overflow: hidden；将元素在垂直方向上收缩为0,使元素消失。只要元素没有可见的边框，该技术就可以正常工作。</li>
-<li>filter: blur(0)；将一个元素的模糊度设置为0，从而使这个元素“消失”在页面中。</li>
+<h1 id="DOCTYPE作用是什么以及标准模式与兼容模式的区别"><a href="#DOCTYPE作用是什么以及标准模式与兼容模式的区别" class="headerlink" title="DOCTYPE作用是什么以及标准模式与兼容模式的区别"></a>DOCTYPE作用是什么以及标准模式与兼容模式的区别</h1><ol>
+<li><p>&lt;!DOCTYPE&gt;声明位于HTML文档中的第一行，处于 <html> 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。</html></p>
+</li>
+<li><p>标准模式的排版 和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。</p>
+</li>
 </ol>
-<h1 id="18-CSS的选择器"><a href="#18-CSS的选择器" class="headerlink" title="18.CSS的选择器"></a>18.CSS的选择器</h1><ul>
-<li><p>元素选择器：* 、E、 E#id、 E.class</p>
-</li>
-<li><p>关系选择器：E、F、E&gt;F、E+F、E~F</p>
-</li>
-<li><p>属性选择器：E[att]、E[att=”val”]、E[att~=”val”]、E[att^=”val”]、E[att$=”val”]、E[att*=”val”]、E[att|=”val”]</p>
-</li>
-<li><p>伪类选择器：E:link、E:visited、E:hover、E:active、E:focus、E:lang(fr)、E:not(s)、E:root、E:first-child、E:last-chil等</p>
-</li>
-<li><p>伪对象选择器：E:first-letter/E::first-letter、E:first-line/E::first-line、E:before/E::before、E:after/E::after、E::selection</p>
-</li>
-</ul>
-<h1 id="19-CSS的权重规则"><a href="#19-CSS的权重规则" class="headerlink" title="19.CSS的权重规则"></a>19.CSS的权重规则</h1><ul>
-<li>一个行内样式：+1000；</li>
-<li>一个ID：+100；</li>
-<li>属性选择器/class类/伪类选择器：+10；</li>
-<li>一个元素名/伪对象选择器：+1。</li>
-</ul>
-<h1 id="20-CSS伪类与CSS伪对象的区别"><a href="#20-CSS伪类与CSS伪对象的区别" class="headerlink" title="20.CSS伪类与CSS伪对象的区别"></a>20.CSS伪类与CSS伪对象的区别</h1><ul>
-<li>CSS 引入伪类和伪元素的概念是为了描述一些现有CSS无法描述的东西，根本区别在于：它们是否创造了新的元素（抽象）</li>
+<h1 id="HTML5-为什么只需要写-lt-DOCTYPE-HTML-gt"><a href="#HTML5-为什么只需要写-lt-DOCTYPE-HTML-gt" class="headerlink" title="HTML5 为什么只需要写&lt;!DOCTYPE HTML&gt;"></a>HTML5 为什么只需要写&lt;!DOCTYPE HTML&gt;</h1><p>HTML5 不基于 SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）；而HTML4.01基于SGML,所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型。</p>
+<p>问：如果我不放入&lt;!DOCTYPE html&gt; ，HTML5还会工作么？<br>答：不会，浏览器将不能识别他是HTML文档，同时HTML5的标签将不能正常工作。</p>
+<h1 id="iframe有哪些缺点"><a href="#iframe有哪些缺点" class="headerlink" title="iframe有哪些缺点"></a>iframe有哪些缺点</h1><ol>
+<li>iframe会阻塞主页面的Onload事件；</li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于SEO；</li>
+<li>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。</li>
+</ol>
+<blockquote>
+<p>如果需要使用iframe，最好是通过javascript动态给iframe添加src属性值，这样可以绕开以上两个问题。</p>
+</blockquote>
+<h1 id="Label的作用是什么以及它该如何使用"><a href="#Label的作用是什么以及它该如何使用" class="headerlink" title="Label的作用是什么以及它该如何使用"></a>Label的作用是什么以及它该如何使用</h1><ol>
+<li>作用：label标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。</li>
+<li>用法：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"Name"</span>&gt;</span>Number:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">“text“name</span>=<span class="string">"Name"</span> <span class="attr">id</span>=<span class="string">"Name"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span>Date:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"B"</span>/&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="canvas和svg图形的区别是什么"><a href="#canvas和svg图形的区别是什么" class="headerlink" title="canvas和svg图形的区别是什么"></a>canvas和svg图形的区别是什么</h1><p><img src="http://ouwxj7f40.bkt.clouddn.com/35395982-bcb9f8ec-0226-11e8-8e81-f9629afb4506.png" alt="35395982-bcb9f8ec-0226-11e8-8e81-f9629afb4506"></p>
+<h1 id="简述盒模型"><a href="#简述盒模型" class="headerlink" title="简述盒模型"></a>简述盒模型</h1><ul>
+<li>文档中的每个元素被描绘为矩形盒子。盒子有四个边界：外边距边界margin, 边框边界border, 内边距边界padding与内容边界content。CSS3中有个box-sizing属性可以控制盒子的计算方式:</li>
 </ul>
 <ol>
-<li>伪类：一开始用来表示一些元素的动态状态，随后CSS2标准扩展了其概念范围，使其成为了所有逻辑上存在但在文档树中却无须标识的“幽灵”分类。</li>
-<li>伪对象：代表了某个元素的子元素，这个子元素虽然在逻辑上存在，但却并不实际存在于文档树中。</li>
+<li><p>W3C盒子模型：content-box：padding和border不被包含在定义的width和height之内。对象的实际宽度等于设置的width值和border、padding之和。</p>
+</li>
+<li><p>IE6盒子模型：border-box：padding和border被包含在定义的width和height之内。对象的实际宽度就等于设置的width值。</p>
+</li>
 </ol>
-<h1 id="21-position的几个取值"><a href="#21-position的几个取值" class="headerlink" title="21.position的几个取值"></a>21.position的几个取值</h1><ul>
-<li><p>absolute：生成绝对定位的元素，相对于 static 定位以外的第一个祖先元素进行定位。</p>
+<h1 id="position的几个取值以及它们定位的原点"><a href="#position的几个取值以及它们定位的原点" class="headerlink" title="position的几个取值以及它们定位的原点"></a>position的几个取值以及它们定位的原点</h1><ul>
+<li><p>absolute：生成绝对定位的元素，相对于值不为 static的第一个父元素进行定位。</p>
 </li>
 <li><p>fixed：生成绝对定位的元素，相对于浏览器窗口进行定位。 （IE6不支持）。</p>
 </li>
 <li><p>relative：生成相对定位的元素，相对于其在普通流中的位置进行定位。</p>
 </li>
-<li><p>static：默认值。没有定位，元素出现在正常的流中。</p>
+<li><p>static：默认值。没有定位，元素出现在正常的流中忽略 top, bottom, left, right z-index 声明）。</p>
+</li>
+<li><p>inherit：规定从父元素继承 position 属性的值。</p>
 </li>
 </ul>
-<h1 id="22-position的absolute与fixed的异同点"><a href="#22-position的absolute与fixed的异同点" class="headerlink" title="22.position的absolute与fixed的异同点"></a>22.position的absolute与fixed的异同点</h1><ul>
+<h1 id="position的absolute与fixed的异同点"><a href="#position的absolute与fixed的异同点" class="headerlink" title="position的absolute与fixed的异同点"></a>position的absolute与fixed的异同点</h1><ul>
 <li><p>相同：</p>
 <ol>
 <li>改变行内元素的呈现方式，display被置为block</li>
@@ -678,7 +636,102 @@
 </ol>
 </li>
 </ul>
-<h1 id="23-外边距重叠"><a href="#23-外边距重叠" class="headerlink" title="23.外边距重叠"></a>23.外边距重叠</h1><ul>
+<h1 id="display的取值以及它们的作用"><a href="#display的取值以及它们的作用" class="headerlink" title="display的取值以及它们的作用"></a>display的取值以及它们的作用</h1><ol>
+<li>block     块类型。默认宽度为父元素宽度，可设置宽高，换行显示。</li>
+<li>none     缺省值。象行内元素类型一样显示。</li>
+<li>inline     行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。</li>
+<li>inline-block     默认宽度为内容宽度，可以设置宽高，同行显示。</li>
+<li>list-item     像块类型元素一样显示，并添加样式列表标记。</li>
+<li>table     此元素会作为块级表格来显示。</li>
+<li>inherit     规定应该从父元素继承 display 属性的值。</li>
+</ol>
+<h1 id="CSS3的Flexbox（弹性盒布局模型）以及适用场景"><a href="#CSS3的Flexbox（弹性盒布局模型）以及适用场景" class="headerlink" title="CSS3的Flexbox（弹性盒布局模型）以及适用场景"></a>CSS3的Flexbox（弹性盒布局模型）以及适用场景</h1><ol>
+<li>一个用于页面布局的全新CSS3功能，Flexbox可以把列表放在同一个方向（从上到下排列，从左到右），并让列表能延伸到占用可用的空间。</li>
+<li>较为复杂的布局还可以通过嵌套一个伸缩容器（flex container）来实现。</li>
+<li>采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。</li>
+<li>它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。</li>
+<li>常规布局是基于块和内联流方向，而Flex布局是基于flex-flow流可以很方便的用来做居中，能对不同屏幕大小自适应。</li>
+<li>在布局上有了比以前更加灵活的空间。</li>
+</ol>
+<h1 id="CSS中的文档流"><a href="#CSS中的文档流" class="headerlink" title="CSS中的文档流"></a>CSS中的文档流</h1><p>普通流就是正常的文档流，在HTML里面的写法就是从上到下，从左到右的排版布局。其中涉及到了块状元素和内联元素。脱离文档流的几个属性：绝对定位(absolute)、固定定位(fixed)、浮动(float)。</p>
+<h1 id="请列举几种可以清除浮动的方法"><a href="#请列举几种可以清除浮动的方法" class="headerlink" title="请列举几种可以清除浮动的方法"></a>请列举几种可以清除浮动的方法</h1><ul>
+<li>浮动会漂浮于普通流之上，像浮云一样，但是只能左右浮动。正是这种特性，导致框内部由于不存在其他普通流元素了，表现出高度为0（高度塌陷）。</li>
+</ul>
+<ol>
+<li>添加额外标签，例如\&lt;div style=”clear:both”/div&gt;</li>
+<li>使用br标签和其自身的html属性，例如\<br clear="all"></li>
+<li>父元素设置 overflow：hidden；在IE6中还需要触发hasLayout，例如zoom:1；</li>
+<li>父元素设置 overflow：auto；同样IE6需要触发hasLayout；</li>
+<li>父元素也设置浮动；</li>
+<li>父元素设置display: table；</li>
+<li>使用 :after 伪元素；由于IE6-7不支持 :after，使用 zoom: 1 触发<a href="http://yiminghe.iteye.com/blog/367384" target="_blank" rel="noopener">hasLayout</a>。</li>
+</ol>
+<ul>
+<li><p>在CSS2.1里面有一个很重要的概念，那就是 Block formatting contexts （块级格式化上下文），简称<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener">BFC</a>。</p>
+</li>
+<li><p>创建了BFC的元素就是一个独立的盒子，里面的子元素不会在布局上影响外面的元素，同时BFC仍然属于文档中的普通流。</p>
+</li>
+<li><p>IE6-7的显示引擎使用的是一个称为布局（layout）的内部概念。</p>
+</li>
+</ul>
+<h1 id="对BFC规范的理解"><a href="#对BFC规范的理解" class="headerlink" title="对BFC规范的理解"></a>对BFC规范的理解</h1><ul>
+<li><p>BFC全称是Block Formatting Context，即块格式化上下文。它是CSS2.1规范定义的，关于CSS渲染定位的一个概念。</p>
+</li>
+<li><p>BFC是页面CSS 视觉渲染的一部分，用于决定块盒子的布局及浮动相互影响范围的一个区域。</p>
+</li>
+<li><p>BFC的一个最重要的效果是，让处于BFC内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。</p>
+</li>
+<li><p>利用BFC可以闭合浮动、防止与浮动元素重叠、以及多栏布局的一种方式。</p>
+</li>
+</ul>
+<h1 id="请列举几种隐藏元素的方法"><a href="#请列举几种隐藏元素的方法" class="headerlink" title="请列举几种隐藏元素的方法"></a>请列举几种隐藏元素的方法</h1><ol>
+<li>visibility: hidden；这个属性只是简单的隐藏某个元素，但是元素占用的空间任然存在。</li>
+<li>opacity: 0；一个CSS3属性，设置0可以使一个元素完全透明，制作出和visibility一样的效果。与visibility相比，它可以被transition和animate</li>
+<li>position: absolute；使元素脱离文档流，处于普通文档之上，给它设置一个很大的left负值定位，使元素定位在可见区域之外。</li>
+<li>display: none；元素会变得不可见，并且不会再占用文档的空间。</li>
+<li>transform: scale(0)；将一个元素设置为无限小，这个元素将不可见。这个元素原来所在的位置将被保留。</li>
+<li>HTML5 hidden attribute；hidden属性的效果和display:none;相同，这个属性用于记录一个元素的状态</li>
+<li>height: 0; overflow: hidden；将元素在垂直方向上收缩为0,使元素消失。只要元素没有可见的边框，该技术就可以正常工作。</li>
+<li>filter: blur(0)；将一个元素的模糊度设置为0，从而使这个元素“消失”在页面中。</li>
+</ol>
+<h1 id="CSS选择器以及可以继承的css属性"><a href="#CSS选择器以及可以继承的css属性" class="headerlink" title="CSS选择器以及可以继承的css属性"></a>CSS选择器以及可以继承的css属性</h1><ol>
+<li>id选择器（ # myid）</li>
+<li>类选择器（.myclassname）</li>
+<li>标签选择器（div, h1, p）</li>
+<li>相邻选择器（h1 + p）</li>
+<li>子选择器（ul &gt; li）</li>
+<li>后代选择器（li a）</li>
+<li>通配符选择器（ * ）</li>
+<li>属性选择器（a[rel = “external”]）</li>
+<li>伪类选择器（a:hover, li:nth-child）</li>
+</ol>
+<ul>
+<li>可继承的样式： font-size font-family color, UL LI DL DD DT</li>
+<li>不可继承的样式：border padding margin width height</li>
+</ul>
+<h1 id="CSS的权重规则"><a href="#CSS的权重规则" class="headerlink" title="CSS的权重规则"></a>CSS的权重规则</h1><ul>
+<li>一个行内样式：+1000；</li>
+<li>一个ID：+100；</li>
+<li>属性选择器/class类/伪类选择器：+10；</li>
+<li>一个元素名/伪对象选择器：+1。</li>
+</ul>
+<h1 id="CSS3新增伪类有那些"><a href="#CSS3新增伪类有那些" class="headerlink" title="CSS3新增伪类有那些"></a>CSS3新增伪类有那些</h1><ol>
+<li>p:first-of-type     选择属于其父元素的首个 \<p> 元素的每个\</p><p>元素。</p></li>
+<li>p:last-of-type        选择属于其父元素的最后 \<p>元素的每个\</p><p>元素。</p></li>
+<li>p:only-of-type     选择属于其父元素唯一的 \<p>元素的每个 </p><p> 元素。</p></li>
+<li>p:only-child     选择属于其父元素的唯一子元素的每个 \<p>元素。</p></li>
+<li>p:nth-child(2)        选择属于其父元素的第二个子元素的每个 \<p> 元素。</p></li>
+<li>:checked      单选框或复选框被选中。</li>
+<li>:disabled     控制表单控件的禁用状态。</li>
+</ol>
+<h1 id="CSS伪类与CSS伪对象的区别"><a href="#CSS伪类与CSS伪对象的区别" class="headerlink" title="CSS伪类与CSS伪对象的区别"></a>CSS伪类与CSS伪对象的区别</h1><ul>
+<li>CSS 引入伪类和伪元素的概念是为了描述一些现有CSS无法描述的东西，根本区别在于：它们是否创造了新的元素（抽象）</li>
+</ul>
+<ol>
+<li>伪类：一开始用来表示一些元素的动态状态，随后CSS2标准扩展了其概念范围，使其成为了所有逻辑上存在但在文档树中却无须标识的“幽灵”分类。</li>
+<li>伪对象：代表了某个元素的子元素，这个子元素虽然在逻辑上存在，但却并不实际存在于文档树中。</li>
+</ol>
+<h1 id="外边距重叠"><a href="#外边距重叠" class="headerlink" title="外边距重叠"></a>外边距重叠</h1><ul>
 <li><p>外边距重叠就是margin-collapse。在CSS当中，相邻的两个盒子（可能是兄弟关系也可能是祖先关系）的外边距可以结合成一个单独的外边距。这种合并外边距的方式被称为折叠，并且因而所结合成的外边距称为折叠外边距。</p>
 </li>
 <li><p>折叠结果遵循下列计算规则：</p>
@@ -689,7 +742,56 @@
 </ol>
 </li>
 </ul>
-<h1 id="24-什么是JavaScript闭包"><a href="#24-什么是JavaScript闭包" class="headerlink" title="24.什么是JavaScript闭包"></a>24.什么是JavaScript闭包</h1><ul>
+<h1 id="px和em的区别"><a href="#px和em的区别" class="headerlink" title="px和em的区别"></a>px和em的区别</h1><ul>
+<li><p>px和em都是长度单位，区别是，px的值是固定的，指定是多少就是多少，计算比较容易。em得值不是固定的，并且em会继承父级元素的字体大小。</p>
+</li>
+<li><p>浏览器的默认字体高都是16px。所以未经调整的浏览器都符合: 1em=16px。那么12px=0.75em, 10px=0.625em。</p>
+</li>
+</ul>
+<h1 id="em和rem的区别"><a href="#em和rem的区别" class="headerlink" title="em和rem的区别"></a>em和rem的区别</h1><ul>
+<li>em是相对长度单位，相对于当前对象内文本的字体尺寸；</li>
+<li>em是CSS3新增的一个相对单位（root em，根em），这个单位与em有什么区别呢？区别在于使用rem为元素设定字体大小时，仍然是相对大小，但相对的只是HTML根元素。</li>
+</ul>
+<h1 id="用纯CSS创建一个三角形的原理"><a href="#用纯CSS创建一个三角形的原理" class="headerlink" title="用纯CSS创建一个三角形的原理"></a>用纯CSS创建一个三角形的原理</h1><p>把上、左、右三条边框隐藏掉（颜色设为 transparent）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">border</span>: transparent solid <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">#005AA0</span> solid <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="li与li之间有看不见的空白间隔是什么原因引起的以及它的解决办法"><a href="#li与li之间有看不见的空白间隔是什么原因引起的以及它的解决办法" class="headerlink" title="li与li之间有看不见的空白间隔是什么原因引起的以及它的解决办法"></a>li与li之间有看不见的空白间隔是什么原因引起的以及它的解决办法</h1><p>行框的排列会受到中间空白（回车\空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为0，就没有空格了。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      ul &#123;</span></span><br><span class="line"><span class="undefined">        list-style: none;</span></span><br><span class="line"><span class="css">        <span class="comment">/*解决空格问题*/</span></span></span><br><span class="line"><span class="undefined">        font-size: 0;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      li &#123;</span></span><br><span class="line"><span class="undefined">        display: inline-block;</span></span><br><span class="line"><span class="undefined">        height: 70px;</span></span><br><span class="line"><span class="undefined">        width: 150px;</span></span><br><span class="line"><span class="undefined">        line-height: 70px;</span></span><br><span class="line"><span class="undefined">        text-align: center;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">border</span>: <span class="selector-id">#005AA0</span> <span class="selector-tag">solid</span> 2<span class="selector-tag">px</span>;</span></span><br><span class="line"><span class="css">        <span class="comment">/*解决空格问题*/</span></span></span><br><span class="line"><span class="undefined">        font-size: 16px;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>li标签<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>li标签<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>li标签<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="如何解决图片与文字的不对齐"><a href="#如何解决图片与文字的不对齐" class="headerlink" title="如何解决图片与文字的不对齐"></a>如何解决图片与文字的不对齐</h1><ol>
+<li>vertical-align：最有效的一种方式；</li>
+<li>margin： 需要不断调试图片的高度，精确度难以保证；</li>
+<li>position：同样是需要不断调试图片的高度，精确度难以保证。</li>
+</ol>
+<h1 id="png、jpg、gif-这些图片格式解释一下，分别什么时候用，有没有了解过webp？"><a href="#png、jpg、gif-这些图片格式解释一下，分别什么时候用，有没有了解过webp？" class="headerlink" title="png、jpg、gif 这些图片格式解释一下，分别什么时候用，有没有了解过webp？"></a>png、jpg、gif 这些图片格式解释一下，分别什么时候用，有没有了解过webp？</h1><ol>
+<li><p>GIF是一种索引颜色格式，在颜色数很少的情况下，产生的文件极小。GIF格式支持背景透明；GIF格式支持动画；GIF格式支持图形渐进；GIF格式支持无损压缩。</p>
+</li>
+<li><p>JPG最主要的优点是能支持上百万种颜色，从而可以用来表现照片。此外，由于JPG图片使用更有效的有损压缩算法，从而使文件长度更小，下载时间更短。JPG较GIF更适合于照片，因为在照片中损失一些细节不像对艺术线条那么明显。另外，JPG对照片的压缩比例更大，而最后的质量也更好。</p>
+</li>
+<li><p>PNG 是20世纪90年代中期开始开发的图像文件存储格式，其目的是企图替代GIF和TIFF文件格式，同时增加一些GIF文件格式所不具备的特性。png是一种无损耗的图像格式。</p>
+</li>
+<li><p>Webp格式：Google开发的一种旨在加快图片加载速度的图片格式。图片压缩体积大约只有JPEG的2/3，并能节省大量的服务器带宽资源和数据空间。Facebook Ebay等知名网站已经开始测试并使用WebP格式。当然其也是一种有损压缩，其主要目的就是加快网络图片的传输效率，让图片能更快的显示在用户的眼前。目前所知道的只有高版本的W3C浏览器才支持这种格式，比如chorme39+，safari7+等等。</p>
+</li>
+</ol>
+<h1 id="什么是CSS-预处理器-后处理器"><a href="#什么是CSS-预处理器-后处理器" class="headerlink" title="什么是CSS 预处理器/后处理器"></a>什么是CSS 预处理器/后处理器</h1><ul>
+<li><p>预处理器：LESS、Sass、Stylus，用来预编译Sass或less，增强了css代码的复用性，还有层级、mixin、变量、循环、函数等，具有很方便的UI组件模块化开发能力，极大的提高工作效率。</p>
+</li>
+<li><p>后处理器：Postcss，通常被视为在完成的样式表中根据CSS规范处理CSS，让其更有效；目前最常做的是给CSS属性添加浏览器私有前缀，实现跨浏览器兼容性的问题。</p>
+</li>
+</ul>
+<h1 id="什么是CSS-Hack"><a href="#什么是CSS-Hack" class="headerlink" title="什么是CSS Hack"></a>什么是CSS Hack</h1><p>针对不同的浏览器写不同的CSS,就是 CSS Hack。<br>IE浏览器Hack一般又分为三种，条件Hack、属性级Hack、选择符Hack（详细参考CSS文档：<a href="http://www.phpstudy.net/css3/" target="_blank" rel="noopener">css文档</a>）。例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> // 1、条件Hack</span><br><span class="line">&lt;!<span class="selector-tag">--</span><span class="selector-attr">[if IE]</span>&gt;</span><br><span class="line">   &lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">         <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:red;&#125;</span><br><span class="line">   &lt;/style&gt;</span><br><span class="line">&lt;!<span class="selector-attr">[endif]</span><span class="selector-tag">--</span>&gt;</span><br><span class="line">// 2、属性Hack</span><br><span class="line"> <span class="selector-class">.test</span>&#123;</span><br><span class="line"> <span class="attribute">color</span>:<span class="number">#090</span>\<span class="number">9</span>; <span class="comment">/* For IE8+ */</span></span><br><span class="line"> *color:#f00;  /* For IE7 and earlier */</span><br><span class="line"> _<span class="selector-tag">color</span>:<span class="selector-id">#ff0</span>;  <span class="comment">/* For IE6 and earlier */</span></span><br><span class="line"> &#125;</span><br><span class="line">// 3、选择符Hack</span><br><span class="line"> * <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#090</span>;&#125;       <span class="comment">/* For IE6 and earlier */</span></span><br><span class="line"> * + <span class="selector-tag">html</span> <span class="selector-class">.test</span>&#123;<span class="attribute">color</span>:<span class="number">#ff0</span>;&#125;     <span class="comment">/* For IE7 */</span></span><br></pre></td></tr></table></figure>
+<h1 id="什么叫优雅降级和渐进增强及其区别"><a href="#什么叫优雅降级和渐进增强及其区别" class="headerlink" title="什么叫优雅降级和渐进增强及其区别"></a>什么叫优雅降级和渐进增强及其区别</h1><ul>
+<li><p>渐进增强 progressive enhancement：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
+</li>
+<li><p>优雅降级 graceful degradation：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</p>
+<p>  区别：</p>
+</li>
+</ul>
+<ol>
+<li>优雅降级是从复杂的现状开始，并试图减少用户体验的供给；</li>
+<li>渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要；</li>
+<li>降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。</li>
+</ol>
+<h1 id="什么是JavaScript闭包"><a href="#什么是JavaScript闭包" class="headerlink" title="什么是JavaScript闭包"></a>什么是JavaScript闭包</h1><ul>
 <li><p>当函数可以记住并访问所在的作用域时，就产生了闭包，即使函数是在当前作用域之外执行。闭包有如下特性：</p>
 <ol>
 <li>JavaScript允许你使用在当前函数以外定义的变量</li>
@@ -703,7 +805,7 @@
 <li><p>在定时器、事件监听器、Ajax请求、跨窗口通信、Web Workers或者任何其他的异步（或者同步）任务中，只要使用了回调函数，实际上就是在使用闭包！</p>
 </li>
 </ul>
-<h1 id="25-JS如何实现面向对象和继承机制"><a href="#25-JS如何实现面向对象和继承机制" class="headerlink" title="25.JS如何实现面向对象和继承机制"></a>25.JS如何实现面向对象和继承机制</h1><ul>
+<h1 id="JS如何实现面向对象和继承机制"><a href="#JS如何实现面向对象和继承机制" class="headerlink" title="JS如何实现面向对象和继承机制"></a>JS如何实现面向对象和继承机制</h1><ul>
 <li><p>创建对象方法：</p>
 <ol>
 <li>利用json创建对象</li>
@@ -715,14 +817,14 @@
 <ol>
 <li>构造函数绑定，使用call或apply方法，将父对象的构造函数绑定在子对象上</li>
 <li>prototype模式，继承new函数的模式</li>
-<li>直接继承函数的prototype属性，对b的一种改进</li>
+<li>直接继承函数的prototype属性，对2的一种改进</li>
 <li>利用空对象作为中介</li>
 <li>在ECMAScript5中定义了一个新方法Object.create()，用于创建一个新方法</li>
 <li>拷贝继承，把父对象的所有属性和方法，拷贝进子对象，实现继承。参考<a href="http://myweb.jowai.info/javascript-clone-and-copy-and-whatever/" target="_blank" rel="noopener">《JavaScript中的对象克隆》</a></li>
 </ol>
 </li>
 </ul>
-<h1 id="26-对this指针的理解"><a href="#26-对this指针的理解" class="headerlink" title="26.对this指针的理解"></a>26.对this指针的理解</h1><ul>
+<h1 id="对this指针的理解"><a href="#对this指针的理解" class="headerlink" title="对this指针的理解"></a>对this指针的理解</h1><ul>
 <li><p>this实际上是在函数被调用时发生的绑定，它指向什么完全取决于函数在哪里被调用。</p>
 </li>
 <li><p>this指的是：调用函数的那个对象。</p>
@@ -734,7 +836,14 @@
 <li>作为构造函数调用，就是通过这个函数new一个新对象（object）。这时，this就指这个新对象。</li>
 <li>apply与call的调用，它们的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。</li>
 </ol>
-<h1 id="27-JS常用的绑定事件的方法有哪些"><a href="#27-JS常用的绑定事件的方法有哪些" class="headerlink" title="27.JS常用的绑定事件的方法有哪些"></a>27.JS常用的绑定事件的方法有哪些</h1><ul>
+<h1 id="简述同步和异步"><a href="#简述同步和异步" class="headerlink" title="简述同步和异步"></a>简述同步和异步</h1><p>JavaScript是单线程，一个时间段内，JavaScript只能干一件事情。任务队列分为同步任务和异步任务。</p>
+<ul>
+<li><p>同步是阻塞模式：同步是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程将会一直等待下去，直到收到返回信息才继续执行下去。</p>
+</li>
+<li><p>异步是非阻塞模式：异步是指进程不需要一直等下去，而是继续执行下面的操作，不管其他进程的状态。当有消息返回时系统会通知进程进行处理，这样可以提高执行的效率。</p>
+</li>
+</ul>
+<h1 id="JS常用的绑定事件的方法有哪些"><a href="#JS常用的绑定事件的方法有哪些" class="headerlink" title="JS常用的绑定事件的方法有哪些"></a>JS常用的绑定事件的方法有哪些</h1><ul>
 <li><p>在DOM元素中直接绑定，DOM元素，可以理解为HTML标签，onXXX=”JavaScript Code”，查看事件列表。</p>
 </li>
 <li><p>在JavaScript代码中绑定，elementObject.onXXX=function(){}，通称为DOM0事件系统。</p>
@@ -742,7 +851,14 @@
 <li><p>绑定事件监听函数，标准浏览器使用 addEventListener() ，IE11以下版本attachEvent() 来绑定事件监听函数，通称为DOM2事件系统。</p>
 </li>
 </ul>
-<h1 id="28-解释下javascript的冒泡和捕获"><a href="#28-解释下javascript的冒泡和捕获" class="headerlink" title="28.解释下javascript的冒泡和捕获"></a>28.解释下javascript的冒泡和捕获</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click2"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click3"</span>&gt;</span>事件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Event对象的常见应用"><a href="#Event对象的常见应用" class="headerlink" title="Event对象的常见应用"></a>Event对象的常见应用</h1><ol>
+<li>event.preventDefault()：阻止事件的默认行为</li>
+<li>event.stopPropagation()：阻止事件的进一步传播，也就是阻止冒泡</li>
+<li>event.stopImmediatePropagation()：阻止剩余的事件处理函数的执行，并防止当前事件在DOM树上冒泡。</li>
+<li>event.currentTarget：返回绑定事件的元素</li>
+<li>event.target：返回触发事件的元素</li>
+</ol>
+<h1 id="解释下javascript的冒泡和捕获"><a href="#解释下javascript的冒泡和捕获" class="headerlink" title="解释下javascript的冒泡和捕获"></a>解释下javascript的冒泡和捕获</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click2"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"click3"</span>&gt;</span>事件<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li>Netscape主张元素1的事件首先发生，这种事件发生顺序被称为捕获型。</li>
 <li>微软则保持元素3具有优先权，这种事件顺序被称为冒泡型。</li>
@@ -751,26 +867,18 @@
 <ul>
 <li>事件监听函数addEventListener()的第三个参数就是控制方法是捕获还是冒泡</li>
 </ul>
-<h1 id="29-jQuery的特点"><a href="#29-jQuery的特点" class="headerlink" title="29.jQuery的特点"></a>29.jQuery的特点</h1><ol>
-<li>一款轻量级的js库</li>
-<li>丰富快速的DOM选择器</li>
-<li>链式表达式</li>
-<li>事件、样式、动画等特效支持</li>
-<li>Ajax操作封装，支持跨域</li>
-<li>跨浏览器兼容</li>
-<li>插件扩展开发</li>
-</ol>
-<h1 id="30-js延迟加载的方式有哪些"><a href="#30-js延迟加载的方式有哪些" class="headerlink" title="30.js延迟加载的方式有哪些"></a>30.js延迟加载的方式有哪些</h1><ul>
+<h1 id="js延迟加载的方式有哪些"><a href="#js延迟加载的方式有哪些" class="headerlink" title="js延迟加载的方式有哪些"></a>js延迟加载的方式有哪些</h1><ul>
 <li><p>将script节点放置在最后&lt;/body&gt;之前</p>
 </li>
 <li><p>使用script标签的defer和async属性，defer属性为延迟加载，是在页面渲染完成之后再进行加载的，而async属性则是和文档并行加载</p>
 </li>
-<li><p>通过监听onload事件，动态添加script节点</p>
+<li><p>通过监听onload事件，动态添加script节点创建DOM元素（用得最多）</p>
 </li>
 <li><p>通过ajax下载js脚本，动态添加script节点</p>
 </li>
 </ul>
-<h1 id="31-如何解决跨域问题"><a href="#31-如何解决跨域问题" class="headerlink" title="31.如何解决跨域问题"></a>31.如何解决跨域问题</h1><ul>
+<h1 id="window-onload和DOMContentLoaded的区别"><a href="#window-onload和DOMContentLoaded的区别" class="headerlink" title="window.onload和DOMContentLoaded的区别"></a>window.onload和DOMContentLoaded的区别</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//页面的全部资源加载完才会执行，包括图片、视频等</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//DOM渲染完即可执行，此时图片、视频还可能没有加载完</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="如何解决跨域问题"><a href="#如何解决跨域问题" class="headerlink" title="如何解决跨域问题"></a>如何解决跨域问题</h1><ul>
 <li><p>JSONP（JSON with Padding），填充式JSON</p>
 </li>
 <li><p>iframe跨域</p>
@@ -782,7 +890,7 @@
 <li><p>跨域资源共享（CORS），服务器设置Access-Control-Allow-OriginHTTP响应头之后，浏览器将会允许跨域请求</p>
 </li>
 </ul>
-<h1 id="32-哪些操作会造成内存泄漏"><a href="#32-哪些操作会造成内存泄漏" class="headerlink" title="32.哪些操作会造成内存泄漏"></a>32.哪些操作会造成内存泄漏</h1><ul>
+<h1 id="哪些操作会造成内存泄漏"><a href="#哪些操作会造成内存泄漏" class="headerlink" title="哪些操作会造成内存泄漏"></a>哪些操作会造成内存泄漏</h1><ul>
 <li><p>当页面中元素被移除或替换时，若元素绑定的事件仍没被移除，在IE中不会作出恰当处理，此时要先手工移除事件，不然会存在内存泄露。</p>
 </li>
 <li><p>在IE中，如果循环引用中的任何对象是 DOM 节点或者 ActiveX 对象，垃圾收集系统则不会处理。</p>
@@ -792,7 +900,7 @@
 <li><p>在销毁对象的时候，要遍历属性中属性，依次删除，否则会泄漏。</p>
 </li>
 </ul>
-<h1 id="33-JavaScript中的变量声明提升"><a href="#33-JavaScript中的变量声明提升" class="headerlink" title="33.JavaScript中的变量声明提升"></a>33.JavaScript中的变量声明提升</h1><ul>
+<h1 id="JavaScript中的变量声明提升"><a href="#JavaScript中的变量声明提升" class="headerlink" title="JavaScript中的变量声明提升"></a>JavaScript中的变量声明提升</h1><ul>
 <li><p>函数声明和变量声明总是被JavaScript解释器隐式地提升到包含他们的作用域的最顶端。</p>
 </li>
 <li><p>function优先声明于var。</p>
@@ -801,7 +909,7 @@
 </li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    bar();</span><br><span class="line">    <span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;<span class="comment">//等同于</span></span><br><span class="line">    <span class="keyword">var</span> x;</span><br><span class="line">    bar();</span><br><span class="line">    x = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    foo(); <span class="comment">// TypeError "foo is not a function"</span></span><br><span class="line">    bar(); <span class="comment">// "this will run!"</span></span><br><span class="line">    <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; &#125;<span class="comment">// 函数表达式被赋值给变量'foo'</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123; &#125;<span class="comment">// 名为'bar'的函数声明</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="34-JavaScript原型和原型链"><a href="#34-JavaScript原型和原型链" class="headerlink" title="34.JavaScript原型和原型链"></a>34.JavaScript原型和原型链</h1><ul>
+<h1 id="JavaScript原型和原型链"><a href="#JavaScript原型和原型链" class="headerlink" title="JavaScript原型和原型链"></a>JavaScript原型和原型链</h1><ul>
 <li><p>原型：</p>
 <ol>
 <li>原型是一个对象，其他对象可以通过它实现属性继承。</li>
@@ -816,19 +924,68 @@
 </ol>
 </li>
 </ul>
-<h1 id="35-JavaScript中的作用域和作用域链"><a href="#35-JavaScript中的作用域和作用域链" class="headerlink" title="35.JavaScript中的作用域和作用域链"></a>35.JavaScript中的作用域和作用域链</h1><ul>
+<h1 id="JavaScript中的作用域和作用域链"><a href="#JavaScript中的作用域和作用域链" class="headerlink" title="JavaScript中的作用域和作用域链"></a>JavaScript中的作用域和作用域链</h1><ul>
 <li><p>变量的作用域（scope）：程序源代码中定义这个变量的区域。</p>
 </li>
 <li><p>作用域链：是一个对象列表或链表，这组对象定义了这段代码“作用域中”的变量。查找变量会从第一个对象开始查找，有则用，无则查找链上的下一个对象。</p>
 </li>
 </ul>
-<h1 id="36-jQuery源码以及jQuery的实现原理"><a href="#36-jQuery源码以及jQuery的实现原理" class="headerlink" title="36.jQuery源码以及jQuery的实现原理"></a>36.jQuery源码以及jQuery的实现原理</h1><ul>
+<h1 id="jQuery源码以及jQuery的实现原理"><a href="#jQuery源码以及jQuery的实现原理" class="headerlink" title="jQuery源码以及jQuery的实现原理"></a>jQuery源码以及jQuery的实现原理</h1><ul>
 <li><p>jQuery给我们带来了一个简洁方便的编码模型(1&gt;创建jQuery对象;2&gt;直接使用jQuery对象的属性/方法/事件),</p>
 </li>
 <li><p>一个强悍的dom元素查找器($)，插件式编程接口(jQuery.fn)，以及插件初始化的”配置”对象思想</p>
 </li>
 </ul>
-<h1 id="37-输入完网址按下回车到看到网页这个过程中发生了什么"><a href="#37-输入完网址按下回车到看到网页这个过程中发生了什么" class="headerlink" title="37.输入完网址按下回车到看到网页这个过程中发生了什么"></a>37.输入完网址按下回车到看到网页这个过程中发生了什么</h1><ol>
+<h1 id="jQuery的特点"><a href="#jQuery的特点" class="headerlink" title="jQuery的特点"></a>jQuery的特点</h1><ol>
+<li>一款轻量级的js库</li>
+<li>丰富快速的DOM选择器</li>
+<li>链式表达式</li>
+<li>事件、样式、动画等特效支持</li>
+<li>Ajax操作封装，支持跨域</li>
+<li>跨浏览器兼容</li>
+<li>插件扩展开发</li>
+</ol>
+<h1 id="浏览器的内核分别是什么"><a href="#浏览器的内核分别是什么" class="headerlink" title="浏览器的内核分别是什么"></a>浏览器的内核分别是什么</h1><ul>
+<li>IE: trident内核</li>
+<li>Firefox：gecko内核</li>
+<li>Safari：webkit内核</li>
+<li>Opera：以前是presto内核，现已改用Google Chrome的Blink内核</li>
+<li>Chrome：Blink(基于webkit，Google与Opera Software共同开发)</li>
+</ul>
+<h1 id="经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧"><a href="#经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧" class="headerlink" title="经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧"></a>经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧</h1><ol>
+<li>png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8</li>
+<li>浏览器默认的margin和padding不同，解决方案是加一个全局的*{margin:0;padding:0;}来统一</li>
+<li>IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大</li>
+<li>超链接访问过后hover样式就不出现了 被点击访问过的超链接样式不在具有hover和active了解决方法是改变CSS属性的排列顺序:L-V-H-A : a:link {} a:visited {} a:hover {} a:active {}</li>
+</ol>
+<h1 id="网站重构的理解"><a href="#网站重构的理解" class="headerlink" title="网站重构的理解"></a>网站重构的理解</h1><ul>
+<li>重构：在不改变外部行为的前提下，简化结构、添加可读性，而在网站前端保持一致的行为。</li>
+</ul>
+<ol>
+<li>使网站前端兼容于现代浏览器(针对于不合规范的CSS、如对IE6有效的)</li>
+<li>对于移动平台的优化，针对于SEO进行优化</li>
+<li>减少代码间的耦合，让代码保持弹性</li>
+<li>压缩或合并JS、CSS、image等前端资源</li>
+</ol>
+<h1 id="WEB应用从服务器主动推送Data到客户端有那些方式"><a href="#WEB应用从服务器主动推送Data到客户端有那些方式" class="headerlink" title="WEB应用从服务器主动推送Data到客户端有那些方式"></a>WEB应用从服务器主动推送Data到客户端有那些方式</h1><ol>
+<li>Html5 websoket</li>
+<li>WebSocket 通过 Flash</li>
+<li>XHR长时间连接</li>
+<li>XHR Multipart Streaming</li>
+<li>不可见的Iframe</li>
+<li>&lt;script&gt;标签的长时间连接(可跨域)</li>
+</ol>
+<h1 id="如何实现浏览器内多个标签页之间的通信"><a href="#如何实现浏览器内多个标签页之间的通信" class="headerlink" title="如何实现浏览器内多个标签页之间的通信"></a>如何实现浏览器内多个标签页之间的通信</h1><ol>
+<li>WebSocket、SharedWorker；</li>
+<li>也可以调用localstorge、cookies等本地存储方式；</li>
+</ol>
+<h1 id="webSocket如何兼容低浏览器？"><a href="#webSocket如何兼容低浏览器？" class="headerlink" title="webSocket如何兼容低浏览器？"></a>webSocket如何兼容低浏览器？</h1><ol>
+<li>Adobe Flash Socket ；</li>
+<li>ActiveX HTMLFile (IE) ；</li>
+<li>基于 multipart 编码发送 XHR；</li>
+<li>基于长轮询的 XHR。</li>
+</ol>
+<h1 id="输入完网址按下回车到看到网页这个过程中发生了什么"><a href="#输入完网址按下回车到看到网页这个过程中发生了什么" class="headerlink" title="输入完网址按下回车到看到网页这个过程中发生了什么"></a>输入完网址按下回车到看到网页这个过程中发生了什么</h1><ol>
 <li>域名解析</li>
 <li>发起TCP的3次握手</li>
 <li>建立TCP连接后发起http请求</li>
@@ -836,7 +993,7 @@
 <li>浏览器解析html代码，并请求html代码中的资源</li>
 <li>浏览器对页面进行渲染呈现给用户</li>
 </ol>
-<h1 id="38-关于前端性能优化"><a href="#38-关于前端性能优化" class="headerlink" title="38.关于前端性能优化"></a>38.关于前端性能优化</h1><ul>
+<h1 id="关于前端性能优化"><a href="#关于前端性能优化" class="headerlink" title="关于前端性能优化"></a>关于前端性能优化</h1><ul>
 <li><p>请求优化：合并JS和CSS，减少DNS查找次数，避免重定向，使用GET完成AJAX请求，减小请求中的Cookie，缓存资源，使用CDN，开启GZip，压缩HTML页面，开启长连接，避免行内脚本阻塞并行下载，少用iframe（阻塞onload事件，影响并行下载）。</p>
 </li>
 <li><p>CSS优化：样式表置于页面顶部，避免使用CSS表达式，使用外部JS和CSS，压缩JS和CSS，避免滤镜。</p>
@@ -846,7 +1003,7 @@
 <li><p>图片优化：内联图使用Data:URL，压缩图片或使用WebP格式，固定图片尺寸，图片预加载，图片延迟加载，使用字体矢量图标，Sprites图片。</p>
 </li>
 </ul>
-<h1 id="39-减少页面加载时间的方法"><a href="#39-减少页面加载时间的方法" class="headerlink" title="39.减少页面加载时间的方法"></a>39.减少页面加载时间的方法</h1><ul>
+<h1 id="减少页面加载时间的方法"><a href="#减少页面加载时间的方法" class="headerlink" title="减少页面加载时间的方法"></a>减少页面加载时间的方法</h1><ul>
 <li><p>尽量减少页面中重复的HTTP请求数量</p>
 </li>
 <li><p>服务器开启gzip压缩</p>
@@ -860,21 +1017,7 @@
 <li><p>使用多域名负载网页内的多个文件、图片</p>
 </li>
 </ul>
-<h1 id="40-以前端角度出发做好SEO需要考虑什么"><a href="#40-以前端角度出发做好SEO需要考虑什么" class="headerlink" title="40.以前端角度出发做好SEO需要考虑什么"></a>40.以前端角度出发做好SEO需要考虑什么</h1><ul>
-<li><p>了解搜索引擎如何抓取网页和如何索引网页</p>
-</li>
-<li><p>meta标签优化</p>
-</li>
-<li><p>关键词分析</p>
-</li>
-<li><p>付费给搜索引擎</p>
-</li>
-<li><p>链接交换和链接广泛度（Link Popularity）</p>
-</li>
-<li><p>合理的标签使用</p>
-</li>
-</ul>
-<h1 id="41-一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"><a href="#41-一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。" class="headerlink" title="41.一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"></a>41.一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。</h1><ul>
+<h1 id="一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"><a href="#一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。" class="headerlink" title="一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"></a>一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。</h1><ul>
 <li><p>图片懒加载，滚动到相应位置才加载图片。</p>
 </li>
 <li><p>图片预加载，如果为幻灯片、相册等，将当前展示图片的前一张和后一张优先下载。</p>
@@ -884,27 +1027,43 @@
 <li><p>如果图片过大，可以使用特殊编码的图片，加载时会先加载一张压缩的特别厉害的缩略图，以提高用户体验。</p>
 </li>
 </ul>
-<h1 id="42-请求服务器时的状态码。"><a href="#42-请求服务器时的状态码。" class="headerlink" title="42.请求服务器时的状态码。"></a>42.请求服务器时的状态码。</h1><p><br></p>
+<h1 id="浏览器本地存储"><a href="#浏览器本地存储" class="headerlink" title="浏览器本地存储"></a>浏览器本地存储</h1><ul>
+<li><p>sessionStorage：用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁，是会话级别的存储。</p>
+</li>
+<li><p>localStorage：用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。</p>
+</li>
+</ul>
+<h1 id="web-storage和cookie的区别"><a href="#web-storage和cookie的区别" class="headerlink" title="web storage和cookie的区别"></a>web storage和cookie的区别</h1><ol>
+<li>Cookie的大小是受限的；</li>
+<li>每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽；</li>
+<li>cookie还需要指定作用域，不可以跨域调用；</li>
+<li>Web Storage拥有setItem,getItem等方法，cookie需要前端开发者自己封装setCookie，getCookie；</li>
+<li>Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生；</li>
+<li>IE7、IE6中的UserData通过简单的代码封装可以统一到所有的浏览器都支持web storage；</li>
+</ol>
+<h1 id="请求服务器时的状态码。"><a href="#请求服务器时的状态码。" class="headerlink" title="请求服务器时的状态码。"></a>请求服务器时的状态码。</h1><p><br></p>
 <blockquote>
 <p>1xx：请求收到，继续处理<br>2xx：操作成功收到，分析、接受<br>3xx：完成此请求必须进一步处理<br>4xx：请求包含一个错误语法或不能完成<br>5xx：服务器执行一个完全有效请求失败</p>
 </blockquote>
 <p>常见的有：</p>
 <ol>
-<li><p>200 OK 访问正常<br>表示成功访问,为网站可正常访问时的状态。</p>
+<li><p>200 OK 客户端请求成功<br>表示成功访问,为网站可正常访问时的状态。</p>
 </li>
-<li><p>301 Moved Permanently 301重定向永久重定向<br>对搜索引擎相对友好的跳转方式，当网站更换域名时可将原域名作301永久重定向到新域名，原域名权重可传递到新域名，也常有将不含www的域名301跳转到含www的，如xxx.com通过301跳转到<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> </p>
+<li><p>301 Moved Permanently 永久重定向<br>对搜索引擎相对友好的跳转方式，当网站更换域名时可将原域名作301永久重定向到新域名，原域名权重可传递到新域名，也常有将不含www的域名301跳转到含www的，如xxx.com通过301跳转到<a href="http://www.xxx.com" target="_blank" rel="noopener">www.xxx.com</a> </p>
 </li>
-<li><p>302 Found 为临时重定向<br>易被搜索引擎判为作弊,比如asp程序的response.Redirect()跳转、js跳转或静态http跳转。</p>
+<li><p>302  Moved Temporarily 临时重定向<br>易被搜索引擎判为作弊,比如asp程序的response.Redirect()跳转、js跳转或静态http跳转。</p>
 </li>
-<li><p>400 Bad Request 域名绑定错误<br>一般是服务器上域名未绑定成功，未备案等情况。</p>
+<li><p>400 Bad Request 请求错误<br>由于客户端请求有语法错误，不能被服务器所理解。</p>
 </li>
-<li><p>401 Unauthorized 未授权<br>您的Web服务器认为，客户端发送的 HTTP 数据流是正确的，但进入网址 (URL) 资源 ， 需要用户身份验证 ， 而相关信息 1 ）尚未被提供, 或 2 ）已提供但没有通过授权测试。这就是通常所知的“ HTTP 基本验证 ”。 需客户端提供的验证请求在 HTTP 协议中被定义为 WWW – 验证标头字段 (WWW-Authenticate header field)  </p>
+<li><p>401 Unauthorized 未授权<br>请求未经授权，无法访问。</p>
 </li>
-<li><p>403 Forbidden 没有权限访问此站<br>你的IP被列入黑名单，连接的用户过多，可以过后再试，网站域名解析到了空间，但空间未绑定此域名等情况。</p>
+<li><p>403 Forbidden 服务器收到请求，但是拒绝提供服务。服务器通常会在响应正文中给出不提供服务的原因。<br>你的IP被列入黑名单，连接的用户过多，可以过后再试，网站域名解析到了空间，但空间未绑定此域名等情况。</p>
 </li>
 <li><p>404 Not Found 文件或目录不存在<br>表示请求文件、目录不存在或删除，设置404错误页时需确保返回值为404。常有因为404错误页设置不当导致不存在的网页返回的不是404而导致搜索引擎降权。</p>
 </li>
-<li><p>500 Internal Server Error 程序或服务器错误<br>表示服务器内部程序错误，出现这样的提示一般是程序页面中出现错误，如小的语法错误，数据连接故障等。</p>
+<li><p>500 Internal Server Error 程序或服务器错误<br>表示服务器内部程序错误，出现这样的提示一般是程序页面中出现错误，如小的语法错误，数据连接故障等。 </p>
+</li>
+<li><p>503 Service Unavailable 服务器当前不能够处理客户端的请求<br>在一段时间之后，服务器可能会恢复正常。</p>
 </li>
 </ol>
 
@@ -1085,7 +1244,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1107,7 +1266,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">100</span>
+                <span class="site-state-item-count">121</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1199,7 +1358,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-前端页面由哪三层构成及各层的作用"><span class="nav-number">1.</span> <span class="nav-text">1.前端页面由哪三层构成及各层的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-行内元素有哪些？块级元素有哪些？-空-void-元素有那些？"><span class="nav-number">2.</span> <span class="nav-text">2.行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-简述盒模型"><span class="nav-number">3.</span> <span class="nav-text">3.简述盒模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-什么是CSS-Hack"><span class="nav-number">4.</span> <span class="nav-text">4.什么是CSS Hack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-简述同步和异步"><span class="nav-number">5.</span> <span class="nav-text">5.简述同步和异步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-浏览器的内核分别是什么"><span class="nav-number">6.</span> <span class="nav-text">6.浏览器的内核分别是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-什么叫优雅降级和渐进增强及其区别"><span class="nav-number">7.</span> <span class="nav-text">7.什么叫优雅降级和渐进增强及其区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-px和em的区别"><span class="nav-number">8.</span> <span class="nav-text">8.px和em的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-浏览器本地存储"><span class="nav-number">9.</span> <span class="nav-text">9.浏览器本地存储</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-web-storage和cookie的区别"><span class="nav-number">10.</span> <span class="nav-text">10.web storage和cookie的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-请列举几种可以清除浮动的方法"><span class="nav-number">11.</span> <span class="nav-text">11.请列举几种可以清除浮动的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-对BFC规范的理解"><span class="nav-number">12.</span> <span class="nav-text">12.对BFC规范的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-WEB应用从服务器主动推送Data到客户端有那些方式"><span class="nav-number">13.</span> <span class="nav-text">13.WEB应用从服务器主动推送Data到客户端有那些方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-网站重构的理解"><span class="nav-number">14.</span> <span class="nav-text">14.网站重构的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-对标签语义化的理解"><span class="nav-number">15.</span> <span class="nav-text">15.对标签语义化的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-HTML与XHTML二者有什么区别"><span class="nav-number">16.</span> <span class="nav-text">16.HTML与XHTML二者有什么区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-请列举几种隐藏元素的方法"><span class="nav-number">17.</span> <span class="nav-text">17.请列举几种隐藏元素的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-CSS的选择器"><span class="nav-number">18.</span> <span class="nav-text">18.CSS的选择器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-CSS的权重规则"><span class="nav-number">19.</span> <span class="nav-text">19.CSS的权重规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-CSS伪类与CSS伪对象的区别"><span class="nav-number">20.</span> <span class="nav-text">20.CSS伪类与CSS伪对象的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#21-position的几个取值"><span class="nav-number">21.</span> <span class="nav-text">21.position的几个取值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#22-position的absolute与fixed的异同点"><span class="nav-number">22.</span> <span class="nav-text">22.position的absolute与fixed的异同点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#23-外边距重叠"><span class="nav-number">23.</span> <span class="nav-text">23.外边距重叠</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#24-什么是JavaScript闭包"><span class="nav-number">24.</span> <span class="nav-text">24.什么是JavaScript闭包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#25-JS如何实现面向对象和继承机制"><span class="nav-number">25.</span> <span class="nav-text">25.JS如何实现面向对象和继承机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#26-对this指针的理解"><span class="nav-number">26.</span> <span class="nav-text">26.对this指针的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#27-JS常用的绑定事件的方法有哪些"><span class="nav-number">27.</span> <span class="nav-text">27.JS常用的绑定事件的方法有哪些</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#28-解释下javascript的冒泡和捕获"><span class="nav-number">28.</span> <span class="nav-text">28.解释下javascript的冒泡和捕获</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#29-jQuery的特点"><span class="nav-number">29.</span> <span class="nav-text">29.jQuery的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#30-js延迟加载的方式有哪些"><span class="nav-number">30.</span> <span class="nav-text">30.js延迟加载的方式有哪些</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#31-如何解决跨域问题"><span class="nav-number">31.</span> <span class="nav-text">31.如何解决跨域问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#32-哪些操作会造成内存泄漏"><span class="nav-number">32.</span> <span class="nav-text">32.哪些操作会造成内存泄漏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#33-JavaScript中的变量声明提升"><span class="nav-number">33.</span> <span class="nav-text">33.JavaScript中的变量声明提升</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#34-JavaScript原型和原型链"><span class="nav-number">34.</span> <span class="nav-text">34.JavaScript原型和原型链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#35-JavaScript中的作用域和作用域链"><span class="nav-number">35.</span> <span class="nav-text">35.JavaScript中的作用域和作用域链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#36-jQuery源码以及jQuery的实现原理"><span class="nav-number">36.</span> <span class="nav-text">36.jQuery源码以及jQuery的实现原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#37-输入完网址按下回车到看到网页这个过程中发生了什么"><span class="nav-number">37.</span> <span class="nav-text">37.输入完网址按下回车到看到网页这个过程中发生了什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#38-关于前端性能优化"><span class="nav-number">38.</span> <span class="nav-text">38.关于前端性能优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#39-减少页面加载时间的方法"><span class="nav-number">39.</span> <span class="nav-text">39.减少页面加载时间的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#40-以前端角度出发做好SEO需要考虑什么"><span class="nav-number">40.</span> <span class="nav-text">40.以前端角度出发做好SEO需要考虑什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#41-一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"><span class="nav-number">41.</span> <span class="nav-text">41.一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#42-请求服务器时的状态码。"><span class="nav-number">42.</span> <span class="nav-text">42.请求服务器时的状态码。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端页面由哪三层构成及各层的作用"><span class="nav-number">1.</span> <span class="nav-text">前端页面由哪三层构成及各层的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#行内元素有哪些？块级元素有哪些？-空-void-元素有那些？"><span class="nav-number">2.</span> <span class="nav-text">行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html5有哪些新特性、移除了那些元素？"><span class="nav-number">3.</span> <span class="nav-text">html5有哪些新特性、移除了那些元素？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#meta标签"><span class="nav-number">4.</span> <span class="nav-text">meta标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对标签语义化的理解"><span class="nav-number">5.</span> <span class="nav-text">对标签语义化的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#以前端角度出发做好SEO需要考虑什么"><span class="nav-number">6.</span> <span class="nav-text">以前端角度出发做好SEO需要考虑什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML与XHTML二者有什么区别"><span class="nav-number">7.</span> <span class="nav-text">HTML与XHTML二者有什么区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DOCTYPE作用是什么以及标准模式与兼容模式的区别"><span class="nav-number">8.</span> <span class="nav-text">DOCTYPE作用是什么以及标准模式与兼容模式的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML5-为什么只需要写-lt-DOCTYPE-HTML-gt"><span class="nav-number">9.</span> <span class="nav-text">HTML5 为什么只需要写&lt;!DOCTYPE HTML&gt;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#iframe有哪些缺点"><span class="nav-number">10.</span> <span class="nav-text">iframe有哪些缺点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Label的作用是什么以及它该如何使用"><span class="nav-number">11.</span> <span class="nav-text">Label的作用是什么以及它该如何使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#canvas和svg图形的区别是什么"><span class="nav-number">12.</span> <span class="nav-text">canvas和svg图形的区别是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简述盒模型"><span class="nav-number">13.</span> <span class="nav-text">简述盒模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#position的几个取值以及它们定位的原点"><span class="nav-number">14.</span> <span class="nav-text">position的几个取值以及它们定位的原点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#position的absolute与fixed的异同点"><span class="nav-number">15.</span> <span class="nav-text">position的absolute与fixed的异同点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#display的取值以及它们的作用"><span class="nav-number">16.</span> <span class="nav-text">display的取值以及它们的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS3的Flexbox（弹性盒布局模型）以及适用场景"><span class="nav-number">17.</span> <span class="nav-text">CSS3的Flexbox（弹性盒布局模型）以及适用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS中的文档流"><span class="nav-number">18.</span> <span class="nav-text">CSS中的文档流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请列举几种可以清除浮动的方法"><span class="nav-number">19.</span> <span class="nav-text">请列举几种可以清除浮动的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对BFC规范的理解"><span class="nav-number">20.</span> <span class="nav-text">对BFC规范的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请列举几种隐藏元素的方法"><span class="nav-number">21.</span> <span class="nav-text">请列举几种隐藏元素的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS选择器以及可以继承的css属性"><span class="nav-number">22.</span> <span class="nav-text">CSS选择器以及可以继承的css属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS的权重规则"><span class="nav-number">23.</span> <span class="nav-text">CSS的权重规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS3新增伪类有那些"><span class="nav-number">24.</span> <span class="nav-text">CSS3新增伪类有那些</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS伪类与CSS伪对象的区别"><span class="nav-number">25.</span> <span class="nav-text">CSS伪类与CSS伪对象的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#外边距重叠"><span class="nav-number">26.</span> <span class="nav-text">外边距重叠</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#px和em的区别"><span class="nav-number">27.</span> <span class="nav-text">px和em的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#em和rem的区别"><span class="nav-number">28.</span> <span class="nav-text">em和rem的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用纯CSS创建一个三角形的原理"><span class="nav-number">29.</span> <span class="nav-text">用纯CSS创建一个三角形的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#li与li之间有看不见的空白间隔是什么原因引起的以及它的解决办法"><span class="nav-number">30.</span> <span class="nav-text">li与li之间有看不见的空白间隔是什么原因引起的以及它的解决办法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何解决图片与文字的不对齐"><span class="nav-number">31.</span> <span class="nav-text">如何解决图片与文字的不对齐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#png、jpg、gif-这些图片格式解释一下，分别什么时候用，有没有了解过webp？"><span class="nav-number">32.</span> <span class="nav-text">png、jpg、gif 这些图片格式解释一下，分别什么时候用，有没有了解过webp？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是CSS-预处理器-后处理器"><span class="nav-number">33.</span> <span class="nav-text">什么是CSS 预处理器/后处理器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是CSS-Hack"><span class="nav-number">34.</span> <span class="nav-text">什么是CSS Hack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么叫优雅降级和渐进增强及其区别"><span class="nav-number">35.</span> <span class="nav-text">什么叫优雅降级和渐进增强及其区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是JavaScript闭包"><span class="nav-number">36.</span> <span class="nav-text">什么是JavaScript闭包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS如何实现面向对象和继承机制"><span class="nav-number">37.</span> <span class="nav-text">JS如何实现面向对象和继承机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对this指针的理解"><span class="nav-number">38.</span> <span class="nav-text">对this指针的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简述同步和异步"><span class="nav-number">39.</span> <span class="nav-text">简述同步和异步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS常用的绑定事件的方法有哪些"><span class="nav-number">40.</span> <span class="nav-text">JS常用的绑定事件的方法有哪些</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Event对象的常见应用"><span class="nav-number">41.</span> <span class="nav-text">Event对象的常见应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解释下javascript的冒泡和捕获"><span class="nav-number">42.</span> <span class="nav-text">解释下javascript的冒泡和捕获</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js延迟加载的方式有哪些"><span class="nav-number">43.</span> <span class="nav-text">js延迟加载的方式有哪些</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#window-onload和DOMContentLoaded的区别"><span class="nav-number">44.</span> <span class="nav-text">window.onload和DOMContentLoaded的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何解决跨域问题"><span class="nav-number">45.</span> <span class="nav-text">如何解决跨域问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哪些操作会造成内存泄漏"><span class="nav-number">46.</span> <span class="nav-text">哪些操作会造成内存泄漏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript中的变量声明提升"><span class="nav-number">47.</span> <span class="nav-text">JavaScript中的变量声明提升</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript原型和原型链"><span class="nav-number">48.</span> <span class="nav-text">JavaScript原型和原型链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript中的作用域和作用域链"><span class="nav-number">49.</span> <span class="nav-text">JavaScript中的作用域和作用域链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery源码以及jQuery的实现原理"><span class="nav-number">50.</span> <span class="nav-text">jQuery源码以及jQuery的实现原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery的特点"><span class="nav-number">51.</span> <span class="nav-text">jQuery的特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器的内核分别是什么"><span class="nav-number">52.</span> <span class="nav-text">浏览器的内核分别是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧"><span class="nav-number">53.</span> <span class="nav-text">经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网站重构的理解"><span class="nav-number">54.</span> <span class="nav-text">网站重构的理解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WEB应用从服务器主动推送Data到客户端有那些方式"><span class="nav-number">55.</span> <span class="nav-text">WEB应用从服务器主动推送Data到客户端有那些方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何实现浏览器内多个标签页之间的通信"><span class="nav-number">56.</span> <span class="nav-text">如何实现浏览器内多个标签页之间的通信</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webSocket如何兼容低浏览器？"><span class="nav-number">57.</span> <span class="nav-text">webSocket如何兼容低浏览器？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入完网址按下回车到看到网页这个过程中发生了什么"><span class="nav-number">58.</span> <span class="nav-text">输入完网址按下回车到看到网页这个过程中发生了什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于前端性能优化"><span class="nav-number">59.</span> <span class="nav-text">关于前端性能优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#减少页面加载时间的方法"><span class="nav-number">60.</span> <span class="nav-text">减少页面加载时间的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"><span class="nav-number">61.</span> <span class="nav-text">一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器本地存储"><span class="nav-number">62.</span> <span class="nav-text">浏览器本地存储</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#web-storage和cookie的区别"><span class="nav-number">63.</span> <span class="nav-text">web storage和cookie的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请求服务器时的状态码。"><span class="nav-number">64.</span> <span class="nav-text">请求服务器时的状态码。</span></a></li></ol></div>
             
 
           </div>
