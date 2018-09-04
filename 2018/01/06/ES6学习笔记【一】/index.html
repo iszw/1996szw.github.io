@@ -138,7 +138,7 @@
 <meta property="og:description" content="Info:es6的学习笔记，包括变量定义关键字let&amp;amp;const、块级作用域Scope、箭头函数Arrow Function、类Class以及异步解决方案Promise">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ouwxj7f40.bkt.clouddn.com/%E6%9C%AA%E5%91%BD%E5%90%8D_meitu_0.jpg">
-<meta property="og:updated_time" content="2018-09-01T07:49:43.908Z">
+<meta property="og:updated_time" content="2018-09-04T16:33:55.528Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6学习笔记[一]">
 <meta name="twitter:description" content="Info:es6的学习笔记，包括变量定义关键字let&amp;amp;const、块级作用域Scope、箭头函数Arrow Function、类Class以及异步解决方案Promise">
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,069 words
+                  3,117 words
                 </span>
               
 
@@ -457,7 +457,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14 min
+                  15 min
                 </span>
               
             </div>
@@ -519,7 +519,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * es6中的setter、getter</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name = "es6")&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    get getName()&#123; <span class="comment">//这里的get形似方法，但它实际上是一个属性</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    set setName(value)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> par = <span class="keyword">new</span> Parent()</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'getter: '</span>,par.getName)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'setter: '</span>, par.setName = <span class="string">'es6-cname'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(par.name,par.getName)</span><br><span class="line"></span><br><span class="line"><span class="comment">//因为setter是一个属性，所以不能写成par.setName(es6-cname)</span></span><br><span class="line"><span class="comment">//而是要写成赋值表达式的形式</span></span><br></pre></td></tr></table></figure>
 <h2 id="类的静态方法和静态变量"><a href="#类的静态方法和静态变量" class="headerlink" title="类的静态方法和静态变量"></a>类的静态方法和静态变量</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * es6中的静态方法和静态属性</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name = "es6")&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> tell()&#123; <span class="comment">//定义类的静态方法使用关键字static</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'es6-static'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Parent.type = <span class="string">'es6-class'</span> <span class="comment">//静态属性没有关键字去声明</span></span><br><span class="line"><span class="comment">//定义类的静态属性是在类定义完成后直接在类的外面进行赋值表达式定义</span></span><br><span class="line"></span><br><span class="line">Parent.tell()  <span class="comment">// 静态方法是通过类去调用，而不是通过类的实例去调用</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Parent.type) <span class="comment">// 打印静态对象</span></span><br></pre></td></tr></table></figure>
 <h1 id="异步-Promise"><a href="#异步-Promise" class="headerlink" title="异步 (Promise)"></a>异步 (Promise)</h1><h2 id="Promise的介绍"><a href="#Promise的介绍" class="headerlink" title="Promise的介绍"></a>Promise的介绍</h2><p><code>Promise</code>是异步编程的一种解决方案，比传统的解决方案–回调函数和事件更合理和更强大。它由社区最早提出和实现，ES6将其写进了语言标准，统一了语法，原生提供了Promise。</p>
-<p>所谓Promise ，简单说就是一个容器，里面保存着某个未来才hui结束的事件(通常是一个异步操作）的结果。从语法上说，Promise是一个对象，从它可以获取异步操作的消息。 </p>
+<p>所谓Promise ，简单说就是一个容器，里面保存着某个未来才会结束的事件(通常是一个异步操作）的结果。<strong>从语法上说，Promise是一个对象，从它可以获取异步操作的消息。 </strong> 也之所以它是一个对象，所以它可以用来保存状态，从而解决了普通回调函数中的“回调地狱”以及“不能return”这两个问题。</p>
 <ol>
 <li><p>三种状态:<br>Promise对象的状态不受外界影响</p>
 <ul>
