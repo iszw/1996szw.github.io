@@ -8,8 +8,8 @@
         <category>life</category>
       </categories>
       <tags>
-        <tag>summary</tag>
         <tag>life</tag>
+        <tag>summary</tag>
       </tags>
   </entry>
   <entry>
@@ -31,8 +31,8 @@
         <category>work</category>
       </categories>
       <tags>
-        <tag>work</tag>
         <tag>summary</tag>
+        <tag>work</tag>
       </tags>
   </entry>
   <entry>
@@ -43,8 +43,8 @@
         <category>work</category>
       </categories>
       <tags>
-        <tag>work</tag>
         <tag>summary</tag>
+        <tag>work</tag>
       </tags>
   </entry>
   <entry>
@@ -512,8 +512,8 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-        <tag>blog</tag>
         <tag>github</tag>
+        <tag>blog</tag>
         <tag>share</tag>
         <tag>博客</tag>
       </tags>
