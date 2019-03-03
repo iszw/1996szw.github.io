@@ -113,7 +113,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="study,javascript,algorithm,freecodecamp,array,string,算法," />
+  <meta name="keywords" content="study,javascript,算法,algorithm,freecodecamp,array,string," />
 
 
 
@@ -130,14 +130,14 @@
 
 
 <meta name="description" content="Info:Javascript中操作字符串和数组一些常见的方法。">
-<meta name="keywords" content="study,javascript,algorithm,freecodecamp,array,string,算法">
+<meta name="keywords" content="study,javascript,算法,algorithm,freecodecamp,array,string">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FreeCodeCamp上面的JS算法题">
 <meta property="og:url" content="https://1996szw.github.io/2017/03/11/FreeCodeCamp上面的JS算法题/index.html">
 <meta property="og:site_name" content="iSzw_Blog">
 <meta property="og:description" content="Info:Javascript中操作字符串和数组一些常见的方法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-13T10:30:52.417Z">
+<meta property="og:updated_time" content="2019-03-03T11:35:29.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FreeCodeCamp上面的JS算法题">
 <meta name="twitter:description" content="Info:Javascript中操作字符串和数组一些常见的方法。">
@@ -439,7 +439,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,554 words
+                  1,874 words
                 </span>
               
 
@@ -455,7 +455,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 min
+                  9 min
                 </span>
               
             </div>
@@ -524,6 +524,21 @@
 <blockquote>
 <p>//splice()方法:arrayObject.splice(index,howmany,item1,…..,itemX)，实现删除从index处开始的零个或多个(howmany)元素，并且用参数列表中声明的一个或多个值(item1~X)来替换那些被删除的元素。</p>
 </blockquote>
+<h1 id="es6的find-和findIndex"><a href="#es6的find-和findIndex" class="headerlink" title="es6的find()和findIndex()"></a>es6的find()和findIndex()</h1><blockquote>
+<p>数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">10</span>].find(<span class="function">(<span class="params">n</span>) =&gt;</span> n &lt; <span class="number">0</span>)  </span><br><span class="line"><span class="comment">// -5  </span></span><br><span class="line">[<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>].find(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, arr</span>) </span>&#123;  </span><br><span class="line"><span class="keyword">return</span> value &gt; <span class="number">9</span>;  </span><br><span class="line">&#125;) <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面代码中，find方法的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组。<br>数组实例的findIndex方法的用法与find方法非常类似，返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回-1。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>].findIndex(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, arr</span>) </span>&#123;  </span><br><span class="line"><span class="keyword">return</span> value &gt; <span class="number">9</span>;  </span><br><span class="line">&#125;) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这两个方法都可以接受第二个参数，用来绑定回调函数的this对象。<br>另外，这两个方法都可以发现♂，弥补了数组的IndexOf方法的不足。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="literal">NaN</span>].indexOf(<span class="literal">NaN</span>)  </span><br><span class="line"><span class="comment">// -1  </span></span><br><span class="line">[<span class="literal">NaN</span>].findIndex(<span class="function"><span class="params">y</span> =&gt;</span> <span class="built_in">Object</span>.is(<span class="literal">NaN</span>, y))  </span><br><span class="line"><span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面代码中，indexOf方法无法识别数组的NaN成员，但是findIndex方法可以借助Object.is方法做到。</p>
+</blockquote>
 
       
     </div>
@@ -584,6 +599,8 @@
           
             <a href="/tags/javascript/" rel="tag"><i class="fa fa-tag"></i> javascript</a>
           
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
             <a href="/tags/algorithm/" rel="tag"><i class="fa fa-tag"></i> algorithm</a>
           
             <a href="/tags/freecodecamp/" rel="tag"><i class="fa fa-tag"></i> freecodecamp</a>
@@ -591,8 +608,6 @@
             <a href="/tags/array/" rel="tag"><i class="fa fa-tag"></i> array</a>
           
             <a href="/tags/string/" rel="tag"><i class="fa fa-tag"></i> string</a>
-          
-            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
         </div>
       
@@ -810,7 +825,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Split-Strings-with-split"><span class="nav-number">1.</span> <span class="nav-text">Split Strings with split()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Get-the-sub-string-with-substring-substr-slice"><span class="nav-number">2.</span> <span class="nav-text">Get the sub string with substring/substr/slice()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Title-Case-a-Sentence-with-toUpper-LowerCase"><span class="nav-number">3.</span> <span class="nav-text">Title Case a Sentence with toUpper/LowerCase()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Get-the-index-of-string-in-a-stringObj-with-indexOf-lastIndexOf"><span class="nav-number">4.</span> <span class="nav-text">Get the index of string in a stringObj with indexOf/lastIndexOf()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Iterate-over-Arrays-with-map"><span class="nav-number">5.</span> <span class="nav-text">Iterate over Arrays with map()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Condense-arrays-with-reduce"><span class="nav-number">6.</span> <span class="nav-text">Condense arrays with reduce()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Filter-Arrays-with-filter"><span class="nav-number">7.</span> <span class="nav-text">Filter Arrays with filter()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sort-Arrays-with-sort"><span class="nav-number">8.</span> <span class="nav-text">Sort Arrays with sort()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reverse-Arrays-with-reverse"><span class="nav-number">9.</span> <span class="nav-text">Reverse Arrays with reverse()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concatenate-Arrays-with-concat"><span class="nav-number">10.</span> <span class="nav-text">Concatenate Arrays with concat()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Join-Strings-with-join"><span class="nav-number">11.</span> <span class="nav-text">Join Strings with join()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Find-the-Longest-Word-in-a-String-with-Math-max-apply"><span class="nav-number">12.</span> <span class="nav-text">Find the Longest Word in a String with Math.max.apply()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Remove-the-smallest-number-in-an-array-with-splice"><span class="nav-number">13.</span> <span class="nav-text">Remove the smallest number in an array with splice()</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Split-Strings-with-split"><span class="nav-number">1.</span> <span class="nav-text">Split Strings with split()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Get-the-sub-string-with-substring-substr-slice"><span class="nav-number">2.</span> <span class="nav-text">Get the sub string with substring/substr/slice()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Title-Case-a-Sentence-with-toUpper-LowerCase"><span class="nav-number">3.</span> <span class="nav-text">Title Case a Sentence with toUpper/LowerCase()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Get-the-index-of-string-in-a-stringObj-with-indexOf-lastIndexOf"><span class="nav-number">4.</span> <span class="nav-text">Get the index of string in a stringObj with indexOf/lastIndexOf()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Iterate-over-Arrays-with-map"><span class="nav-number">5.</span> <span class="nav-text">Iterate over Arrays with map()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Condense-arrays-with-reduce"><span class="nav-number">6.</span> <span class="nav-text">Condense arrays with reduce()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Filter-Arrays-with-filter"><span class="nav-number">7.</span> <span class="nav-text">Filter Arrays with filter()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sort-Arrays-with-sort"><span class="nav-number">8.</span> <span class="nav-text">Sort Arrays with sort()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reverse-Arrays-with-reverse"><span class="nav-number">9.</span> <span class="nav-text">Reverse Arrays with reverse()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concatenate-Arrays-with-concat"><span class="nav-number">10.</span> <span class="nav-text">Concatenate Arrays with concat()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Join-Strings-with-join"><span class="nav-number">11.</span> <span class="nav-text">Join Strings with join()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Find-the-Longest-Word-in-a-String-with-Math-max-apply"><span class="nav-number">12.</span> <span class="nav-text">Find the Longest Word in a String with Math.max.apply()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Remove-the-smallest-number-in-an-array-with-splice"><span class="nav-number">13.</span> <span class="nav-text">Remove the smallest number in an array with splice()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#es6的find-和findIndex"><span class="nav-number">14.</span> <span class="nav-text">es6的find()和findIndex()</span></a></li></ol></div>
             
 
           </div>
