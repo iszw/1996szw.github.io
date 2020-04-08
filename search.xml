@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Data Structures and Algorithms For Javascript]]></title>
     <url>%2F2019%2F09%2F24%2FData%20Structures%20and%20Algorithms%20For%20Javascript%2F</url>
-    <content type="text"><![CDATA[leetcode刷题 Data StructuresString字符串反转 12345678910111213141516171819202122232425262728293031323334export default (str) =&gt; &#123; // 字符串按空格进行分隔，保存数组，数组的元素的先后顺序就是单词的顺序 let arr = str.split(' ') // 对数组进行遍历，然后每个元素进行反转 let result = arr.map(item =&gt; &#123; return item.split('').reverse().join('') &#125;) return result.join(' ')&#125;export default (str) =&gt; &#123; // 1. 字符串按空格进行分隔，保存数组，数组的元素的先后顺序就是单词的顺序 // 2. 对数组进行遍历，然后每个元素进行反转 return str.split(' ').map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ')&#125;export default (str) =&gt; &#123; // 1. 字符串按空格进行分隔，保存数组，数组的元素的先后顺序就是单词的顺序 // 2. 对数组进行遍历，然后每个元素进行反转 return str.split(/\s/g).map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ')&#125;export default (str) =&gt; &#123; // 1. 字符串按空格进行分隔，保存数组，数组的元素的先后顺序就是单词的顺序 // 2. 对数组进行遍历，然后每个元素进行反转 // 对输入进行了限制（空）单词用空格隔开（没见过单词中有&lt;等特殊字符之前考虑的是空格，单引号）(LeetCode测试用例) return str.length ? str.match(/[\S]+/g).map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ') : ''&#125; 数组正则排序递归数据结构栈堆队列链表矩阵二叉树常见算法贪心算法动态规划]]></content>
+    <content type="text"><![CDATA[leetcode刷题 Data StructuresString字符串反转 1234567891011121314151617181920212223242526272829303132export default (str) =&gt; &#123; // 字符串按空格进行分隔，保存数组，数组的元素的先后顺序就是单词的顺序 let arr = str.split(' ') // 对数组进行遍历，然后每个元素进行反转 let result = arr.map(item =&gt; &#123; return item.split('').reverse().join('') &#125;) return result.join(' ')&#125;export default (str) =&gt; &#123; // 1. 字符串按空格进行分隔，保存数组，数组的元素的先后顺序就是单词的顺序 // 2. 对数组进行遍历，然后每个元素进行反转 return str.split(' ').map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ')&#125;export default (str) =&gt; &#123; return str.split(/\s/g).map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ')&#125;/** * 对输入进行了限制（空）单词用空格隔开（没见过单词中有&lt;等特殊字符之前考虑的是空格，单引号）(LeetCode测试用例) */export default (str) =&gt; &#123; return str.length ? str.match(/[\S]+/g).map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ') : ''&#125; API：String.prototype.splitString.prototype.matchArray.prototype.mapArray.prototype.reverseArray.prototype.join 计数二进制子串 难度稍大的算法题目如何解？算法的本质是寻找规律并实现 如何找到规律？发现输入和输出之间的关系，寻找突破点 复杂的实现怎么办实现是程序+数据结构的结合体 123456789101112131415161718192021222324// 关于 LeetCode 测试用例字符串过长导致 RegExp too big的问题暂时不予修复export default (str) =&gt; &#123; // 建立数据结构，堆栈，保存数据 let r = [] // 给定任意子输入都返回第一个符合条件的子串 let match = (str) =&gt; &#123; let j = str.match(/^(0+|1+)/)[0] let o = (j[0] ^ 1).toString().repeat(j.length) let reg = new RegExp(`^($&#123;j&#125;$&#123;o&#125;)`) if (reg.test(str)) &#123; return RegExp.$1 &#125; else &#123; return '' &#125; &#125; // 通过for循环控制程序运行的流程 for (let i = 0, len = str.length - 1; i &lt; len; i++) &#123; let sub = match(str.slice(i)) if (sub) &#123; r.push(sub) &#125; &#125; return r&#125; 数组正则排序递归数据结构栈堆队列链表矩阵二叉树常见算法贪心算法动态规划]]></content>
       <categories>
         <category>study</category>
       </categories>
@@ -111,9 +111,9 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>css</tag>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
+        <tag>css</tag>
         <tag>vue</tag>
         <tag>stylus</tag>
         <tag>travelweb</tag>
@@ -172,8 +172,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>es6</tag>
         <tag>parameter</tag>
         <tag>proxy</tag>
@@ -189,8 +189,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>es6</tag>
         <tag>let</tag>
         <tag>const</tag>
@@ -211,8 +211,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>vue</tag>
         <tag>vue父子间通信</tag>
         <tag>vue生命周期函数</tag>
@@ -238,8 +238,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>es6</tag>
         <tag>vue</tag>
         <tag>webpack</tag>
@@ -276,8 +276,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>vue</tag>
         <tag>前端框架</tag>
       </tags>
@@ -321,9 +321,9 @@
         <category>work</category>
       </categories>
       <tags>
+        <tag>javascript</tag>
         <tag>html</tag>
         <tag>css</tag>
-        <tag>javascript</tag>
         <tag>web</tag>
         <tag>interview</tag>
         <tag>http</tag>
@@ -341,8 +341,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>regex</tag>
         <tag>正则表达式</tag>
       </tags>
@@ -368,8 +368,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>study</tag>
+        <tag>css</tag>
         <tag>回流</tag>
         <tag>重绘</tag>
         <tag>render tree</tag>
@@ -399,9 +399,9 @@
         <category>study</category>
       </categories>
       <tags>
+        <tag>study</tag>
         <tag>html</tag>
         <tag>css</tag>
-        <tag>study</tag>
         <tag>居中</tag>
       </tags>
   </entry>
@@ -413,8 +413,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>study</tag>
+        <tag>css</tag>
         <tag>flex</tag>
       </tags>
   </entry>
@@ -426,8 +426,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>study</tag>
+        <tag>css</tag>
         <tag>flex</tag>
         <tag>position</tag>
         <tag>absolute</tag>
@@ -445,8 +445,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>dom</tag>
         <tag>树</tag>
       </tags>
@@ -459,9 +459,9 @@
         <category>study</category>
       </categories>
       <tags>
+        <tag>study</tag>
         <tag>html</tag>
         <tag>css</tag>
-        <tag>study</tag>
       </tags>
   </entry>
   <entry>
@@ -472,8 +472,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>算法</tag>
         <tag>algorithm</tag>
         <tag>freecodecamp</tag>
@@ -489,8 +489,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>js-web-api</tag>
         <tag>ajax</tag>
         <tag>事件</tag>
@@ -507,8 +507,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>异步</tag>
         <tag>JS变量类型</tag>
         <tag>原型</tag>
