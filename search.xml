@@ -321,8 +321,8 @@
         <category>work</category>
       </categories>
       <tags>
-        <tag>html</tag>
         <tag>css</tag>
+        <tag>html</tag>
         <tag>javascript</tag>
         <tag>web</tag>
         <tag>interview</tag>
@@ -399,9 +399,9 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>html</tag>
         <tag>css</tag>
         <tag>study</tag>
+        <tag>html</tag>
         <tag>居中</tag>
       </tags>
   </entry>
@@ -459,9 +459,9 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>html</tag>
         <tag>css</tag>
         <tag>study</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -527,8 +527,8 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-        <tag>github</tag>
         <tag>blog</tag>
+        <tag>github</tag>
         <tag>share</tag>
         <tag>博客</tag>
       </tags>
