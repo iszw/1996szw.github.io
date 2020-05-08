@@ -1,4 +1,10 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+/*字体*/
+/*@font-face { font-family:MyFont;
+src: url(https:xxx)}
+body{font-family:MyFont!important;}*/
+
 html {
   height: 100%;
   font-size: 20px;
@@ -9,7 +15,7 @@ body {
   background: #fff;
   color: #4c4948;
   font-size: 14px;
-  font-family: Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, "Microsoft YaHei", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Lato, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, MicrMicrosoft YaHei, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, "Microsoft YaHei", Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -77,7 +83,7 @@ hr {
   position: relative;
   margin: 2rem auto;
   width: calc(100% - 4px);
-  border: 2px dashed #a4d8fa;
+  border: 2px dashed #d2ebfd;
 }
 hr:hover:before {
   left: calc(95% - 20px);
@@ -87,7 +93,7 @@ hr:before {
   top: -20px;
   left: 5%;
   z-index: 1;
-  color: #49b1f5;
+  color: #a4d8fa;
   content: '\f21c';
   font-style: normal;
   font-variant: normal;
@@ -1569,7 +1575,7 @@ blockquote footer cite:before {
 }
 #article-container pre,
 #article-container code {
-  font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number !important;
+  font-family: Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number, Menlo, "PingFang SC", "Microsoft YaHei", monospace, Helvetica Neue For Number !important;
 }
 #article-container code {
   padding: 0.1rem 0.2rem;
@@ -3209,7 +3215,7 @@ figure.gallery-group .gallery-group-name:after {
   text-overflow: ellipsis;
   word-wrap: break-word;
   font-size: 1.2rem;
-  line-height: 1.4;
+  line-height: 1.5;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -3684,8 +3690,8 @@ figure.gallery-group .gallery-group-name:after {
 #article-container h6:before {
   position: absolute;
   top: calc(50% - 0.35rem);
-  color: #f47466;
-  content: '\f0c1';
+  color: #ffb821;
+  content: '\f0e7';
   font-style: normal;
   font-variant: normal;
   line-height: 1;
@@ -4063,7 +4069,7 @@ img {
   text-decoration: none;
 }
 #article-container a {
-  color: #49b1f5;
+  color: #99a9bf;
 }
 #article-container a:hover {
   text-decoration: underline;
@@ -4253,11 +4259,11 @@ img {
   transition: all 0.5s;
 }
 #rightside #rightside-config-hide {
-  -webkit-transform: translate(35px, 0);
-  -moz-transform: translate(35px, 0);
-  -o-transform: translate(35px, 0);
-  -ms-transform: translate(35px, 0);
-  transform: translate(35px, 0);
+  -webkit-transform: translate(40px, 0);
+  -moz-transform: translate(40px, 0);
+  -o-transform: translate(40px, 0);
+  -ms-transform: translate(40px, 0);
+  transform: translate(40px, 0);
 }
 #rightside .rightside-in {
   -webkit-transform: translate(0, 0) !important;
@@ -4283,14 +4289,17 @@ img {
 #rightside > div > div {
   display: block;
   margin-bottom: 2px;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   background-color: #49b1f5;
   color: #fff;
   text-align: center;
   font-size: 16px;
-  line-height: 29px;
+  line-height: 35px;
   cursor: pointer;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  border-radius: 3px;
 }
 #rightside > div > i:hover,
 #rightside > div > a:hover,
@@ -4445,7 +4454,7 @@ img {
   top: 0;
   left: -300px;
   z-index: 10;
-  padding: 1rem 0 2rem 0.5rem;
+  padding: 1rem 0 2rem 2rem;
   width: 300px;
   height: 100%;
   background: #f6f8fa;

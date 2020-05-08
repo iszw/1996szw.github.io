@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Data Structures and Algorithms For Javascript]]></title>
     <url>%2F2019%2F09%2F24%2FData%20Structures%20and%20Algorithms%20For%20Javascript%2F</url>
-    <content type="text"><![CDATA[leetcode刷题 Data StructuresString字符串反转 1234567891011121314151617181920212223242526272829303132export default (str) =&gt; &#123; // 字符串按空格进行分隔，保存数组，数组的元素的先后顺序就是单词的顺序 let arr = str.split(' ') // 对数组进行遍历，然后每个元素进行反转 let result = arr.map(item =&gt; &#123; return item.split('').reverse().join('') &#125;) return result.join(' ')&#125;export default (str) =&gt; &#123; // 1. 字符串按空格进行分隔，保存数组，数组的元素的先后顺序就是单词的顺序 // 2. 对数组进行遍历，然后每个元素进行反转 return str.split(' ').map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ')&#125;export default (str) =&gt; &#123; return str.split(/\s/g).map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ')&#125;/** * 对输入进行了限制（空）单词用空格隔开（没见过单词中有&lt;等特殊字符之前考虑的是空格，单引号）(LeetCode测试用例) */export default (str) =&gt; &#123; return str.length ? str.match(/[\S]+/g).map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ') : ''&#125; API：String.prototype.splitString.prototype.matchArray.prototype.mapArray.prototype.reverseArray.prototype.join 计数二进制子串 难度稍大的算法题目如何解？ 算法的本质是寻找规律并实现2. 如何找到规律？发现输入和输出之间的关系，寻找突破点3. 复杂的实现怎么办实现是程序+数据结构的结合体 123456789101112131415161718192021222324// 关于 LeetCode 测试用例字符串过长导致 RegExp too big的问题暂时不予修复export default (str) =&gt; &#123; // 建立数据结构，堆栈，保存数据 let r = [] // 给定任意子输入都返回第一个符合条件的子串 let match = (str) =&gt; &#123; let j = str.match(/^(0+|1+)/)[0] let o = (j[0] ^ 1).toString().repeat(j.length) let reg = new RegExp(`^($&#123;j&#125;$&#123;o&#125;)`) if (reg.test(str)) &#123; return RegExp.$1 &#125; else &#123; return '' &#125; &#125; // 通过for循环控制程序运行的流程 for (let i = 0, len = str.length - 1; i &lt; len; i++) &#123; let sub = match(str.slice(i)) if (sub) &#123; r.push(sub) &#125; &#125; return r&#125; Array电话号码的组合（ 公式运算） 1234567891011121314151617181920212223242526272829303132333435export default (str) =&gt; &#123; // 对输入做处理，如果小于1返回空（LeetCode测试用例） if (str.length &lt; 1) return [] // 建立电话号码键盘映射 let map = ['', 1, 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'] // 如果只给了一个按键，直接把按键内容取出来并按单个字符分组就可以了（LeetCode测试用例） if (str.length &lt; 2) return map[str].split('') // 把输入字符串按单字符分隔变成数组，234=&gt;[2,3,4] let num = str.split('') // 保存键盘映射后的字母内容，如 23=&gt;['abc','def'] let code = [] num.forEach(item =&gt; &#123; if (map[item]) &#123; code.push(map[item]) &#125; &#125;) let comb = (arr) =&gt; &#123; // 临时变量用来保存前两个组合的结果 let tmp = [] // 最外层的循环是遍历第一个元素，里层的循环是遍历第二个元素 for (let i = 0, il = arr[0].length; i &lt; il; i++) &#123; for (let j = 0, jl = arr[1].length; j &lt; jl; j++) &#123; tmp.push(`$&#123;arr[0][i]&#125;$&#123;arr[1][j]&#125;`) &#125; &#125; arr.splice(0, 2, tmp) if (arr.length &gt; 1) &#123; comb(arr) &#125; else &#123; return tmp &#125; return arr[0] &#125; return comb(code)&#125; 卡牌分组（归类运算）种花问题（筛选运算）格雷编码（二进制运算）正则排序递归数据结构栈堆队列链表矩阵二叉树常见算法贪心算法动态规划]]></content>
+    <content type="text"><![CDATA[leetcode刷题 Data StructuresString字符串反转 1234567891011121314151617181920212223242526272829303132export default (str) =&gt; &#123; // 字符串按空格进行分隔，保存数组，数组的元素的先后顺序就是单词的顺序 let arr = str.split(' ') // 对数组进行遍历，然后每个元素进行反转 let result = arr.map(item =&gt; &#123; return item.split('').reverse().join('') &#125;) return result.join(' ')&#125;export default (str) =&gt; &#123; // 1. 字符串按空格进行分隔，保存数组，数组的元素的先后顺序就是单词的顺序 // 2. 对数组进行遍历，然后每个元素进行反转 return str.split(' ').map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ')&#125;export default (str) =&gt; &#123; return str.split(/\s/g).map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ')&#125;/** * 对输入进行了限制（空）单词用空格隔开（没见过单词中有&lt;等特殊字符之前考虑的是空格，单引号）(LeetCode测试用例) */export default (str) =&gt; &#123; return str.length ? str.match(/[\S]+/g).map(item =&gt; &#123; return item.split('').reverse().join('') &#125;).join(' ') : ''&#125; API：String.prototype.splitString.prototype.matchArray.prototype.mapArray.prototype.reverseArray.prototype.join 计数二进制子串 难度稍大的算法题目如何解？ 算法的本质是寻找规律并实现 如何找到规律？ 发现输入和输出之间的关系，寻找突破点 复杂的实现怎么办？ 实现是程序+数据结构的结合体 123456789101112131415161718192021222324// 关于 LeetCode 测试用例字符串过长导致 RegExp too big的问题暂时不予修复export default (str) =&gt; &#123; // 建立数据结构，堆栈，保存数据 let r = [] // 给定任意子输入都返回第一个符合条件的子串 let match = (str) =&gt; &#123; let j = str.match(/^(0+|1+)/)[0] let o = (j[0] ^ 1).toString().repeat(j.length) let reg = new RegExp(`^($&#123;j&#125;$&#123;o&#125;)`) if (reg.test(str)) &#123; return RegExp.$1 &#125; else &#123; return '' &#125; &#125; // 通过for循环控制程序运行的流程 for (let i = 0, len = str.length - 1; i &lt; len; i++) &#123; let sub = match(str.slice(i)) if (sub) &#123; r.push(sub) &#125; &#125; return r&#125; Array电话号码的组合（ 公式运算） 思路： 1234567891011121314151617181920212223242526272829303132333435export default (str) =&gt; &#123; // 对输入做处理，如果小于1返回空（LeetCode测试用例） if (str.length &lt; 1) return [] // 建立电话号码键盘映射 let map = ['', 1, 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'] // 如果只给了一个按键，直接把按键内容取出来并按单个字符分组就可以了（LeetCode测试用例） if (str.length &lt; 2) return map[str].split('') // 把输入字符串按单字符分隔变成数组，234=&gt;[2,3,4] let num = str.split('') // 保存键盘映射后的字母内容，如 23=&gt;['abc','def'] let code = [] num.forEach(item =&gt; &#123; if (map[item]) &#123; code.push(map[item]) &#125; &#125;) let comb = (arr) =&gt; &#123; // 临时变量用来保存前两个组合的结果 let tmp = [] // 最外层的循环是遍历第一个元素，里层的循环是遍历第二个元素 for (let i = 0, il = arr[0].length; i &lt; il; i++) &#123; for (let j = 0, jl = arr[1].length; j &lt; jl; j++) &#123; tmp.push(`$&#123;arr[0][i]&#125;$&#123;arr[1][j]&#125;`) &#125; &#125; arr.splice(0, 2, tmp) if (arr.length &gt; 1) &#123; comb(arr) &#125; else &#123; return tmp &#125; return arr[0] &#125; return comb(code)&#125; 卡牌分组（归类运算） 种花问题（筛选运算）格雷编码（二进制运算）正则排序递归数据结构栈堆队列链表矩阵二叉树常见算法贪心算法动态规划]]></content>
       <categories>
         <category>study</category>
       </categories>
@@ -23,8 +23,8 @@
         <category>life</category>
       </categories>
       <tags>
-        <tag>summary</tag>
         <tag>life</tag>
+        <tag>summary</tag>
       </tags>
   </entry>
   <entry>
@@ -46,8 +46,8 @@
         <category>work</category>
       </categories>
       <tags>
-        <tag>work</tag>
         <tag>summary</tag>
+        <tag>work</tag>
       </tags>
   </entry>
   <entry>
@@ -58,8 +58,8 @@
         <category>work</category>
       </categories>
       <tags>
-        <tag>work</tag>
         <tag>summary</tag>
+        <tag>work</tag>
       </tags>
   </entry>
   <entry>
@@ -308,8 +308,8 @@
         <tag>javascript</tag>
         <tag>web</tag>
         <tag>interview</tag>
-        <tag>http</tag>
         <tag>html/css</tag>
+        <tag>http</tag>
         <tag>frame</tag>
       </tags>
   </entry>
@@ -322,12 +322,12 @@
       </categories>
       <tags>
         <tag>css</tag>
-        <tag>html</tag>
         <tag>javascript</tag>
+        <tag>html</tag>
         <tag>web</tag>
         <tag>interview</tag>
-        <tag>jquery</tag>
         <tag>http</tag>
+        <tag>jquery</tag>
         <tag>面试</tag>
         <tag>盒模型</tag>
         <tag>状态码</tag>
@@ -527,8 +527,8 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-        <tag>github</tag>
         <tag>blog</tag>
+        <tag>github</tag>
         <tag>share</tag>
         <tag>博客</tag>
       </tags>
