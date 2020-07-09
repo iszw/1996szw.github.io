@@ -32,11 +32,11 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>html</tag>
-        <tag>css</tag>
-        <tag>javascript</tag>
         <tag>tips</tag>
         <tag>work</tag>
+        <tag>javascript</tag>
+        <tag>css</tag>
+        <tag>html</tag>
         <tag>vue</tag>
         <tag>html2canvas</tag>
         <tag>canvas2image</tag>
@@ -159,10 +159,10 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>css</tag>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>css</tag>
         <tag>vue</tag>
+        <tag>study</tag>
         <tag>travelweb</tag>
         <tag>vue-awesome-swiper</tag>
         <tag>axios</tag>
@@ -190,11 +190,11 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>毕业设计</tag>
-        <tag>graduation</tag>
         <tag>数据挖掘</tag>
         <tag>关联规则算法</tag>
         <tag>apriori</tag>
+        <tag>毕业设计</tag>
+        <tag>graduation</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -220,8 +220,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>es6</tag>
         <tag>parameter</tag>
         <tag>proxy</tag>
@@ -237,8 +237,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>es6</tag>
         <tag>let</tag>
         <tag>const</tag>
@@ -259,10 +259,10 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
         <tag>vue</tag>
         <tag>refs</tag>
+        <tag>study</tag>
         <tag>vue父子间通信</tag>
         <tag>vue生命周期函数</tag>
         <tag>vue模版语法</tag>
@@ -285,10 +285,10 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
-        <tag>es6</tag>
         <tag>vue</tag>
+        <tag>study</tag>
+        <tag>es6</tag>
         <tag>stylus</tag>
         <tag>webpack</tag>
         <tag>npm</tag>
@@ -323,9 +323,9 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
         <tag>vue</tag>
+        <tag>study</tag>
         <tag>前端框架</tag>
       </tags>
   </entry>
@@ -353,9 +353,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
-        <tag>http</tag>
         <tag>web</tag>
         <tag>interview</tag>
+        <tag>http</tag>
         <tag>html/css</tag>
         <tag>frame</tag>
       </tags>
@@ -368,13 +368,13 @@
         <category>work</category>
       </categories>
       <tags>
-        <tag>html</tag>
-        <tag>css</tag>
         <tag>javascript</tag>
-        <tag>http</tag>
+        <tag>css</tag>
+        <tag>html</tag>
         <tag>web</tag>
         <tag>interview</tag>
         <tag>jquery</tag>
+        <tag>http</tag>
         <tag>面试</tag>
         <tag>盒模型</tag>
         <tag>状态码</tag>
@@ -388,8 +388,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>regex</tag>
         <tag>正则表达式</tag>
       </tags>
@@ -433,9 +433,9 @@
       </categories>
       <tags>
         <tag>study</tag>
+        <tag>http</tag>
         <tag>tcp</tag>
         <tag>ip</tag>
-        <tag>http</tag>
       </tags>
   </entry>
   <entry>
@@ -446,8 +446,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>html</tag>
         <tag>css</tag>
+        <tag>html</tag>
         <tag>study</tag>
         <tag>居中</tag>
       </tags>
@@ -492,8 +492,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>dom</tag>
         <tag>树</tag>
       </tags>
@@ -506,8 +506,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>html</tag>
         <tag>css</tag>
+        <tag>html</tag>
         <tag>study</tag>
       </tags>
   </entry>
@@ -519,8 +519,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>算法</tag>
         <tag>algorithm</tag>
         <tag>freecodecamp</tag>
@@ -536,8 +536,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>js-web-api</tag>
         <tag>ajax</tag>
         <tag>事件</tag>
@@ -554,8 +554,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>study</tag>
         <tag>javascript</tag>
+        <tag>study</tag>
         <tag>异步</tag>
         <tag>JS变量类型</tag>
         <tag>原型</tag>
