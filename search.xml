@@ -27,15 +27,15 @@
   <entry>
     <title><![CDATA[Daliy FE Coding Tips]]></title>
     <url>%2F2019%2F06%2F06%2FDaliy%20FE%20Coding%20Tips%2F</url>
-    <content type="text"><![CDATA[Vue的异步组件​ 在项目中有时候会有一些比较大的组件，类似于代码编辑器、echart图标渲染之类的组件，如果一次性全部直接同步打包的话，体积就会非常大，严重影响性能。 import()函数 按需加载，异步加载组件 12345678910111213141516171819202122232425262728293031&lt;template&gt; &lt;div&gt; &lt;p&gt;vue 高级特性&lt;/p&gt; &lt;hr&gt; &lt;!-- nextTick --&gt; &lt;NextTick/&gt; &lt;!-- 异步组件 --&gt; &lt;FormDemo v-if="showFormDemo"/&gt; &lt;button @click="showFormDemo = !showFormDemo"&gt;show form demo&lt;/button&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import NextTick from './NextTick'export default &#123; components: &#123; NextTick, // 异步加载：只有在需要渲染这个组件的时候才会加载 FormDemo: () =&gt; import('../BaseUse/FormDemo'), &#125;, data() &#123; return &#123; NextTickName: "NextTick", showFormDemo: false &#125; &#125;&#125;&lt;/script&gt; this.$notify()1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253import operateFeedback from './operateFeedback.vue'const Plugin = &#123; install (Vue, options = &#123;&#125;) &#123; /** * Makes sure that plugin can be installed only once */ if (this.installed) return this.installed = true /** * Plugin API * tips: 提示文案 * existTime: 提示存在的时间 * ifSuccessed: 是否是操作成功的反馈 失败传0 成功传1或者不传 */ Vue.prototype.$notify = (tips = '操作成功', existTime = 1500, ifSuccessed = 1) =&gt; &#123; let feedback = Vue.extend(operateFeedback) let a = new feedback(&#123; data: &#123; tips, ifSuccessed &#125; &#125;) let domNotify = document.getElementById("ddr-notify"); let ele = document.createElement("div"); ele.setAttribute("id", "ddr-notify-child") domNotify.appendChild(ele) // ele2.setAttribute("id", "ddr-notify-child") // ele.setAttribute("class", "ddr-notify-child-2") setTimeout(() =&gt; &#123; a.$mount('#ddr-notify-child') &#125;, 300) setTimeout(() =&gt; &#123; let domNotifyChild = a.$el domNotifyChild.parentNode.removeChild(domNotifyChild); // let domNotify = document.getElementById("ddr-notify"); // console.log('domNotify:', domNotify) // console.log('a:', a) // a.$destroy() // console.log('a:', a) // domNotify.remove() &#125;, existTime) // let component = new feedback().$mount(); // let $dom = component.$el; // let root = document.getElementById("ddr") // root.appendChild($dom); &#125; &#125;&#125;export default Plugin 调用子组件的方法（vm.$refs.xx.xx()）12345678beforeRouteEnter(to, from, next) &#123; next(vm =&gt; &#123; if(from.name === 'noteUpload' &amp;&amp; vm.$route.query.from === 'upload') &#123; vm.$refs.topicListChild.reInitNoteList() vm.slideToNoteList() &#125; &#125;)&#125;, iPhone低版本输入框问题12345// 在输入框上绑定一个 @blur="inputBlur"// 防止输入框把页面顶上去 导致点击区域失效inputBlur () &#123; window.scrollTo(0, 2000)&#125;, 让文字在一个方框内水平垂直居中由于文字长度是不确定的，所以无法指定一个固定的宽高 fit-content 兼容性有问题，在ios10以上才能用，所以弃用。改为： 1234567891011text-align: center;line-height: 16px;position: absolute;top: 0;bottom: 0;left: 0;right: 0;display: flex;align-items: center;justify-content: center;padding: 0 14px 8px; 也就是说 flex和absolute结合起来也是可以实现居中的。 html占位符1234567&amp;#32; == 普通的英文半角空格&amp;#160; == &amp;nbsp; == &amp;#xA0; == no-break space （普通的英文半角空格但不换行）&amp;#12288; == 中文全角空格 （一个中文宽度）&amp;#8194; == &amp;ensp; == en空格 （半个中文宽度）&amp;#8195; == &amp;emsp; == em空格 （一个中文宽度）&amp;#8197; == 四分之一em空格 （四分之一中文宽度）相比平时的空格（&amp;#32;），nbsp拥有不间断（non-breaking）特性。即连续的nbsp会在同一行内显示。即使有100个连续的nbsp，浏览器也不会把它们拆成两行。 html2canvas &amp;&amp; canvas2image移动端保存带有个性化信息和样式的图片的方法，参考于基于html2canvas实现网页保存为图片及图片清晰度优化 正常用一个div来写样式 再写一个div作浅黑色蒙板 最上面的才是真正的图片，可以用appendChild将生成的img添加上去并为其写上样式 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748import html2canvas from 'html2canvas'import Canvas2Image from '@/util/canvas2image'// html2canvas 生成图片的方法generateCanvas() &#123; this.$nextTick(() =&gt; &#123; let cntElem = this.$refs.hideBox; let shareContent = cntElem;//需要截图的包裹的（原生的）DOM 对象 let width = shareContent.offsetWidth; //获取dom 宽度 let height = shareContent.offsetHeight; //获取dom 高度 let canvas = document.createElement("canvas"); //创建一个canvas节点 let scale = 3; //定义任意放大倍数 支持小数 canvas.width = width * scale; //定义canvas 宽度 * 缩放 canvas.height = height * scale; //定义canvas高度 *缩放 canvas.getContext("2d").scale(scale, scale); //获取context,设置scale let opts = &#123; scale: scale, // 添加的scale 参数 canvas: canvas, //自定义 canvas // logging: true, //日志开关，便于查看html2canvas的内部执行流程 width: width, //dom 原始宽度 height: height, //dom 原始高度 // useCORS: true, // 【重要】开启跨域配置 &#125;; html2canvas(this.$refs.hideBox, opts).then((canvas) =&gt; &#123; let context = canvas.getContext('2d') // 【重要】关闭抗锯齿 context.mozImageSmoothingEnabled = false context.webkitImageSmoothingEnabled = false context.msImageSmoothingEnabled = false context.imageSmoothingEnabled = false // 【重要】默认转化的格式为png,也可设置为其他格式 let img = Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height) this.$refs.realImg.appendChild(img) // $(img).css(&#123; // "width": canvas.width / 2 + "px", // "height": canvas.height / 2 + "px", // &#125;).addClass('f-full') &#125;) &#125;)&#125; 内容溢出变成省略号(ellipsis)12345// 单行ellipsisoverflow: hidden; text-overflow:ellipsis; white-space: nowrap;// 多行ellipsisoverflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; Vue的渲染缺陷假如在v-if中这样写，v-if=&quot;obj.a&quot;且对象obj不存在a属性，那么这个页面将会整个不渲染，而不是在Vue中报错undefined。此时可以通过注释掉某片div来逐一排查是哪个判断出现问题。 Vue的watch缺陷 watch默认是浅监听，可能无法监测到对象的深层key属性变化 watch监听引用类型，拿不到oldVal 查阅: vue官方文档.得知如果是想watch检测到值变化并且立刻使用则需要加上 immediate: true, 1234567891011watch: &#123; 'uploaConfig.moreList': &#123; handler (newVal) &#123; if (this.uploadConfig.moreList &amp;&amp; this.uploadConfig.moreList.length &gt; 0) &#123; this.moreList = newVal.moreList &#125; &#125;, deep: true, immediate: true, &#125;&#125; 对象监听1234567891011121314151617181920212223242526&lt;div class="watch-demo-item"&gt; &lt;input type="text" v-model="obj.val2"&gt; &lt;div&gt;&#123;&#123;value2&#125;&#125;&lt;/div&gt;&lt;/div&gt;// ...data () &#123; return &#123; val1: '', value1: '', obj: &#123; val2: '' &#125;, value2: '' &#125;&#125;,watch: &#123; val1 (val, oval) &#123; this.value1 = val &#125;, obj (val, oval) &#123; this.value2 = val.val2 &#125;&#125;,methods: &#123;&#125; ​ 可以看到，监听的对象某个key发生变化时，watch并没有生效。 解决方案一1234567891011121314151617181920data () &#123; return &#123; val1: '', value1: '', obj: &#123; val2: '' &#125;, value2: '' &#125;&#125;,watch: &#123; val1 (val, oval) &#123; this.value1 = val &#125;, 'obj.val2' (val, oval) &#123; this.value2 = val &#125;&#125;,methods: &#123;&#125; ​ 确实是成功了，但现实开发过程中，我们的obj对象很难确定里面的key数量，假如很多个key的时候，总不能写多个监听去监听key吧？ 解决方案二123456789101112131415161718192021data () &#123; return &#123; val1: '', value1: '', obj: &#123; val2: '' &#125;, value2: '' &#125;&#125;,watch: &#123; val1 (val, oval) &#123; this.value1 = val &#125;, 'obj': &#123; handler (val, oval) &#123; this.value2 = val.val2 &#125;, deep: true &#125;&#125;, 解释：handler是watch的高级用法,里面有一个属性 deep，默认值是 false，代表是否深度监听, 还有一个属性 immediate，默认值也是 false ，但immediate:true代表如果在 wacth 里声明了之后，就会立即先去执行里面的handler方法，如果为 false就跟我们以前的效果一样，不会在绑定的时候就执行。deep深度监听会影响性能； 两者可以同时存在。 定义一个高度自适应的输入框前些日子有过textarea高度自适应的需求，找到一个插件flexText,虽然没有用上去，但是的精简的代码很吸引我。 它是原理是这样的，HTML结构如下： 1234&lt;div class="expandingArea"&gt; &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt; &lt;textarea placeholder="输入文字"&gt;&lt;/textarea&gt;&lt;/div&gt; 其中的expandingArea的样式仅有 123.expandingArea&#123; position:relative;&#125; 目的是用于textarea相对于expandingArea绝对定位： 123456textarea&#123; position:absolute; top:0; left:0； height:100%;&#125; 通过这样的样式设置，textArea的高度会始终等于expandingArea的高度，要让textarea的高度变化也只需要调整expadingArea的高度即可。那么怎么样让expandingArea的高度变化随内容高度变化而变化呢？pre是比较重要的东西。 1234pre&#123; display:block; visibility:hidden;&#125; pre以块形式存在，并且不可见，但是是占用空间的，不像display:none;什么空间也不占。这时需要把textarea中的内容实时同步到pre里的span标签中，因为pre没有postion:absolute所以它的高度会一直影响expandingArea的高度。总结原理就是：pre会随内容的高度变化而变化，expandingArea的高度又随pre变化，因为textarea的高度100% textarea的高度会随expandingArea变化，只要同步textarea的内容到pre中，就达到一个textarea随内容高度变化的目的了。 关于这个方法的兼容性问题 在这个方法的创始人博客有提到NEIL JENKINS。个人觉得这个方法是牛逼的，没有通过计算，逻辑上它像上思维推导，代码实现不复杂，轻松愉快。在这个例子中又看到了一次合理的结构可以简化代码的案例:)。 参考于如何创建一个高度自适应的textarea 延伸阅读：line-height:normal是怎样计算的? - 知乎 https://www.zhihu.com/question/21786347 （提到了IFC的概念） Vue事件中的event参数12345678910111213141516171819202122232425262728293031323334353637383940&lt;template&gt; &lt;div&gt; &lt;p&gt;&#123;&#123;num&#125;&#125;&lt;&#x2F;p&gt; &lt;button @click&#x3D;&quot;increment1&quot;&gt;+1&lt;&#x2F;button&gt; &lt;button @click&#x3D;&quot;increment2(2, $event)&quot;&gt;+2&lt;&#x2F;button&gt; &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;script&gt;export default &#123; data() &#123; return &#123; num: 0 &#125; &#125;, methods: &#123; increment1(event) &#123; console.log(&#39;event&#39;, event, event.__proto__.constructor) &#x2F;&#x2F; 是原生的 event 对象 console.log(event.target) console.log(event.currentTarget) &#x2F;&#x2F; 注意，事件是被注册到当前元素的，和 React 不一样 this.num++ &#125;, increment2(val, event) &#123; console.log(event.target) this.num &#x3D; this.num + val &#125;, loadHandler() &#123; &#x2F;&#x2F; do some thing &#125; &#125;, mounted() &#123; window.addEventListener(&#39;load&#39;, this.loadHandler) &#125;, beforeDestroy() &#123; &#x2F;&#x2F;【注意】用 vue 绑定的事件，组建销毁时会自动被解绑 &#x2F;&#x2F; 自己绑定的事件，需要自己销毁！！！ window.removeEventListener(&#39;load&#39;, this.loadHandler) &#125;&#125;&lt;&#x2F;script&gt; event 是原生的 事件被挂载到当前事件绑定的元素 和 DOM 事件一样 Vue非父子组件间的通信 event.js 123import Vue from 'vue'export default new Vue() input.vue 1234567891011121314151617181920212223242526272829&lt;template&gt; &lt;div&gt; &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;title&quot;&#x2F;&gt; &lt;button @click&#x3D;&quot;addTitle&quot;&gt;add&lt;&#x2F;button&gt; &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;script&gt;import event from &#39;.&#x2F;event&#39;export default &#123; data() &#123; return &#123; title: &#39;&#39; &#125; &#125;, methods: &#123; addTitle() &#123; &#x2F;&#x2F; 调用父组件的事件 this.$emit(&#39;add&#39;, this.title) &#x2F;&#x2F;🌟🌟🌟 调用自定义事件，也可以传参 event.$emit(&#39;onAddTitle&#39;, this.title) this.title &#x3D; &#39;&#39; &#125; &#125;&#125;&lt;&#x2F;script&gt; list.vue 12345678910111213141516171819202122232425262728293031323334353637383940414243444546&lt;template&gt; &lt;div&gt; &lt;ul&gt; &lt;li v-for="item in list" :key="item.id"&gt; &#123;&#123;item.title&#125;&#125; &lt;button @click="deleteItem(item.id)"&gt;删除&lt;/button&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import event from './event'export default &#123; props: &#123; list: &#123; type: Array, default() &#123; return [] &#125; &#125; &#125;, data() &#123; return &#123; &#125; &#125;, methods: &#123; deleteItem(id) &#123; this.$emit('delete', id) &#125;, addTitleHandler(title) &#123; console.log('on add title', title) &#125; &#125;, mounted() &#123; //🌟🌟🌟 绑定自定义事件 //🌟🌟🌟 之所以这里写的函数名而不是箭头函数是为了方便在beforeDestroy里解绑该自定义事件 event.$on('onAddTitle', this.addTitleHandler) &#125;, beforeDestroy() &#123; //🌟🌟🌟 及时销毁，否则可能造成内存泄露 event.$off('onAddTitle', this.addTitleHandler) &#125;&#125;&lt;/script&gt; 自定义一个Vue实例（这里的event），这个实例就可以实现$on、$emit、$off的功能。就不需要引入event bus总线了 $nextTick Vue是异步渲染。 data改变之后，DOM并不会立刻渲染 $nextTick会在DOM渲染之后被触发，以获取最新的DOM节点 123456789101112131415161718192021222324252627282930313233343536&lt;template&gt; &lt;div id&#x3D;&quot;app&quot;&gt; &lt;ul ref&#x3D;&quot;ul1&quot;&gt; &lt;li v-for&#x3D;&quot;(item, index) in list&quot; :key&#x3D;&quot;index&quot;&gt; &#123;&#123;item&#125;&#125; &lt;&#x2F;li&gt; &lt;&#x2F;ul&gt; &lt;button @click&#x3D;&quot;addItem&quot;&gt;添加一项&lt;&#x2F;button&gt; &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;script&gt;export default &#123; name: &#39;app&#39;, data() &#123; return &#123; list: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;] &#125; &#125;, methods: &#123; addItem() &#123; this.list.push(&#96;$&#123;Date.now()&#125;&#96;) this.list.push(&#96;$&#123;Date.now()&#125;&#96;) this.list.push(&#96;$&#123;Date.now()&#125;&#96;) &#x2F;&#x2F; 1. 异步渲染，$nextTick 待 DOM 渲染完再回调 &#x2F;&#x2F; 2. 页面渲染时会将 data 的修改做整合，多次 data 修改只会渲染一次 this.$nextTick(() &#x3D;&gt; &#123; &#x2F;&#x2F; 获取 DOM 元素 const ulElem &#x3D; this.$refs.ul1 console.log( ulElem.childNodes.length ) &#125;) &#125; &#125;&#125;&lt;&#x2F;script&gt;]]></content>
+    <content type="text"><![CDATA[Vue的异步组件​ 在项目中有时候会有一些比较大的组件，类似于代码编辑器、echart图标渲染之类的组件，如果一次性全部直接同步打包的话，体积就会非常大，严重影响性能。 import()函数 按需加载，异步加载组件 12345678910111213141516171819202122232425262728293031&lt;template&gt; &lt;div&gt; &lt;p&gt;vue 高级特性&lt;/p&gt; &lt;hr&gt; &lt;!-- nextTick --&gt; &lt;NextTick/&gt; &lt;!-- 异步组件 --&gt; &lt;FormDemo v-if="showFormDemo"/&gt; &lt;button @click="showFormDemo = !showFormDemo"&gt;show form demo&lt;/button&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;import NextTick from './NextTick'export default &#123; components: &#123; NextTick, // 异步加载：只有在需要渲染这个组件的时候才会加载 FormDemo: () =&gt; import('../BaseUse/FormDemo'), &#125;, data() &#123; return &#123; NextTickName: "NextTick", showFormDemo: false &#125; &#125;&#125;&lt;/script&gt; this.$notify()1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253import operateFeedback from './operateFeedback.vue'const Plugin = &#123; install (Vue, options = &#123;&#125;) &#123; /** * Makes sure that plugin can be installed only once */ if (this.installed) return this.installed = true /** * Plugin API * tips: 提示文案 * existTime: 提示存在的时间 * ifSuccessed: 是否是操作成功的反馈 失败传0 成功传1或者不传 */ Vue.prototype.$notify = (tips = '操作成功', existTime = 1500, ifSuccessed = 1) =&gt; &#123; let feedback = Vue.extend(operateFeedback) let a = new feedback(&#123; data: &#123; tips, ifSuccessed &#125; &#125;) let domNotify = document.getElementById("ddr-notify"); let ele = document.createElement("div"); ele.setAttribute("id", "ddr-notify-child") domNotify.appendChild(ele) // ele2.setAttribute("id", "ddr-notify-child") // ele.setAttribute("class", "ddr-notify-child-2") setTimeout(() =&gt; &#123; a.$mount('#ddr-notify-child') &#125;, 300) setTimeout(() =&gt; &#123; let domNotifyChild = a.$el domNotifyChild.parentNode.removeChild(domNotifyChild); // let domNotify = document.getElementById("ddr-notify"); // console.log('domNotify:', domNotify) // console.log('a:', a) // a.$destroy() // console.log('a:', a) // domNotify.remove() &#125;, existTime) // let component = new feedback().$mount(); // let $dom = component.$el; // let root = document.getElementById("ddr") // root.appendChild($dom); &#125; &#125;&#125;export default Plugin 调用子组件的方法（vm.$refs.xx.xx()）12345678beforeRouteEnter(to, from, next) &#123; next(vm =&gt; &#123; if(from.name === 'noteUpload' &amp;&amp; vm.$route.query.from === 'upload') &#123; vm.$refs.topicListChild.reInitNoteList() vm.slideToNoteList() &#125; &#125;)&#125;, iPhone低版本输入框问题12345// 在输入框上绑定一个 @blur="inputBlur"// 防止输入框把页面顶上去 导致点击区域失效inputBlur () &#123; window.scrollTo(0, 2000)&#125;, 让文字在一个方框内水平垂直居中由于文字长度是不确定的，所以无法指定一个固定的宽高 fit-content 兼容性有问题，在ios10以上才能用，所以弃用。改为： 1234567891011text-align: center;line-height: 16px;position: absolute;top: 0;bottom: 0;left: 0;right: 0;display: flex;align-items: center;justify-content: center;padding: 0 14px 8px; 也就是说 flex和absolute结合起来也是可以实现居中的。 html占位符1234567&amp;#32; == 普通的英文半角空格&amp;#160; == &amp;nbsp; == &amp;#xA0; == no-break space （普通的英文半角空格但不换行）&amp;#12288; == 中文全角空格 （一个中文宽度）&amp;#8194; == &amp;ensp; == en空格 （半个中文宽度）&amp;#8195; == &amp;emsp; == em空格 （一个中文宽度）&amp;#8197; == 四分之一em空格 （四分之一中文宽度）相比平时的空格（&amp;#32;），nbsp拥有不间断（non-breaking）特性。即连续的nbsp会在同一行内显示。即使有100个连续的nbsp，浏览器也不会把它们拆成两行。 html2canvas &amp;&amp; canvas2image移动端保存带有个性化信息和样式的图片的方法，参考于基于html2canvas实现网页保存为图片及图片清晰度优化 正常用一个div来写样式 再写一个div作浅黑色蒙板 最上面的才是真正的图片，可以用appendChild将生成的img添加上去并为其写上样式 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748import html2canvas from 'html2canvas'import Canvas2Image from '@/util/canvas2image'// html2canvas 生成图片的方法generateCanvas() &#123; this.$nextTick(() =&gt; &#123; let cntElem = this.$refs.hideBox; let shareContent = cntElem;//需要截图的包裹的（原生的）DOM 对象 let width = shareContent.offsetWidth; //获取dom 宽度 let height = shareContent.offsetHeight; //获取dom 高度 let canvas = document.createElement("canvas"); //创建一个canvas节点 let scale = 3; //定义任意放大倍数 支持小数 canvas.width = width * scale; //定义canvas 宽度 * 缩放 canvas.height = height * scale; //定义canvas高度 *缩放 canvas.getContext("2d").scale(scale, scale); //获取context,设置scale let opts = &#123; scale: scale, // 添加的scale 参数 canvas: canvas, //自定义 canvas // logging: true, //日志开关，便于查看html2canvas的内部执行流程 width: width, //dom 原始宽度 height: height, //dom 原始高度 // useCORS: true, // 【重要】开启跨域配置 &#125;; html2canvas(this.$refs.hideBox, opts).then((canvas) =&gt; &#123; let context = canvas.getContext('2d') // 【重要】关闭抗锯齿 context.mozImageSmoothingEnabled = false context.webkitImageSmoothingEnabled = false context.msImageSmoothingEnabled = false context.imageSmoothingEnabled = false // 【重要】默认转化的格式为png,也可设置为其他格式 let img = Canvas2Image.convertToJPEG(canvas, canvas.width, canvas.height) this.$refs.realImg.appendChild(img) // $(img).css(&#123; // "width": canvas.width / 2 + "px", // "height": canvas.height / 2 + "px", // &#125;).addClass('f-full') &#125;) &#125;)&#125; 内容溢出变成省略号(ellipsis)12345// 单行ellipsisoverflow: hidden; text-overflow:ellipsis; white-space: nowrap;// 多行ellipsisoverflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; Vue的渲染缺陷假如在v-if中这样写，v-if=&quot;obj.a&quot;且对象obj不存在a属性，那么这个页面将会整个不渲染，而不是在Vue中报错undefined。此时可以通过注释掉某片div来逐一排查是哪个判断出现问题。 Vue的watch缺陷 watch默认是浅监听，可能无法监测到对象的深层key属性变化 watch监听引用类型，拿不到oldVal 查阅: vue官方文档.得知如果是想watch检测到值变化并且立刻使用则需要加上 immediate: true, 1234567891011watch: &#123; 'uploaConfig.moreList': &#123; handler (newVal) &#123; if (this.uploadConfig.moreList &amp;&amp; this.uploadConfig.moreList.length &gt; 0) &#123; this.moreList = newVal.moreList &#125; &#125;, deep: true, immediate: true, &#125;&#125; 对象监听1234567891011121314151617181920212223242526&lt;div class="watch-demo-item"&gt; &lt;input type="text" v-model="obj.val2"&gt; &lt;div&gt;&#123;&#123;value2&#125;&#125;&lt;/div&gt;&lt;/div&gt;// ...data () &#123; return &#123; val1: '', value1: '', obj: &#123; val2: '' &#125;, value2: '' &#125;&#125;,watch: &#123; val1 (val, oval) &#123; this.value1 = val &#125;, obj (val, oval) &#123; this.value2 = val.val2 &#125;&#125;,methods: &#123;&#125; ​ 可以看到，监听的对象某个key发生变化时，watch并没有生效。 解决方案一1234567891011121314151617181920data () &#123; return &#123; val1: '', value1: '', obj: &#123; val2: '' &#125;, value2: '' &#125;&#125;,watch: &#123; val1 (val, oval) &#123; this.value1 = val &#125;, 'obj.val2' (val, oval) &#123; this.value2 = val &#125;&#125;,methods: &#123;&#125; ​ 确实是成功了，但现实开发过程中，我们的obj对象很难确定里面的key数量，假如很多个key的时候，总不能写多个监听去监听key吧？ 解决方案二123456789101112131415161718192021data () &#123; return &#123; val1: '', value1: '', obj: &#123; val2: '' &#125;, value2: '' &#125;&#125;,watch: &#123; val1 (val, oval) &#123; this.value1 = val &#125;, 'obj': &#123; handler (val, oval) &#123; this.value2 = val.val2 &#125;, deep: true &#125;&#125;, 解释：handler是watch的高级用法,里面有一个属性 deep，默认值是 false，代表是否深度监听, 还有一个属性 immediate，默认值也是 false ，但immediate:true代表如果在 wacth 里声明了之后，就会立即先去执行里面的handler方法，如果为 false就跟我们以前的效果一样，不会在绑定的时候就执行。deep深度监听会影响性能； 两者可以同时存在。 定义一个高度自适应的输入框前些日子有过textarea高度自适应的需求，找到一个插件flexText,虽然没有用上去，但是的精简的代码很吸引我。 它是原理是这样的，HTML结构如下： 1234&lt;div class="expandingArea"&gt; &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt; &lt;textarea placeholder="输入文字"&gt;&lt;/textarea&gt;&lt;/div&gt; 其中的expandingArea的样式仅有 123.expandingArea&#123; position:relative;&#125; 目的是用于textarea相对于expandingArea绝对定位： 123456textarea&#123; position:absolute; top:0; left:0； height:100%;&#125; 通过这样的样式设置，textArea的高度会始终等于expandingArea的高度，要让textarea的高度变化也只需要调整expadingArea的高度即可。那么怎么样让expandingArea的高度变化随内容高度变化而变化呢？pre是比较重要的东西。 1234pre&#123; display:block; visibility:hidden;&#125; pre以块形式存在，并且不可见，但是是占用空间的，不像display:none;什么空间也不占。这时需要把textarea中的内容实时同步到pre里的span标签中，因为pre没有postion:absolute所以它的高度会一直影响expandingArea的高度。总结原理就是：pre会随内容的高度变化而变化，expandingArea的高度又随pre变化，因为textarea的高度100% textarea的高度会随expandingArea变化，只要同步textarea的内容到pre中，就达到一个textarea随内容高度变化的目的了。 关于这个方法的兼容性问题 在这个方法的创始人博客有提到NEIL JENKINS。个人觉得这个方法是牛逼的，没有通过计算，逻辑上它像上思维推导，代码实现不复杂，轻松愉快。在这个例子中又看到了一次合理的结构可以简化代码的案例:)。 参考于如何创建一个高度自适应的textarea 延伸阅读：line-height:normal是怎样计算的? - 知乎 https://www.zhihu.com/question/21786347 （提到了IFC的概念） Vue事件中的event参数12345678910111213141516171819202122232425262728293031323334353637383940&lt;template&gt; &lt;div&gt; &lt;p&gt;&#123;&#123;num&#125;&#125;&lt;&#x2F;p&gt; &lt;button @click&#x3D;&quot;increment1&quot;&gt;+1&lt;&#x2F;button&gt; &lt;button @click&#x3D;&quot;increment2(2, $event)&quot;&gt;+2&lt;&#x2F;button&gt; &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;script&gt;export default &#123; data() &#123; return &#123; num: 0 &#125; &#125;, methods: &#123; increment1(event) &#123; console.log(&#39;event&#39;, event, event.__proto__.constructor) &#x2F;&#x2F; 是原生的 event 对象 console.log(event.target) console.log(event.currentTarget) &#x2F;&#x2F; 注意，事件是被注册到当前元素的，和 React 不一样 this.num++ &#125;, increment2(val, event) &#123; console.log(event.target) this.num &#x3D; this.num + val &#125;, loadHandler() &#123; &#x2F;&#x2F; do some thing &#125; &#125;, mounted() &#123; window.addEventListener(&#39;load&#39;, this.loadHandler) &#125;, beforeDestroy() &#123; &#x2F;&#x2F;【注意】用 vue 绑定的事件，组建销毁时会自动被解绑 &#x2F;&#x2F; 自己绑定的事件，需要自己销毁！！！ window.removeEventListener(&#39;load&#39;, this.loadHandler) &#125;&#125;&lt;&#x2F;script&gt; event 是原生的 事件被挂载到当前事件绑定的元素 和 DOM 事件一样 Vue非父子组件间的通信 event.js 123import Vue from 'vue'export default new Vue() input.vue 1234567891011121314151617181920212223242526272829&lt;template&gt; &lt;div&gt; &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;title&quot;&#x2F;&gt; &lt;button @click&#x3D;&quot;addTitle&quot;&gt;add&lt;&#x2F;button&gt; &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;script&gt;import event from &#39;.&#x2F;event&#39;export default &#123; data() &#123; return &#123; title: &#39;&#39; &#125; &#125;, methods: &#123; addTitle() &#123; &#x2F;&#x2F; 调用父组件的事件 this.$emit(&#39;add&#39;, this.title) &#x2F;&#x2F;🌟🌟🌟 调用自定义事件，也可以传参 event.$emit(&#39;onAddTitle&#39;, this.title) this.title &#x3D; &#39;&#39; &#125; &#125;&#125;&lt;&#x2F;script&gt; list.vue 12345678910111213141516171819202122232425262728293031323334353637383940414243444546&lt;template&gt; &lt;div&gt; &lt;ul&gt; &lt;li v-for&#x3D;&quot;item in list&quot; :key&#x3D;&quot;item.id&quot;&gt; &#123;&#123;item.title&#125;&#125; &lt;button @click&#x3D;&quot;deleteItem(item.id)&quot;&gt;删除&lt;&#x2F;button&gt; &lt;&#x2F;li&gt; &lt;&#x2F;ul&gt; &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;script&gt;import event from &#39;.&#x2F;event&#39;export default &#123; props: &#123; list: &#123; type: Array, default() &#123; return [] &#125; &#125; &#125;, data() &#123; return &#123; &#125; &#125;, methods: &#123; deleteItem(id) &#123; this.$emit(&#39;delete&#39;, id) &#125;, addTitleHandler(title) &#123; console.log(&#39;on add title&#39;, title) &#125; &#125;, mounted() &#123; &#x2F;&#x2F;🌟🌟🌟 绑定自定义事件 &#x2F;&#x2F;🌟🌟🌟 之所以这里写的函数名而不是箭头函数是为了方便在beforeDestroy里解绑该自定义事件 event.$on(&#39;onAddTitle&#39;, this.addTitleHandler) &#125;, beforeDestroy() &#123; &#x2F;&#x2F;🌟🌟🌟 及时销毁，否则可能造成内存泄露 event.$off(&#39;onAddTitle&#39;, this.addTitleHandler) &#125;&#125;&lt;&#x2F;script&gt; 自定义一个Vue实例（这里的event），这个实例就可以实现$on、$emit、$off的功能。就不需要引入event bus总线了 $nextTick Vue是异步渲染。 data改变之后，DOM并不会立刻渲染 $nextTick会在DOM渲染之后被触发，以获取最新的DOM节点 123456789101112131415161718192021222324252627282930313233343536&lt;template&gt; &lt;div id&#x3D;&quot;app&quot;&gt; &lt;ul ref&#x3D;&quot;ul1&quot;&gt; &lt;li v-for&#x3D;&quot;(item, index) in list&quot; :key&#x3D;&quot;index&quot;&gt; &#123;&#123;item&#125;&#125; &lt;&#x2F;li&gt; &lt;&#x2F;ul&gt; &lt;button @click&#x3D;&quot;addItem&quot;&gt;添加一项&lt;&#x2F;button&gt; &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;script&gt;export default &#123; name: &#39;app&#39;, data() &#123; return &#123; list: [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;] &#125; &#125;, methods: &#123; addItem() &#123; this.list.push(&#96;$&#123;Date.now()&#125;&#96;) this.list.push(&#96;$&#123;Date.now()&#125;&#96;) this.list.push(&#96;$&#123;Date.now()&#125;&#96;) &#x2F;&#x2F; 1. 异步渲染，$nextTick 待 DOM 渲染完再回调 &#x2F;&#x2F; 2. 页面渲染时会将 data 的修改做整合，多次 data 修改只会渲染一次 this.$nextTick(() &#x3D;&gt; &#123; &#x2F;&#x2F; 获取 DOM 元素 const ulElem &#x3D; this.$refs.ul1 console.log( ulElem.childNodes.length ) &#125;) &#125; &#125;&#125;&lt;&#x2F;script&gt;]]></content>
       <categories>
         <category>study</category>
       </categories>
       <tags>
+        <tag>css</tag>
         <tag>tips</tag>
         <tag>work</tag>
         <tag>javascript</tag>
-        <tag>css</tag>
         <tag>html</tag>
         <tag>vue</tag>
         <tag>html2canvas</tag>
@@ -159,10 +159,10 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>css</tag>
-        <tag>vue</tag>
         <tag>study</tag>
+        <tag>javascript</tag>
+        <tag>vue</tag>
         <tag>travelweb</tag>
         <tag>vue-awesome-swiper</tag>
         <tag>axios</tag>
@@ -190,11 +190,11 @@
         <category>study</category>
       </categories>
       <tags>
+        <tag>毕业设计</tag>
+        <tag>graduation</tag>
         <tag>数据挖掘</tag>
         <tag>关联规则算法</tag>
         <tag>apriori</tag>
-        <tag>毕业设计</tag>
-        <tag>graduation</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -220,8 +220,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>study</tag>
+        <tag>javascript</tag>
         <tag>es6</tag>
         <tag>parameter</tag>
         <tag>proxy</tag>
@@ -237,8 +237,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>study</tag>
+        <tag>javascript</tag>
         <tag>es6</tag>
         <tag>let</tag>
         <tag>const</tag>
@@ -259,10 +259,10 @@
         <category>study</category>
       </categories>
       <tags>
+        <tag>study</tag>
         <tag>javascript</tag>
         <tag>vue</tag>
         <tag>refs</tag>
-        <tag>study</tag>
         <tag>vue父子间通信</tag>
         <tag>vue生命周期函数</tag>
         <tag>vue模版语法</tag>
@@ -285,9 +285,9 @@
         <category>study</category>
       </categories>
       <tags>
+        <tag>study</tag>
         <tag>javascript</tag>
         <tag>vue</tag>
-        <tag>study</tag>
         <tag>es6</tag>
         <tag>stylus</tag>
         <tag>webpack</tag>
@@ -323,9 +323,9 @@
         <category>study</category>
       </categories>
       <tags>
+        <tag>study</tag>
         <tag>javascript</tag>
         <tag>vue</tag>
-        <tag>study</tag>
         <tag>前端框架</tag>
       </tags>
   </entry>
@@ -353,9 +353,9 @@
       </categories>
       <tags>
         <tag>javascript</tag>
+        <tag>http</tag>
         <tag>web</tag>
         <tag>interview</tag>
-        <tag>http</tag>
         <tag>html/css</tag>
         <tag>frame</tag>
       </tags>
@@ -368,13 +368,13 @@
         <category>work</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>css</tag>
+        <tag>javascript</tag>
         <tag>html</tag>
+        <tag>http</tag>
         <tag>web</tag>
         <tag>interview</tag>
         <tag>jquery</tag>
-        <tag>http</tag>
         <tag>面试</tag>
         <tag>盒模型</tag>
         <tag>状态码</tag>
@@ -388,8 +388,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>study</tag>
+        <tag>javascript</tag>
         <tag>regex</tag>
         <tag>正则表达式</tag>
       </tags>
@@ -433,9 +433,9 @@
       </categories>
       <tags>
         <tag>study</tag>
-        <tag>http</tag>
         <tag>tcp</tag>
         <tag>ip</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>
@@ -447,8 +447,8 @@
       </categories>
       <tags>
         <tag>css</tag>
-        <tag>html</tag>
         <tag>study</tag>
+        <tag>html</tag>
         <tag>居中</tag>
       </tags>
   </entry>
@@ -475,10 +475,10 @@
       <tags>
         <tag>css</tag>
         <tag>study</tag>
-        <tag>flex</tag>
         <tag>position</tag>
         <tag>absolute</tag>
         <tag>relative</tag>
+        <tag>flex</tag>
         <tag>float</tag>
         <tag>margin</tag>
         <tag>center</tag>
@@ -492,8 +492,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>study</tag>
+        <tag>javascript</tag>
         <tag>dom</tag>
         <tag>树</tag>
       </tags>
@@ -507,8 +507,8 @@
       </categories>
       <tags>
         <tag>css</tag>
-        <tag>html</tag>
         <tag>study</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -519,8 +519,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>study</tag>
+        <tag>javascript</tag>
         <tag>算法</tag>
         <tag>algorithm</tag>
         <tag>freecodecamp</tag>
@@ -536,8 +536,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>study</tag>
+        <tag>javascript</tag>
         <tag>js-web-api</tag>
         <tag>ajax</tag>
         <tag>事件</tag>
@@ -554,8 +554,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>javascript</tag>
         <tag>study</tag>
+        <tag>javascript</tag>
         <tag>异步</tag>
         <tag>JS变量类型</tag>
         <tag>原型</tag>
