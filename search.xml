@@ -67,10 +67,10 @@
       </categories>
       <tags>
         <tag>css</tag>
+        <tag>html</tag>
         <tag>tips</tag>
         <tag>work</tag>
         <tag>javascript</tag>
-        <tag>html</tag>
         <tag>vue</tag>
         <tag>html2canvas</tag>
         <tag>canvas2image</tag>
@@ -102,8 +102,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>github</tag>
+        <tag>git</tag>
         <tag>rebase</tag>
       </tags>
   </entry>
@@ -431,8 +431,8 @@
       </categories>
       <tags>
         <tag>css</tag>
-        <tag>javascript</tag>
         <tag>html</tag>
+        <tag>javascript</tag>
         <tag>http</tag>
         <tag>web</tag>
         <tag>interview</tag>
@@ -636,8 +636,8 @@
       </categories>
       <tags>
         <tag>hexo</tag>
-        <tag>blog</tag>
         <tag>github</tag>
+        <tag>blog</tag>
         <tag>share</tag>
         <tag>博客</tag>
       </tags>
