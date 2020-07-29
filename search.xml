@@ -66,8 +66,8 @@
         <category>study</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>html</tag>
+        <tag>css</tag>
         <tag>tips</tag>
         <tag>work</tag>
         <tag>javascript</tag>
@@ -253,10 +253,10 @@
       </categories>
       <tags>
         <tag>graduation</tag>
-        <tag>毕业设计</tag>
         <tag>数据挖掘</tag>
         <tag>关联规则算法</tag>
         <tag>apriori</tag>
+        <tag>毕业设计</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -430,8 +430,8 @@
         <category>work</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>html</tag>
+        <tag>css</tag>
         <tag>javascript</tag>
         <tag>http</tag>
         <tag>web</tag>
@@ -508,9 +508,9 @@
         <category>study</category>
       </categories>
       <tags>
+        <tag>html</tag>
         <tag>css</tag>
         <tag>study</tag>
-        <tag>html</tag>
         <tag>居中</tag>
       </tags>
   </entry>
@@ -568,9 +568,9 @@
         <category>study</category>
       </categories>
       <tags>
+        <tag>html</tag>
         <tag>css</tag>
         <tag>study</tag>
-        <tag>html</tag>
       </tags>
   </entry>
   <entry>
